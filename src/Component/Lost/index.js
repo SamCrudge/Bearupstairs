@@ -9,7 +9,7 @@ class Lost extends React.Component {
     render() {
         return (
             <div className="Lost">
-                <h1>Hi</h1>
+                <h1>404 you are serverly lost</h1>
             </div>
         )
     }
