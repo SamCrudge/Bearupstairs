@@ -8,7 +8,7 @@ import Main from './Component/Main'
 import Lost from './Component/Lost'
 
 class Routing extends React.Component {
-  render() {
+    render() {
       return (
           <Router>
               <div>
