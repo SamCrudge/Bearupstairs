@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Route, Link, BrowserRouter as Router, Switch} from "react-router-dom";
+import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
 import * as serviceWorker from './serviceWorker';
 import './index.css';
 
@@ -12,11 +12,6 @@ class Routing extends React.Component {
       return (
           <Router>
               <div>
-                  <ul>
-                      <li>
-                          <Link to="/">Home</Link>
-                       </li>
-                  </ul>
                   <Switch>
                             <Route exact path="/" component={ Main }/>
                             <Route component={ Lost }/>
