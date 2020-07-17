@@ -24,6 +24,7 @@ class Routing extends React.Component {
     }
 
     navPop() {
+        const nav = document.querySelector('#nav');
         nav.classList.toggle('closeNav');
         nav.classList.toggle('openNav');
     }
@@ -33,7 +34,7 @@ class Routing extends React.Component {
       return (
           <Router>
               <div>
-                      <label id="navbutton" onClick={ this.navPop }>
+                      <label id="navbutton" onChange={ this.navPop }>
                           <input type="checkbox" id="navCheckbox" />
                               <span>
                                 <div> </div>
@@ -70,10 +71,3 @@ ReactDOM.render(
 );
 
 serviceWorker.unregister();
-
-const nav = document.querySelector('#nav');
-
-document.querySelector('#navbutton').addEventListener('change', () => {
-    nav.classList.toggle('closeNav');
-    nav.classList.toggle('openNav');
-});
