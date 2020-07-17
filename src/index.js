@@ -19,7 +19,7 @@ class Routing extends React.Component {
                   <ul className='Navigation'>
                       {/*This creates the Nav component you will style in css.*/}
                       <li>
-                          <Link to="/">Home</Link>
+                          <Link to="/">HOME</Link>
                           <Link to="/about">ABOUT</Link>
                           <Link to="/portfolio">PORTFOLIO</Link>
                           <Link to="/contact">CONTACT</Link>
