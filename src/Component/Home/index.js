@@ -3,15 +3,15 @@ import './home.css'
 
 
 
-class Main extends React.Component {
+class Home extends React.Component {
 
 
     render() {
         return (
-            <div className="main">
+            <div className="Home">
             </div>
         )
     }
 }
 
-export default Main
+export default Home
