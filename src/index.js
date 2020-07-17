@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Route, Link, BrowserRouter as Router, Switch} from "react-router-dom";
 import * as serviceWorker from './serviceWorker';
-import './index.css';
+import './index.scss';
+
 
 // importing components so the Router div can pull the needed files.
 import Header from "./Component/Header";
@@ -15,21 +16,38 @@ import Footer from "./Component/Footer";
 
 
 class Routing extends React.Component {
+
+
+    constructor(props, context) {
+        super(props, context);
+        this.navPop = this.navPop.bind(this)
+    }
+
+    navPop() {
+        nav.classList.toggle('closeNav');
+        nav.classList.toggle('openNav');
+    }
+
+
     render() {
       return (
           <Router>
               <div>
-                  <ul className='Navigation'>
-                      {/*This creates the Nav component you will style in css.*/}
-                      <li>
-                          <Link to="/">HOME</Link>
-                          <Link to="/about">ABOUT</Link>
-                          <Link to="/portfolio">PORTFOLIO</Link>
-                          <Link to="/contact">CONTACT</Link>
-                      </li>
-                  </ul>
+                      <label id="navbutton" onClick={ this.navPop }>
+                          <input type="checkbox" id="navCheckbox" />
+                              <span>
+                                <div> </div>
+                                <div> </div>
+                                <div> </div>
+                              </span>
+                      </label>
+                      <ul id="nav" class="closeNav">
+                         <li><Link to="/">HOME</Link></li>
+                          <li><Link to="/about">ABOUT</Link></li>
+                          <li><Link to="/portfolio">PORTFOLIO</Link></li>
+                          <li><Link to="/contact">CONTACT</Link></li>
+                      </ul>
                   <Switch>
-                      {/*This will determine which components to use when the Links are press in the browser*/}
                             <Route exact path="/" component={ Home }/>
                             <Route exact path="/about" component={ About }/>
                             <Route exact path="/portfolio" component={ Portfolio }/>
@@ -41,8 +59,7 @@ class Routing extends React.Component {
       )
   }
 }
-/*This <> </> is a fragment useful for holding multiple components for the Render that can only have a single object with the Document.getElement....*/
-/* https://reactjs.org/docs/fragments.html */
+
 ReactDOM.render(
     <>
         <Header />,
@@ -53,3 +70,10 @@ ReactDOM.render(
 );
 
 serviceWorker.unregister();
+
+const nav = document.querySelector('#nav');
+
+document.querySelector('#navbutton').addEventListener('change', () => {
+    nav.classList.toggle('closeNav');
+    nav.classList.toggle('openNav');
+});
