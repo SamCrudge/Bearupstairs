@@ -1,6 +1,6 @@
 import React from "react";
 import './lost.css'
-
+const Link = require("react-router-dom").Link;
 
 
 class Lost extends React.Component {
@@ -9,7 +9,8 @@ class Lost extends React.Component {
     render() {
         return (
             <div className="Lost">
-                <h1>404 you are serverly lost</h1>
+                <h1>Hi, this isn't a page we recognise. Perhaps you'd like to go home?</h1>
+                <Link to="/">Home</Link>
             </div>
         )
     }
