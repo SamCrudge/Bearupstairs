@@ -8,7 +8,7 @@ class Header extends React.Component {
     render() {
         return (
             <div className="Header">
-                <p>I'm a Footer</p>
+                <img src={require("../../Assets/bearupstairs.jpg")} alt='Logo' />
             </div>
         )
     }

@@ -5,12 +5,14 @@ import * as serviceWorker from './serviceWorker';
 import './index.css';
 
 // importing components so the Router div can pull the needed files.
+import Header from "./Component/Header";
 import Home from './Component/Home'
 import About from "./Component/About";
 import Portfolio from "./Component/Portfolio";
 import Contact from "./Component/Contact";
 import Lost from './Component/Lost'
 import Footer from "./Component/Footer";
+
 
 class Routing extends React.Component {
     render() {
@@ -43,6 +45,7 @@ class Routing extends React.Component {
 /* https://reactjs.org/docs/fragments.html */
 ReactDOM.render(
     <>
+        <Header />,
         <Routing />,
         <Footer />,
     </>,
