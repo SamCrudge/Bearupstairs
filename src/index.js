@@ -10,6 +10,7 @@ import About from "./Component/About";
 import Portfolio from "./Component/Portfolio";
 import Contact from "./Component/Contact";
 import Lost from './Component/Lost'
+import Footer from "./Component/Footer";
 
 class Routing extends React.Component {
     render() {
@@ -38,9 +39,13 @@ class Routing extends React.Component {
       )
   }
 }
-
+/*This <> </> is a fragment useful for holding multiple components for the Render that can only have a single object with the Document.getElement....*/
+/* https://reactjs.org/docs/fragments.html */
 ReactDOM.render(
-  <Routing />,
+    <>
+        <Routing />,
+        <Footer />,
+    </>,
   document.getElementById('root')
 );
 

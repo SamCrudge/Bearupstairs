@@ -13,3 +13,15 @@ code {
 }
 
 /* feel free to change any of this. */
+
+.Navigation {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+
+}
+
+/* a's are basically the Link element inside the List item */
+a {
+  padding-right: 10px;
+}
