@@ -1,8 +1,6 @@
 import React from "react";
 import './Socials.css'
 
-
-
 class Socials extends React.Component {
 
     constructor(props, context) {
