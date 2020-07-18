@@ -4,17 +4,14 @@ import {Route, Link, BrowserRouter as Router, Switch} from "react-router-dom";
 import * as serviceWorker from './serviceWorker';
 import './index.css';
 
-// importing components so the Router div can pull the needed files.
 import Header from "./Component/Header";
-import Socials from "./Socials";
+import Socials from "./Component/Socials";
 import Home from './Component/Home'
 import About from "./Component/About";
 import Portfolio from "./Component/Portfolio";
 import Contact from "./Component/Contact";
 import Lost from './Component/Lost'
 import Footer from "./Component/Footer";
-
-
 
 class Routing extends React.Component {
 
