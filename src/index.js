@@ -6,6 +6,7 @@ import './index.css';
 
 // importing components so the Router div can pull the needed files.
 import Header from "./Component/Header";
+import Socials from "./Socials";
 import Home from './Component/Home'
 import About from "./Component/About";
 import Portfolio from "./Component/Portfolio";
@@ -14,12 +15,12 @@ import Lost from './Component/Lost'
 import Footer from "./Component/Footer";
 
 
+
 class Routing extends React.Component {
 
     constructor(props, context) {
         super(props, context);
         this.navPop = this.navPop.bind(this);
-        this.socialPop = this.socialPop.bind(this);
     }
 
     navPop() {
@@ -28,14 +29,10 @@ class Routing extends React.Component {
         nav.classList.toggle('openNav');
     }
 
-    socialPop() {
-        document.getElementById('social').classList.toggle('socialClick');
-    }
-
     render() {
 
-      return (
-          <Router>
+        return (
+            <Router>
                 <div>
                     <label id='navButton' onChange={ this.navPop }>
                         <input type='checkbox' id='navCheckbox' />
@@ -56,25 +53,10 @@ class Routing extends React.Component {
                         <Route exact path="/contact" component={ Contact }/>
                         <Route component={ Lost }/>
                     </Switch>
-                    <div id="social">
-                        <div id="socialButton" onClick={this.socialPop}>
-                            <span>&#10010;</span>
-                        </div>
-                        <menu id="socialIcons">
-                            <a href="https://github.com/bearupstairs/">
-                                <img src={require("./Assets/github.png")} className="iconOne" alt='Github logo' />
-                            </a>
-                            <a href="https://twitter.com/bearupstairs/">
-                                <img src={require("./Assets/twitter.png")} className="iconTwo" alt='Twitter logo' />
-                            </a>
-                            <a href="https://facebook.com/bearupstairs/">
-                                <img src={require("./Assets/facebook.png")} className="iconThree" alt='Facebook logo' />
-                            </a>
-                        </menu>
-                    </div>
+                    <Socials />
                 </div>
-          </Router>
-      )
+            </Router>
+        )
 
     }
 
