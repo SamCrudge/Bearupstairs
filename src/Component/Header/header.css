@@ -4,5 +4,6 @@
 }
 
 .Header img {
+    z-index: -5;
     height: 20vh;
 }
