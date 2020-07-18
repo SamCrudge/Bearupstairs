@@ -131,10 +131,6 @@ ul, li {
   background: var(--main-style-color);
 }
 
-#social {
-  display: none;
-}
-
 @media (min-device-width:1224px) {
 
   #nav {
@@ -154,97 +150,4 @@ ul, li {
   #navButton {
     display: none;
   }
-
-  #social {
-    display: block;
-    position: absolute;
-    width: 8rem;
-    height: 8rem;
-    top: -2.3rem;
-    right: -2.3rem;
-  }
-
-  #social * {
-    padding: 0;
-    margin: 0;
-  }
-
-  #socialButton {
-    z-index: 1;
-    position: absolute;
-    width: 2rem;
-    height: 2rem;
-    top: 0; bottom: 0; left: 0; right: 0;
-    margin: auto;
-    border-radius: 50%;
-    font-size: 1rem;
-    line-height: 2rem;
-    text-align: center;
-    color: var(--main-background-color);
-    background-color: var(--main-style-color);
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform .3s ease;
-  }
-
-  #socialIcons {
-    position: absolute;
-    width: 2rem;
-    height: 2rem;
-    top: 0; bottom: 0; left: 0; right: 0;
-    margin: auto;
-    border-radius: 100%;
-    background: var(--main-style-color);
-    box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.5);
-    z-index: -1;
-    transition: all .3s ease;
-  }
-
-  #social #socialButton:active, #social.socialClick #socialButton:active {
-    transform: scale(1.2);
-  }
-
-  #social.socialClick #socialButton {
-    transform: rotateY(180deg);
-    box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.8);
-  }
-
-  #social.socialClick #socialIcons {
-    width: 8rem;
-    height: 8rem;
-  }
-
-  #social img {
-    position: absolute;
-    top: 0; bottom: 0; left: 0; right: 0;
-    margin: auto;
-    width: 1.3rem;
-    transition: transform .3s ease;
-  }
-
-  #social #socialButton img {
-    width: 1rem;
-  }
-
-  #social #socialIcons img {
-    border-radius: 50%;
-    box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.8);
-  }
-
-  #social.socialClick img {
-    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-  /* github (change to instagram) */
-  #social.socialClick .iconOne {
-    transform: translate(.3rem, 2.8rem);
-  }
-  /* twitter */
-  #social.socialClick .iconTwo {
-    transform: translate(-2rem, 2rem);
-  }
-  /* facebook */
-  #social.socialClick .iconThree {
-    transform: translate(-2.8rem, -.3rem);
-  }
-
 }
