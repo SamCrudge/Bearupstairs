@@ -21,6 +21,7 @@ class Routing extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.navPop = this.navPop.bind(this)
+        This is whats catching the onChange event and sending it to the navPop function.
     }
 
     navPop() {
