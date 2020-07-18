@@ -19,7 +19,7 @@
     }
 
     #socialButton {
-        z-index: 1;
+        z-index: 2;
         position: absolute;
         width: 2rem;
         height: 2rem;
@@ -37,6 +37,7 @@
     }
 
     #socialIcons {
+        z-index: 1;
         position: absolute;
         width: 2rem;
         height: 2rem;
@@ -45,7 +46,6 @@
         border-radius: 100%;
         background: var(--main-style-color);
         box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.5);
-        z-index: -1;
         transition: all .3s ease;
     }
 
@@ -83,7 +83,7 @@
     #social.socialClick img {
         transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
-    /* github (change to instagram) */
+    /* instagram */
     #social.socialClick .iconOne {
         transform: translate(.3rem, 2.8rem);
     }

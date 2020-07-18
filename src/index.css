@@ -51,10 +51,11 @@ ul, li {
 }
 
 #nav {
+  z-index: 50;
   position: fixed;
   width: 100%;
   bottom: 0;
-  font-size: 8vh;
+  font-size: 3rem;
   font-weight: 700;
   text-align: center;
   line-height: 17vh;
