@@ -9,6 +9,9 @@ class Home extends React.Component {
     render() {
         return (
             <div className="Home">
+                <div>
+                    <p>I'm the Homepage Content.</p>
+                </div>
             </div>
         )
     }
