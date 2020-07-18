@@ -15,39 +15,55 @@ import Footer from "./Component/Footer";
 
 
 class Routing extends React.Component {
+
+    constructor(props, context) {
+        super(props, context);
+        this.navPop = this.navPop.bind(this);
+    }
+
+    navPop() {
+        const nav = document.getElementById('nav');
+        nav.classList.toggle('closeNav');
+        nav.classList.toggle('openNav');
+    }
+
     render() {
+
       return (
           <Router>
-              <div>
-                  <ul className='Navigation'>
-                      {/*This creates the Nav component you will style in css.*/}
-                      <li>
-                          <Link to="/">HOME</Link>
-                          <Link to="/about">ABOUT</Link>
-                          <Link to="/portfolio">PORTFOLIO</Link>
-                          <Link to="/contact">CONTACT</Link>
-                      </li>
-                  </ul>
-                  <Switch>
-                      {/*This will determine which components to use when the Links are press in the browser*/}
-                            <Route exact path="/" component={ Home }/>
-                            <Route exact path="/about" component={ About }/>
-                            <Route exact path="/portfolio" component={ Portfolio }/>
-                            <Route exact path="/contact" component={ Contact }/>
-                            <Route component={ Lost }/>
-                  </Switch>
-              </div>
+                <div>
+                    <label id='navButton' onChange={ this.navPop }>
+                        <input type='checkbox' id='navCheckbox' />
+                        <span>
+                            <div></div><div></div><div></div>
+                        </span>
+                    </label>
+                    <ul id='nav' className='closeNav'>
+                        <li onClick={this.navPop}><Link to="/">HOME</Link></li>
+                        <li onClick={this.navPop}><Link to="/portfolio">PORTFOLIO</Link></li>
+                        <li onClick={this.navPop}><Link to="/about">ABOUT</Link></li>
+                        <li onClick={this.navPop}><Link to="/contact">CONTACT</Link></li>
+                    </ul>
+                    <Switch>
+                        <Route exact path="/" component={ Home }/>
+                        <Route exact path="/about" component={ About }/>
+                        <Route exact path="/portfolio" component={ Portfolio }/>
+                        <Route exact path="/contact" component={ Contact }/>
+                        <Route component={ Lost }/>
+                    </Switch>
+                </div>
           </Router>
       )
-  }
+
+    }
+
 }
-/*This <> </> is a fragment useful for holding multiple components for the Render that can only have a single object with the Document.getElement....*/
-/* https://reactjs.org/docs/fragments.html */
+
 ReactDOM.render(
     <>
-        <Header />,
-        <Routing />,
-        <Footer />,
+        <Header />
+        <Routing />
+        <Footer />
     </>,
   document.getElementById('root')
 );
