@@ -36,6 +36,7 @@ class Routing extends React.Component {
           <Router>
               <div>
                       <label id="navbutton" onChange={ this.navPop }>
+                      This is how you make the eventlisteners. onClick is one aswell, pretty sure there's one for everything,
                           <input type="checkbox" id="navCheckbox" />
                               <span>
                                 <div> </div>
