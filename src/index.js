@@ -56,7 +56,6 @@ class Routing extends React.Component {
         )
 
     }
-
 }
 
 ReactDOM.render(
