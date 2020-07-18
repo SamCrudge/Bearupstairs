@@ -58,7 +58,7 @@ class Routing extends React.Component {
                     </Switch>
                     <div id="social">
                         <div id="socialButton" onClick={this.socialPop}>
-                            <span>&#10010;</span>
+                                <img src={require("./Assets/hearticon.png")} alt='Social media' />
                         </div>
                         <menu id="socialIcons">
                             <a href="https://github.com/bearupstairs/">
