@@ -27,7 +27,6 @@ class Routing extends React.Component {
     }
 
     render() {
-
         return (
             <Router>
                 <div>
@@ -54,7 +53,6 @@ class Routing extends React.Component {
                 </div>
             </Router>
         )
-
     }
 }
 
@@ -64,7 +62,7 @@ ReactDOM.render(
         <Routing />
         <Footer />
     </>,
-  document.getElementById('root')
+    document.getElementById('root')
 );
 
 serviceWorker.unregister();
