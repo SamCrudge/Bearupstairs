@@ -20,15 +20,18 @@ class Home extends React.Component {
                         We build attractive, functional websites for creatives.
                     </p>
                 </div>
-                <div className="accentTextOne   ">
+                <div className="accentTextOne">
                     <p>We know how important it is for you</p>
                     <p>to share your
                         <span className="accentTextTwo">
-                            <span className="redText"> beautiful</span> <i>content</i></span></p>
+                            <span className="redText"> beautiful</span>
+                            <i> content</i>
+                        </span>
+                    </p>
                     <p>in a beautiful space,</p>
                     <p>to be able to easily</p>
                     <p>sell your work,</p>
-                    <p>simply.</p>
+                    <p className="mainText redText">simply.</p>
                 </div>
                 <div className="mainText">
                     <p>LET US HELP!</p>

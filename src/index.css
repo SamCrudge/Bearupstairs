@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Libre+Baskerville&family=Raleway:wght@400;700&display=swap");
 
+@font-face {
+  font-family: "Elephant";
+  src: url("./Assets/ELEPHNT.TTF");
+}
+
+@font-face {
+  font-family: "Elephant";
+  src: url("./Assets/ELEPHNTI.TTF");
+  font-style: italic;
+}
+
 :root {
   --main-background-color: #fff;
   --main-style-color: #ff3541;
@@ -11,6 +22,7 @@
 body {
   background: var(--main-background-color);
   margin: 0;
+  min-height: 100vh;
   font-family: "Raleway";
   overflow-x: hidden;
 }
@@ -21,6 +33,7 @@ a {
 }
 
 .mainText {
+  font-family: "Raleway";
   font-size: 1.3rem;
   font-weight: 400;
 }
@@ -32,7 +45,12 @@ a {
 
 .accentTextTwo {
   font-size: 1.1rem;
-  font-family: 'Abril Fatface', cursive;
+  font-family: 'Elephant';
+}
+
+.accentTextTwoItalic {
+  font-size: 1.1rem;
+  font-family: 'Elephant', italic;
 }
 
 .allCaps {

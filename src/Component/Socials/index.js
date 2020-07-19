@@ -16,16 +16,16 @@ class Socials extends React.Component {
         return (
             <div id="social">
                 <div id="socialButton" onClick={this.socialPop}>
-                    <span>&#10010;</span>
+                    <img src={require("../../Assets/hearticon.png")} alt='Social media' />
                 </div>
                 <menu id="socialIcons">
-                    <a href="https://instagram.com/bear.upstairs">
+                    <a href="https://instagram.com/bear.upstairs" target="_blank" rel="noopener noreferrer" >
                         <img src={require("../../Assets/instagram.png")} className="iconOne" alt='Github logo' />
                     </a>
-                    <a href="https://twitter.com/bearupstairs">
+                    <a href="https://twitter.com/bearupstairs" target="_blank" rel="noopener noreferrer" >
                         <img src={require("../../Assets/twitter.png")} className="iconTwo" alt='Twitter logo' />
                     </a>
-                    <a href="https://facebook.com/bearupstairs">
+                    <a href="https://facebook.com/bearupstairs" target="_blank" rel="noopener noreferrer" >
                         <img src={require("../../Assets/facebook.png")} className="iconThree" alt='Facebook logo' />
                     </a>
                 </menu>
