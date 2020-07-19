@@ -24,6 +24,18 @@ h1 {
     margin-bottom: 5vh;
 }
 
+.title {
+    width: 90vw;
+    box-sizing: border-box;
+    padding: 1vh;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--main-background-color);
+    text-transform: uppercase;
+    background-color: var(--main-style-color);
+    border-top-right-radius: 20vh;
+}
+
 .portfolioBlock img {
     width: 90vw;
     box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.5);
@@ -43,18 +55,21 @@ h1 {
     .portfolioPage {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        width: 28vw;
-        height: 28vw;
-    }
-
-    .portfolioBlock img {
+        justify-content: space-around;
         width: 28vw;
         transition: all 0.5s ease;
     }
 
-    .portfolioBlock img:hover {
+    .portfolioPage:hover {
         transform: scale(1.05);
+    }
+
+    .title {
+        width: 28vw;
+    }
+
+    .portfolioBlock img {
+        width: 28vw;
     }
 
 }
