@@ -37,10 +37,10 @@ class Routing extends React.Component {
                         </span>
                     </label>
                     <ul id='nav' className='closeNav'>
-                        <li onClick={this.navPop}><Link to="/">HOME</Link></li>
-                        <li onClick={this.navPop}><Link to="/portfolio">PORTFOLIO</Link></li>
-                        <li onClick={this.navPop}><Link to="/about">ABOUT</Link></li>
-                        <li onClick={this.navPop}><Link to="/contact">CONTACT</Link></li>
+                        <li onClick={this.navPop}><Link to="/"><div>HOME</div></Link></li>
+                        <li onClick={this.navPop}><Link to="/portfolio"><div>PORTFOLIO</div></Link></li>
+                        <li onClick={this.navPop}><Link to="/about"><div>ABOUT</div></Link></li>
+                        <li onClick={this.navPop}><Link to="/contact"><div>CONTACT</div></Link></li>
                     </ul>
                     <Switch>
                         <Route exact path="/" component={ Home }/>

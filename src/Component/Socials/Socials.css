@@ -44,7 +44,7 @@
         top: 0; bottom: 0; left: 0; right: 0;
         margin: auto;
         border-radius: 100%;
-        background: var(--main-style-color);
+        background-color: var(--main-style-color);
         box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.5);
         transition: all .3s ease;
     }
@@ -95,4 +95,5 @@
     #social.socialClick .iconThree {
         transform: translate(-2.8rem, -.3rem);
     }
+
 }
