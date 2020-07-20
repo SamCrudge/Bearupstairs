@@ -44,8 +44,22 @@ h1 {
 @media (min-device-width:1224px) {
 
     h1 {
-        margin-top: 5vh;
-        margin-bottom: 0;
+        width: 25vw;
+        height: 5rem;
+        line-height: 5rem;
+    }
+
+    .portfolioDeco {
+        display: flex;
+        justify-content: space-around;
+        width: 100vw;
+    }
+
+    .portfolioLine {
+        width: 40vw;
+        height: 1px;
+        margin: 5rem 0 0;
+        background-color: #111111;
     }
 
     .portfolioBlock {

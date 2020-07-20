@@ -6,11 +6,11 @@ import './index.css';
 
 import Header from "./Component/Header";
 import Socials from "./Component/Socials";
-import Home from './Component/Home'
+import Home from "./Component/Home"
 import About from "./Component/About";
 import Portfolio from "./Component/Portfolio";
 import Contact from "./Component/Contact";
-import Lost from './Component/Lost'
+import Lost from "./Component/Lost"
 import Footer from "./Component/Footer";
 
 class Routing extends React.Component {
@@ -30,7 +30,7 @@ class Routing extends React.Component {
         return (
             <Router>
                 <div>
-                    <label id='navButton' onChange={ this.navPop }>
+                    <label id='navButton' onChange={this.navPop}>
                         <input type='checkbox' id='navCheckbox' />
                         <span>
                             <div></div><div></div><div></div>
