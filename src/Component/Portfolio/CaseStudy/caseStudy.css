@@ -28,6 +28,8 @@
     right: 0;
     margin: auto;
     font-size: 2rem;
+    text-align: center;
+    line-height: 70vh;
     color: var(--primary-type-color);
     background-color: rgba(250,250,250,0.8);
     box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.75);
@@ -53,14 +55,6 @@
     transform: rotate(45deg);
 }
 
-.openCaseStudy {
-    display: block;
-}
-
-.viewCaseStudy {
-    opacity: 1;
-}
-
 .CaseOpen {
     display: block;
 }
@@ -69,6 +63,9 @@
     display: none;
 }
 
+.viewCaseStudy {
+    opacity: 1;
+}
 
 @media (min-device-width:1224px) {
 

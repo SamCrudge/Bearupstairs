@@ -13,7 +13,7 @@ class CaseStudy extends React.Component {
         const caseStudy = document.querySelector('.CaseStudy');
         document.querySelector('.CaseWindow').classList.toggle('viewCaseStudy');
         setTimeout(() => { document.querySelector('.CaseBase').classList.toggle('viewCaseStudy') }, 700);
-        setTimeout(() => { caseStudy.classList.toggle('openCaseStudy') }, 1000);
+        setTimeout(() => { caseStudy.classList.toggle('CaseOpen') }, 1000);
     }
 
     render() {
@@ -23,9 +23,15 @@ class CaseStudy extends React.Component {
                 <div className="CaseBase" onClick={this.caseStudyExit} />
                 <div className="CaseWindow">
                     <div className="exitCaseStudy" onClick={this.caseStudyExit}>&#43;</div>
-                    <CaseStudyOne />
-                    <CaseStudyTwo />
-                    <CaseStudyThree />
+                        <div className={this.props.caseOneStatus}>
+                            hi
+                        </div>
+                        <div className={this.props.caseTwoStatus}>
+                            sup
+                        </div>
+                        <div className={this.props.caseThreeStatus}>
+                            ca va
+                        </div>
                 </div>
             </div>
         )

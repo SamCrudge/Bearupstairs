@@ -5,13 +5,13 @@ class CaseStudyThree extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            caseStatus: "CaseClosed"
+            caseThreeStatus: "CaseClosed"
         };
     }
 
     render() {
         return (
-            <div className={this.state.caseStatus}>
+            <div className={this.props.caseThreeStatus}>
                 ca va
             </div>
         )

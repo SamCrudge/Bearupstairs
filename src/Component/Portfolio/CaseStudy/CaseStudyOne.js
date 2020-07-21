@@ -1,21 +1,21 @@
 import React from "react";
 
-class CaseStudyTwo extends React.Component {
+class CaseStudyOne extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            caseStatus: "CaseClosed"
+            caseOneStatus: "CaseClosed"
         };
     }
 
     render() {
         return (
-            <div className={this.state.caseStatus}>
-                sup
+            <div className={this.props.caseOneStatus}>
+                hi
             </div>
         )
     }
 }
 
-export default CaseStudyTwo
+export default CaseStudyOne

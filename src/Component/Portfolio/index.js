@@ -1,33 +1,65 @@
 import React from "react";
 
 import './portfolio.css';
-import '../CaseStudy/caseStudy.css';
-
-import CaseStudy from "../CaseStudy";
+import './CaseStudy/caseStudy.css';
 
 class Portfolio extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            caseOneStatus: 'CaseClosed',
+            caseTwoStatus: 'CaseClosed',
+            caseThreeStatus: 'CaseClosed'
+        };
+        this.changeCaseTwoStatus = this.changeCaseTwoStatus.bind(this);
         this.caseStudyPop = this.caseStudyPop.bind(this);
         this.caseStudyOnePop = this.caseStudyOnePop.bind(this);
         this.caseStudyTwoPop = this.caseStudyTwoPop.bind(this);
         this.caseStudyThreePop = this.caseStudyThreePop.bind(this);
+        this.caseStudyExit = this.caseStudyExit.bind(this);
+    }
+    changeCaseOneStatus(status) {
+        this.setState({
+            caseOneStatus: status
+        });
+    }
+    changeCaseTwoStatus(status) {
+        this.setState({
+            caseTwoStatus: status
+        });
+    }
+    changeCaseThreeStatus(status) {
+        this.setState({
+            caseThreeStatus: status
+        });
     }
     caseStudyPop() {
         const caseStudy = document.querySelector('.CaseStudy');
-        caseStudy.classList.toggle('openCaseStudy');
+        caseStudy.classList.toggle('CaseOpen');
         setTimeout(() => { document.querySelector('.CaseBase').classList.toggle('viewCaseStudy') }, 100);
         setTimeout(() => { document.querySelector('.CaseWindow').classList.toggle('viewCaseStudy') }, 700);
     }
     caseStudyOnePop() {
         this.caseStudyPop();
+        this.changeCaseOneStatus('CaseOpen')
     }
     caseStudyTwoPop() {
         this.caseStudyPop();
+        this.changeCaseTwoStatus('CaseOpen')
     }
     caseStudyThreePop() {
         this.caseStudyPop();
+        this.changeCaseThreeStatus('CaseOpen')
+    }
+    caseStudyExit() {
+        const caseStudy = document.querySelector('.CaseStudy');
+        document.querySelector('.CaseWindow').classList.toggle('viewCaseStudy');
+        setTimeout(() => { document.querySelector('.CaseBase').classList.toggle('viewCaseStudy') }, 700);
+        setTimeout(() => { caseStudy.classList.toggle('openCaseStudy') }, 1000);
+        this.changeCaseOneStatus('CaseClosed');
+        this.changeCaseTwoStatus('CaseClosed');
+        this.changeCaseThreeStatus('CaseClosed');
     }
 
     render() {
@@ -53,7 +85,21 @@ class Portfolio extends React.Component {
                         <img src={require("../../Assets/portfolio/portfolio_ff_1.jpg")} alt='Desktop example' />
                     </div>
                 </div>
-                <CaseStudy />
+                <div className="CaseStudy">
+                    <div className="CaseBase" onClick={this.caseStudyExit} />
+                    <div className="CaseWindow">
+                        <div className="exitCaseStudy" onClick={this.caseStudyExit}>&#43;</div>
+                        <div className={this.state.caseOneStatus}>
+                            1
+                        </div>
+                        <div className={this.state.caseTwoStatus}>
+                            2
+                        </div>
+                        <div className={this.state.caseThreeStatus}>
+                            3
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
