@@ -56,7 +56,7 @@ class Portfolio extends React.Component {
         const caseStudy = document.querySelector('.CaseStudy');
         document.querySelector('.CaseWindow').classList.toggle('viewCaseStudy');
         setTimeout(() => { document.querySelector('.CaseBase').classList.toggle('viewCaseStudy') }, 700);
-        setTimeout(() => { caseStudy.classList.toggle('openCaseStudy') }, 1000);
+        setTimeout(() => { caseStudy.classList.toggle('CaseOpen') }, 1000);
         this.changeCaseOneStatus('CaseClosed');
         this.changeCaseTwoStatus('CaseClosed');
         this.changeCaseThreeStatus('CaseClosed');
