@@ -4,35 +4,40 @@ import './portfolio.css';
 import './CaseStudy/caseStudy.css';
 
 import PortfolioPage from "./CaseStudy/PortfolioPage";
-import CaseStudy from "./CaseStudy";
+import CaseStudy from "./CaseStudy/CaseStudy";
 
 class Portfolio extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            openId: ''
+            openId: '',
+            caseName: '',
+            caseImage: '',
+            caseDesc: ''
         };
         this.caseStudyPop = this.caseStudyPop.bind(this);
         this.caseStudyExit = this.caseStudyExit.bind(this);
     }
-    caseStudyPop(id) {
+    caseStudyPop = (id, name, image, desc) => {
+        this.setState({
+            openId: id,
+            caseName: name,
+            caseImage: image,
+            caseDesc: desc
+        });
         const caseStudy = document.querySelector('.CaseStudy');
         caseStudy.classList.toggle('CaseOpen');
         setTimeout(() => { document.querySelector('.CaseBase').classList.toggle('viewCaseStudy') }, 100);
         setTimeout(() => { document.querySelector('.CaseWindow').classList.toggle('viewCaseStudy') }, 700);
-        this.setState({
-            openId: id
-        });
+
     }
-    caseStudyExit() {
+    caseStudyExit = () => {
         const caseStudy = document.querySelector('.CaseStudy');
         document.querySelector('.CaseWindow').classList.toggle('viewCaseStudy');
         setTimeout(() => { document.querySelector('.CaseBase').classList.toggle('viewCaseStudy') }, 700);
         setTimeout(() => { caseStudy.classList.toggle('CaseOpen') }, 1000);
-        this.setState({
-            openId: ''
-        });
+        setTimeout(() => { this.setState({ openId: '', caseName: '', caseImage: '', caseDesc: '' }); }, 1100);
     }
 
     render() {
@@ -49,23 +54,29 @@ class Portfolio extends React.Component {
                         clickHandler={this.caseStudyPop}
                         id={0}
                         name={"Artist gallery: bluesungfruit"}
-                        image={require("../../Assets/portfolio/portfolio_bsf_1.jpg")} />
+                        image={require("../../Assets/portfolio/portfolio_bsf_1.jpg")}
+                        desc={"Description of this."} />
                     <PortfolioPage
                         clickHandler={this.caseStudyPop}
                         id={1}
                         name={"Victoria Hill Acupuncture"}
-                        image={require("../../Assets/portfolio/portfolio_vha_1.jpg")} />
+                        image={require("../../Assets/portfolio/portfolio_vha_1.jpg")}
+                        desc={"Description of this."} />
                     <PortfolioPage
                         clickHandler={this.caseStudyPop}
                         id={2}
                         name={"The Forester & Flower Pub and B&B"}
-                        image={require("../../Assets/portfolio/portfolio_ff_1.jpg")} />
+                        image={require("../../Assets/portfolio/portfolio_ff_1.jpg")}
+                        desc={"Description of this."} />
                 </div>
                 <div className="CaseStudy">
-                    <div className="CaseBase" onClick={this.caseStudyExit} id={''} />
+                    <div className="CaseBase" onClick={this.caseStudyExit} />
                     <div className="CaseWindow">
                         <div className="exitCaseStudy" onClick={this.caseStudyExit}>&#43;</div>
-                        <CaseStudy name={this.state.openId} />
+                        <CaseStudy id={this.state.openId}
+                                   name={this.state.caseName}
+                                   image={this.state.caseImage}
+                                   desc={this.state.caseDesc} />
                     </div>
                 </div>
             </div>
