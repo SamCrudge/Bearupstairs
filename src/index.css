@@ -83,6 +83,10 @@ ul, li {
   transition: all .5s linear;
 }
 
+#nav div {
+  background-color: var(--main-style-color);
+}
+
 #nav a {
   color: var(--secondary-type-color);
   text-decoration: none;
@@ -170,11 +174,34 @@ ul, li {
     min-width: 125px;
     height: 5vh;
     line-height: 5vh;
+    transition: all 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715);
   }
 
   #nav div:hover {
-    background-color: #ff737a;
-    transition: background-color 0.5s;
+    transform: translateX(-8px) translateY(-8px);
+    box-shadow:
+      1px 1px #533c44,
+      2px 2px #533c44,
+      3px 3px #533c44,
+      4px 4px #533c44,
+      5px 5px #533c44,
+      6px 6px #533c44,
+      7px 7px #533c44,
+      8px 8px #533c44;
+  }
+
+  #nav div:active {
+    transform: translateX(-4px) translateY(-4px);
+    box-shadow:
+            0px 0px #533c44,
+            1px 1px #533c44,
+            1.5px 1.5px #533c44,
+            2px 2px #533c44,
+            2.5px 2.5px #533c44,
+            3px 3px #533c44,
+            3.5px 3.5px #533c44,
+            4px 4px #533c44;
+    transition: all 0.1s ease;
   }
 
   #navButton {

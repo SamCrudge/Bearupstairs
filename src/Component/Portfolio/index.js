@@ -3,7 +3,7 @@ import React from "react";
 import './portfolio.css';
 import './CaseStudy/caseStudy.css';
 
-import PortfolioPage from "./CaseStudy/PortfolioPage";
+import PortfolioPage from "./PortfolioPage";
 import CaseStudy from "./CaseStudy/CaseStudy";
 
 class Portfolio extends React.Component {
@@ -35,9 +35,9 @@ class Portfolio extends React.Component {
     caseStudyExit = () => {
         const caseStudy = document.querySelector('.CaseStudy');
         document.querySelector('.CaseWindow').classList.toggle('viewCaseStudy');
-        setTimeout(() => { document.querySelector('.CaseBase').classList.toggle('viewCaseStudy') }, 700);
-        setTimeout(() => { caseStudy.classList.toggle('CaseOpen') }, 1000);
-        setTimeout(() => { this.setState({ openId: '', caseName: '', caseImage: '', caseDesc: '' }); }, 1100);
+        setTimeout(() => { document.querySelector('.CaseBase').classList.toggle('viewCaseStudy') }, 300);
+        setTimeout(() => { caseStudy.classList.toggle('CaseOpen') }, 400);
+        setTimeout(() => { this.setState({ openId: '', caseName: '', caseImage: '', caseDesc: '' }); }, 500);
     }
 
     render() {
@@ -55,19 +55,19 @@ class Portfolio extends React.Component {
                         id={0}
                         name={"Artist gallery: bluesungfruit"}
                         image={require("../../Assets/portfolio/portfolio_bsf_1.jpg")}
-                        desc={"Description of this."} />
+                        desc={"In Sicily, women are more dangerous than shotguns. Vito, how do you like my little angel? Isn't she beautiful? If anything in this life is certain, if history has taught us anything, it is that you can kill anyone. I am sorry. What happened to your father was business. I have much respect for your father. But your father, his thinking is old-fashioned. You must understand why I had to do that. Now let's work through where we go from here."} />
                     <PortfolioPage
                         clickHandler={this.caseStudyPop}
                         id={1}
                         name={"Victoria Hill Acupuncture"}
                         image={require("../../Assets/portfolio/portfolio_vha_1.jpg")}
-                        desc={"Description of this."} />
+                        desc={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."} />
                     <PortfolioPage
                         clickHandler={this.caseStudyPop}
                         id={2}
-                        name={"The Forester & Flower Pub and B&B"}
+                        name={"The Forester & Flower"}
                         image={require("../../Assets/portfolio/portfolio_ff_1.jpg")}
-                        desc={"Description of this."} />
+                        desc={"Now, it is a fact, gentlemen, as you may see for yourselves, that my hair is of a very full and rich tint, so that it seemed to me that if there was to be any competition in the matter I stood as good a chance as any man that I had ever met. Vincent Spaulding seemed to know so much about it that I thought he might prove useful, so I just ordered him to put up the shutters for the day and to come right away with me. He was very willing to have a holiday, so we shut the business up and started off for the address that was given us in the advertisement."} />
                 </div>
                 <div className="CaseStudy">
                     <div className="CaseBase" onClick={this.caseStudyExit} />

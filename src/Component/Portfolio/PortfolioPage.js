@@ -9,7 +9,7 @@ class PortfolioPage extends React.Component {
                     this.props.name,
                     this.props.image,
                     this.props.desc
-                )}}>
+                )}} >
                 <div className="title">&#10010; {this.props.name}</div>
                 <img src={this.props.image} alt='Desktop example' />
             </div>

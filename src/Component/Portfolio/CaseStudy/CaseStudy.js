@@ -2,11 +2,15 @@ import React from "react";
 
 class CaseStudy extends React.Component {
 
+    componentDidUpdate(prevProps, prevState,snapshot) {
+        window.scrollTo(0, 0)
+    }
+
     render() {
         return (
             <div className="CaseFile">
                 <div className="CaseTitle">
-                    {this.props.name}
+                    &#10010; {this.props.name}
                 </div>
                 <div className="CaseDesc">
                     {this.props.desc}
