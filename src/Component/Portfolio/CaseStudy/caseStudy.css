@@ -61,7 +61,7 @@
     margin-bottom: 2vh;
     padding: 1rem 0 1rem 0;
     color: var(--primary-type-color);
-    background-color: rgba(250,250,250,0.8);
+    background-color: var(--main-background-color);
     box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.75);
 }
 
@@ -70,7 +70,6 @@
     top: 0; bottom: 0; left: 0; right: 0;
     margin: auto;
     color: var(--primary-type-color);
-    background-color: rgba(250,250,250,0.8);
     box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.75);
 }
 
@@ -82,7 +81,7 @@
     font-size: 1.2rem;
     line-height: 2rem;
     color: var(--primary-type-color);
-    background-color: rgba(250,250,250,0.8);
+    background-color: var(--main-background-color);
     box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.75);
 }
 
@@ -94,14 +93,13 @@
     height: 4vh;
     top: 1vh;
     right: 1vh;
-    color: var(--primary-type-color);
+    color: var(--secondary-type-color);
     font-size: 8vh;
     font-weight: 200;
     line-height: 4vh;
     text-align: center;
-    background-color: rgba(250,250,250,0.8);
+    background-color: var(--main-style-color);
     box-shadow: 10px 10px 20px -8px rgba(0, 0, 0, 1);
-    border: 1px solid #111111;
     border-radius: 100%;
     transform: rotate(45deg);
 }
@@ -116,6 +114,10 @@
 
 .viewCaseStudy {
     opacity: 1;
+}
+
+.NextCase {
+    display: none;
 }
 
 @media (min-width:1224px) {
@@ -168,6 +170,16 @@
     .exitCaseStudy {
         top: 0;
         right: 0;
+    }
+
+    .NextCase {
+        display: block;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: 0; bottom: 0; right: 0;
+        margin: auto;
+        background: greenyellow;
     }
 
 }

@@ -39,7 +39,6 @@ class Portfolio extends React.Component {
         setTimeout(() => { caseStudy.classList.toggle('CaseOpen') }, 400);
         setTimeout(() => { this.setState({ openId: '', caseName: '', caseImage: '', caseDesc: '' }); }, 500);
     }
-
     render() {
 
         return (

@@ -1,6 +1,7 @@
 import React from "react";
 
 class PortfolioPage extends React.Component {
+
     render () {
         return (
             <div className="portfolioPage" onClick={() => {
