@@ -71,7 +71,7 @@ class Portfolio extends React.Component {
                 <div className="CaseStudy">
                     <div className="CaseBase" onClick={this.caseStudyExit} />
                     <div className="CaseWindow">
-                        <div className="exitCaseStudy" onClick={this.caseStudyExit}>&#43;</div>
+                        <div className="exitCaseStudy" onClick={this.caseStudyExit}>&#10006;</div>
                         <CaseStudy id={this.state.openId}
                                    name={this.state.caseName}
                                    image={this.state.caseImage}
