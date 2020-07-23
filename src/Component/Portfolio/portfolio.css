@@ -16,7 +16,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     width: 100vw;
-    min-height: 50vh;
+    min-height: 40vh;
 }
 
 .portfolioPage {
@@ -45,22 +45,8 @@ h1 {
 @media (min-device-width:1224px) {
 
     h1 {
-        width: 25vw;
         height: 5rem;
         line-height: 5rem;
-    }
-
-    .portfolioDeco {
-        display: flex;
-        justify-content: space-around;
-        width: 100vw;
-    }
-
-    .portfolioLine {
-        width: 40vw;
-        height: 1px;
-        margin: 5rem 0 0;
-        background-color: #111111;
     }
 
     .portfolioBlock {

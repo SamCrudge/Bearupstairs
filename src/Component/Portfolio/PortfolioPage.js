@@ -8,11 +8,12 @@ class PortfolioPage extends React.Component {
                 this.props.clickHandler(
                     this.props.id,
                     this.props.name,
-                    this.props.image,
+                    this.props.deskImage,
+                    this.props.mobImage,
                     this.props.desc
                 )}} >
                 <div className="title">&#10010; {this.props.name}</div>
-                <img src={this.props.image} alt='Desktop example' />
+                <img src={this.props.deskImage} alt='Desktop example' />
             </div>
         );
     }
