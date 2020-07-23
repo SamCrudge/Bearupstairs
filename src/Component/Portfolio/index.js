@@ -11,36 +11,37 @@ class Portfolio extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            openId: '',
-            caseName: '',
-            caseDeskImage: '',
-            caseMobImage: '',
-            caseDesc: ''
+            id: '',
+            name: '',
+            deskImage: '',
+            mobImage: '',
+            desc: ''
         };
         this.caseStudyPop = this.caseStudyPop.bind(this);
         this.caseStudyExit = this.caseStudyExit.bind(this);
     }
     caseStudyPop = (id, name, deskImage, mobImage, desc) => {
         this.setState({
-            openId: id,
-            caseName: name,
-            caseDeskImage: deskImage,
-            caseMobImage: mobImage,
-            caseDesc: desc
+            id: id,
+            name: name,
+            deskImage: deskImage,
+            mobImage: mobImage,
+            desc: desc
         });
         const caseStudy = document.querySelector('.CaseStudy');
         caseStudy.classList.toggle('CaseOpen');
         setTimeout(() => { document.querySelector('.CaseBase').classList.toggle('viewCaseStudy') }, 100);
         setTimeout(() => { document.querySelector('.CaseWindow').classList.toggle('viewCaseStudy') }, 700);
-
+        setTimeout(() => { console.log(this.state) }, 2000);
     }
     caseStudyExit = () => {
         const caseStudy = document.querySelector('.CaseStudy');
         document.querySelector('.CaseWindow').classList.toggle('viewCaseStudy');
         setTimeout(() => { document.querySelector('.CaseBase').classList.toggle('viewCaseStudy') }, 300);
         setTimeout(() => { caseStudy.classList.toggle('CaseOpen') }, 400);
-        setTimeout(() => { this.setState({ openId: '', caseName: '', caseDeskImage: '', caseMobImage: '', caseDesc: '' }); }, 500);
+        setTimeout(() => { this.setState({ id: '', name: '', deskImage: '', mobImage: '', desc: '' }); }, 500);
     }
+
     render() {
 
         return (
@@ -73,11 +74,11 @@ class Portfolio extends React.Component {
                     <div className="CaseBase" onClick={this.caseStudyExit} />
                     <div className="CaseWindow">
                         <div className="exitCaseStudy" onClick={this.caseStudyExit}>&#10006;</div>
-                        <CaseStudy id={this.state.openId}
-                                   name={this.state.caseName}
-                                   deskImage={this.state.caseDeskImage}
-                                   mobImage={this.state.caseMobImage}
-                                   desc={this.state.caseDesc} />
+                        <CaseStudy id={this.state.id}
+                                   name={this.state.name}
+                                   deskImage={this.state.deskImage}
+                                   mobImage={this.state.mobImage}
+                                   desc={this.state.desc} />
                     </div>
                 </div>
             </div>
