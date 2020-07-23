@@ -102,20 +102,16 @@
     border-radius: 100%;
 }
 
-.CaseOpen {
+.caseOpen {
     display: block;
 }
 
-.CaseClosed {
+.caseClosed {
     display: none;
 }
 
 .viewCaseStudy {
     opacity: 1;
-}
-
-.NextCase {
-    display: none;
 }
 
 @media (min-width:1224px) {
@@ -192,16 +188,6 @@
     .exitCaseStudy {
         top: 0;
         right: 0;
-    }
-
-    .NextCase {
-        display: block;
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        top: 0; bottom: 0; right: 0;
-        margin: auto;
-        background: greenyellow;
     }
 
 }

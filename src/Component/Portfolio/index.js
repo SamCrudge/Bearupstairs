@@ -6,6 +6,28 @@ import './CaseStudy/caseStudy.css';
 import PortfolioPage from "./PortfolioPage";
 import CaseStudy from "./CaseStudy/CaseStudy";
 
+const bsf = {
+    id: 0,
+    name: "Artist gallery: bluesungfruit",
+    deskImage: require("../../Assets/portfolio/portfolio_bsf_1.jpg"),
+    mobImage: require("../../Assets/portfolio/portfolio_bsf_2.jpg"),
+    desc: "In Sicily, women are more dangerous than shotguns. Vito, how do you like my little angel? Isn't she beautiful? If anything in this life is certain, if history has taught us anything, it is that you can kill anyone. I am sorry. What happened to your father was business. I have much respect for your father. But your father, his thinking is old-fashioned. You must understand why I had to do that. Now let's work through where we go from here."
+};
+const vha = {
+    id: 1,
+    name: "Victoria Hill Acupuncture",
+    deskImage: require("../../Assets/portfolio/portfolio_vha_1.jpg"),
+    mobImage: require("../../Assets/portfolio/portfolio_vha_2.jpg"),
+    desc: "In Sicily, women are more dangerous than shotguns. Vito, how do you like my little angel? Isn't she beautiful? If anything in this life is certain, if history has taught us anything, it is that you can kill anyone. I am sorry. What happened to your father was business. I have much respect for your father. But your father, his thinking is old-fashioned. You must understand why I had to do that. Now let's work through where we go from here."
+};
+const ff = {
+    id: 2,
+    name: "The Forester & Flower",
+    deskImage: require("../../Assets/portfolio/portfolio_ff_1.jpg"),
+    mobImage: require("../../Assets/portfolio/portfolio_ff_2.jpg"),
+    desc: "Now, it is a fact, gentlemen, as you may see for yourselves, that my hair is of a very full and rich tint, so that it seemed to me that if there was to be any competition in the matter I stood as good a chance as any man that I had ever met. Vincent Spaulding seemed to know so much about it that I thought he might prove useful, so I just ordered him to put up the shutters for the day and to come right away with me. He was very willing to have a holiday, so we shut the business up and started off for the address that was given us in the advertisement."
+};
+
 class Portfolio extends React.Component {
 
     constructor(props) {
@@ -19,6 +41,8 @@ class Portfolio extends React.Component {
         };
         this.caseStudyPop = this.caseStudyPop.bind(this);
         this.caseStudyExit = this.caseStudyExit.bind(this);
+        this.nextCaseStudy = this.nextCaseStudy.bind(this);
+        this.prevCaseStudy = this.prevCaseStudy.bind(this);
     }
     caseStudyPop = (id, name, deskImage, mobImage, desc) => {
         this.setState({
@@ -28,18 +52,35 @@ class Portfolio extends React.Component {
             mobImage: mobImage,
             desc: desc
         });
-        const caseStudy = document.querySelector('.CaseStudy');
-        caseStudy.classList.toggle('CaseOpen');
+        document.querySelector('.CaseStudy').classList.toggle('caseOpen');
         setTimeout(() => { document.querySelector('.CaseBase').classList.toggle('viewCaseStudy') }, 100);
         setTimeout(() => { document.querySelector('.CaseWindow').classList.toggle('viewCaseStudy') }, 700);
-        setTimeout(() => { console.log(this.state) }, 2000);
+        setTimeout(() => { document.querySelectorAll('.casePrevNext').forEach(e => e.classList.toggle('caseClosed')) }, 750);
     }
     caseStudyExit = () => {
-        const caseStudy = document.querySelector('.CaseStudy');
+        document.querySelectorAll('.casePrevNext').forEach(e => e.classList.toggle('caseClosed'));
         document.querySelector('.CaseWindow').classList.toggle('viewCaseStudy');
         setTimeout(() => { document.querySelector('.CaseBase').classList.toggle('viewCaseStudy') }, 300);
-        setTimeout(() => { caseStudy.classList.toggle('CaseOpen') }, 400);
+        setTimeout(() => { document.querySelector('.CaseStudy').classList.toggle('caseOpen') }, 400);
         setTimeout(() => { this.setState({ id: '', name: '', deskImage: '', mobImage: '', desc: '' }); }, 500);
+    }
+    nextCaseStudy = () => {
+        if (this.state.id === 0) {
+            this.setState({...vha});
+        } else if (this.state.id === 1) {
+            this.setState({...ff});
+        } else if (this.state.id === 2) {
+            this.setState({...bsf});
+        }
+    }
+    prevCaseStudy = () => {
+        if (this.state.id === 0) {
+            this.setState({...ff});
+        } else if (this.state.id === 1) {
+            this.setState({...bsf});
+        } else if (this.state.id === 2) {
+            this.setState({...vha});
+        }
     }
 
     render() {
@@ -50,26 +91,19 @@ class Portfolio extends React.Component {
                 <div className="portfolioBlock">
                     <PortfolioPage
                         clickHandler={this.caseStudyPop}
-                        id={0}
-                        name={"Artist gallery: bluesungfruit"}
-                        deskImage={require("../../Assets/portfolio/portfolio_bsf_1.jpg")}
-                        mobImage={require("../../Assets/portfolio/portfolio_bsf_2.jpg")}
-                        desc={"In Sicily, women are more dangerous than shotguns. Vito, how do you like my little angel? Isn't she beautiful? If anything in this life is certain, if history has taught us anything, it is that you can kill anyone. I am sorry. What happened to your father was business. I have much respect for your father. But your father, his thinking is old-fashioned. You must understand why I had to do that. Now let's work through where we go from here."} />
+                        {...bsf}
+                    />
                     <PortfolioPage
                         clickHandler={this.caseStudyPop}
-                        id={1}
-                        name={"Victoria Hill Acupuncture"}
-                        deskImage={require("../../Assets/portfolio/portfolio_vha_1.jpg")}
-                        mobImage={require("../../Assets/portfolio/portfolio_vha_2.jpg")}
-                        desc={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."} />
+                        {...vha}
+                    />
                     <PortfolioPage
                         clickHandler={this.caseStudyPop}
-                        id={2}
-                        name={"The Forester & Flower"}
-                        deskImage={require("../../Assets/portfolio/portfolio_ff_1.jpg")}
-                        mobImage={require("../../Assets/portfolio/portfolio_ff_2.jpg")}
-                        desc={"Now, it is a fact, gentlemen, as you may see for yourselves, that my hair is of a very full and rich tint, so that it seemed to me that if there was to be any competition in the matter I stood as good a chance as any man that I had ever met. Vincent Spaulding seemed to know so much about it that I thought he might prove useful, so I just ordered him to put up the shutters for the day and to come right away with me. He was very willing to have a holiday, so we shut the business up and started off for the address that was given us in the advertisement."} />
+                        {...ff}
+                    />
                 </div>
+                <div className="prevCase casePrevNext caseClosed" onClick={this.prevCaseStudy} />
+                <div className="nextCase casePrevNext caseClosed" onClick={this.nextCaseStudy} />
                 <div className="CaseStudy">
                     <div className="CaseBase" onClick={this.caseStudyExit} />
                     <div className="CaseWindow">
