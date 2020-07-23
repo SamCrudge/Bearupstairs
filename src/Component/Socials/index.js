@@ -3,8 +3,8 @@ import './Socials.css'
 
 class Socials extends React.Component {
 
-    constructor(props, context) {
-        super(props, context);
+    constructor(props) {
+        super(props);
         this.socialPop = this.socialPop.bind(this);
     }
 

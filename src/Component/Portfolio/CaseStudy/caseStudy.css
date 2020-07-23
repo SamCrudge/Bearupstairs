@@ -45,7 +45,7 @@
     width: 100%;
     box-sizing: border-box;
     padding: 0 3rem 0 1rem;
-    margin: 7vh 0 2vh 0;
+    margin: 8vh 0 2vh 0;
     font-size: 1.4rem;
     line-height: 4rem;
     color: var(--secondary-type-color);
@@ -84,24 +84,6 @@
     box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.75);
 }
 
-.exitCaseStudy {
-    z-index: 500;
-    cursor: pointer;
-    position: absolute;
-    width: 4vh;
-    height: 4vh;
-    top: 1vh;
-    right: 1vh;
-    color: var(--secondary-type-color);
-    font-size: 3vh;
-    font-weight: 200;
-    line-height: 4vh;
-    text-align: center;
-    background-color: var(--main-style-color);
-    box-shadow: 10px 10px 20px -8px rgba(0, 0, 0, 1);
-    border-radius: 100%;
-}
-
 .caseOpen {
     display: block;
 }
@@ -138,7 +120,7 @@
 
     .CaseDeskImg {
         position: absolute;
-        width: 40vw;
+        width: 46vw;
         top: 15vh;
         right: 0;
         margin: 0;
@@ -146,7 +128,7 @@
     }
 
     .CaseDeskImg img {
-        width: 40vw;
+        width: 46vw;
     }
 
     .CaseMobImg {
@@ -154,7 +136,7 @@
         position: absolute;
         width: 14vw;
         bottom: 0;
-        left: 38vw;
+        left: 39vw;
         margin: auto;
         padding: 0;
     }
@@ -164,6 +146,7 @@
         box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.75);
     }
 
+    /* title bars for mobile & desktop images */
     .mobDesk {
         display: block;
         width: 100%;
@@ -183,11 +166,6 @@
         margin: 0;
         padding: 2vh 4vh 6vh 3vh;
         border-bottom-right-radius: 10vh;
-    }
-
-    .exitCaseStudy {
-        top: 0;
-        right: 0;
     }
 
 }

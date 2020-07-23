@@ -55,10 +55,10 @@ class Portfolio extends React.Component {
         document.querySelector('.CaseStudy').classList.toggle('caseOpen');
         setTimeout(() => { document.querySelector('.CaseBase').classList.toggle('viewCaseStudy') }, 100);
         setTimeout(() => { document.querySelector('.CaseWindow').classList.toggle('viewCaseStudy') }, 700);
-        setTimeout(() => { document.querySelectorAll('.casePrevNext').forEach(e => e.classList.toggle('caseClosed')) }, 750);
+        setTimeout(() => { document.querySelectorAll('.caseStudyButtons').forEach(e => e.classList.toggle('caseClosed')) }, 750);
     }
     caseStudyExit = () => {
-        document.querySelectorAll('.casePrevNext').forEach(e => e.classList.toggle('caseClosed'));
+        document.querySelectorAll('.caseStudyButtons').forEach(e => e.classList.toggle('caseClosed'));
         document.querySelector('.CaseWindow').classList.toggle('viewCaseStudy');
         setTimeout(() => { document.querySelector('.CaseBase').classList.toggle('viewCaseStudy') }, 300);
         setTimeout(() => { document.querySelector('.CaseStudy').classList.toggle('caseOpen') }, 400);
@@ -102,12 +102,12 @@ class Portfolio extends React.Component {
                         {...ff}
                     />
                 </div>
-                <div className="prevCase casePrevNext caseClosed" onClick={this.prevCaseStudy} />
-                <div className="nextCase casePrevNext caseClosed" onClick={this.nextCaseStudy} />
+                <div className="prevCase casePrevNext caseStudyButtons caseClosed" onClick={this.prevCaseStudy}>&#x2039;</div>
+                <div className="nextCase casePrevNext caseStudyButtons caseClosed" onClick={this.nextCaseStudy}>&#x203A;</div>
+                <div className="exitCaseStudy caseStudyButtons caseClosed" onClick={this.caseStudyExit}>&#10006;</div>
                 <div className="CaseStudy">
                     <div className="CaseBase" onClick={this.caseStudyExit} />
                     <div className="CaseWindow">
-                        <div className="exitCaseStudy" onClick={this.caseStudyExit}>&#10006;</div>
                         <CaseStudy id={this.state.id}
                                    name={this.state.name}
                                    deskImage={this.state.deskImage}

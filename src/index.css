@@ -62,6 +62,10 @@ a {
   color: #ff3541;
 }
 
+.lineBreaker {
+  white-space: pre-line;
+}
+
 ul, li {
   list-style: none;
   margin: auto;

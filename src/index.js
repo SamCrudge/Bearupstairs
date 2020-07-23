@@ -33,7 +33,7 @@ class Routing extends React.Component {
                     <label id='navButton' onChange={this.navPop}>
                         <input type='checkbox' id='navCheckbox' />
                         <span>
-                            <div></div><div></div><div></div>
+                            <div /><div /><div />
                         </span>
                     </label>
                     <ul id='nav' className='closeNav'>

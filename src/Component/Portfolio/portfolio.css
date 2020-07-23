@@ -42,7 +42,45 @@ h1 {
     box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.5);
 }
 
-@media (min-device-width:1224px) {
+/* exit, prev, next basic styling */
+.caseStudyButtons {
+    z-index: 500;
+    cursor: pointer;
+    position: absolute;
+    width: 6vh;
+    height: 6vh;
+    color: var(--secondary-type-color);
+    text-align: center;
+    background-color: var(--main-style-color);
+    box-shadow: 10px 10px 20px -8px rgba(0, 0, 0, 0.8);
+    border-radius: 100%;
+}
+
+.casePrevNext {
+    top: 1vh;
+    margin: auto;
+    font-size: 6vh;
+    font-weight: 700;
+    line-height: 5vh;
+}
+
+.nextCase {
+    left: 8vh;
+}
+
+.prevCase {
+    left: 1vh;
+}
+
+/* other styling for this button on .caseStudyButton */
+.exitCaseStudy {
+    top: 1vh;
+    right: 1vh;
+    font-size: 3.5vh;
+    line-height: 6vh;
+}
+
+@media (min-width:1224px) {
 
     h1 {
         height: 5rem;
@@ -74,23 +112,12 @@ h1 {
     }
 
     .casePrevNext {
-        z-index: 500;
-        display: block;
-        position: absolute;
-        width: 100px;
-        height: 100px;
         top: 0; bottom: 0;
-        margin: auto;
-        background: greenyellow;
-        border-radius: 100%;
     }
 
     .nextCase {
-        right: 0;
-    }
-
-    .prevCase {
-        left: 0;
+        left: auto;
+        right: 1vh;
     }
 
 }

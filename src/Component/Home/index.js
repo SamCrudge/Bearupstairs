@@ -1,20 +1,16 @@
 import React from "react";
 import './home.css'
 
-
-
 class Home extends React.Component {
 
-
     render() {
+
         return (
             <div className="Home">
                 <div className="mainText">
-                    <p>
-                        Hi! We’re
-                        <span className="allCaps">
-                            <span className="redText"> Bear</span>Upstairs
-                        </span>, your friendly web team.
+                    <p className="lineBreaker">
+                        Hi! We’re <span className="allCaps"><span className="redText"> Bear</span> Upstairs</span>,
+                        your friendly web team.
                     </p>
                     <p>
                         We build attractive, functional websites for creatives.
