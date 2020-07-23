@@ -6,21 +6,21 @@ import './CaseStudy/caseStudy.css';
 import PortfolioPage from "./PortfolioPage";
 import CaseStudy from "./CaseStudy/CaseStudy";
 
-const bsf = {
+const page0 = {
     id: 0,
     name: "Artist gallery: bluesungfruit",
     deskImage: require("../../Assets/portfolio/portfolio_bsf_1.jpg"),
     mobImage: require("../../Assets/portfolio/portfolio_bsf_2.jpg"),
     desc: "In Sicily, women are more dangerous than shotguns. Vito, how do you like my little angel? Isn't she beautiful? If anything in this life is certain, if history has taught us anything, it is that you can kill anyone. I am sorry. What happened to your father was business. I have much respect for your father. But your father, his thinking is old-fashioned. You must understand why I had to do that. Now let's work through where we go from here."
 };
-const vha = {
+const page1 = {
     id: 1,
     name: "Victoria Hill Acupuncture",
     deskImage: require("../../Assets/portfolio/portfolio_vha_1.jpg"),
     mobImage: require("../../Assets/portfolio/portfolio_vha_2.jpg"),
     desc: "In Sicily, women are more dangerous than shotguns. Vito, how do you like my little angel? Isn't she beautiful? If anything in this life is certain, if history has taught us anything, it is that you can kill anyone. I am sorry. What happened to your father was business. I have much respect for your father. But your father, his thinking is old-fashioned. You must understand why I had to do that. Now let's work through where we go from here."
 };
-const ff = {
+const page2 = {
     id: 2,
     name: "The Forester & Flower",
     deskImage: require("../../Assets/portfolio/portfolio_ff_1.jpg"),
@@ -66,20 +66,20 @@ class Portfolio extends React.Component {
     }
     nextCaseStudy = () => {
         if (this.state.id === 0) {
-            this.setState({...vha});
+            this.setState({...page1});
         } else if (this.state.id === 1) {
-            this.setState({...ff});
+            this.setState({...page2});
         } else if (this.state.id === 2) {
-            this.setState({...bsf});
+            this.setState({...page0});
         }
     }
     prevCaseStudy = () => {
         if (this.state.id === 0) {
-            this.setState({...ff});
+            this.setState({...page2});
         } else if (this.state.id === 1) {
-            this.setState({...bsf});
+            this.setState({...page0});
         } else if (this.state.id === 2) {
-            this.setState({...vha});
+            this.setState({...page1});
         }
     }
 
@@ -91,15 +91,15 @@ class Portfolio extends React.Component {
                 <div className="portfolioBlock">
                     <PortfolioPage
                         clickHandler={this.caseStudyPop}
-                        {...bsf}
+                        {...page0}
                     />
                     <PortfolioPage
                         clickHandler={this.caseStudyPop}
-                        {...vha}
+                        {...page1}
                     />
                     <PortfolioPage
                         clickHandler={this.caseStudyPop}
-                        {...ff}
+                        {...page2}
                     />
                 </div>
                 <div className="prevCase casePrevNext caseStudyButtons caseClosed" onClick={this.prevCaseStudy}>&#x2039;</div>

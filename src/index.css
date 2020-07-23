@@ -130,6 +130,7 @@ ul, li {
   text-align: center;
   background-color: var(--main-style-color);
   box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.75);
+  border-radius: 100%;
   transition: all .5s ease;
 }
 
@@ -137,14 +138,24 @@ ul, li {
   transform: scale(0.9);
 }
 
+#navButton input + span span {
+  position: absolute;
+  width: var(--navbutton-size);
+  height: var(--navbutton-size);
+  top: 0; bottom: 0; left: 0; right: 0;
+  box-sizing: border-box;
+  border: 8px solid var(--main-style-color);
+  border-radius: 100%;
+}
+
 #navButton input + span div {
-  width: 40px;
+  width: 37px;
   height: 6px;
   margin: auto;
   background-color: var(--main-background-color);
   text-align: center;
 }
-
+/*
 #navButton input:checked + span {
   background-color: var(--main-background-color);
   color: var(--main-style-color);
@@ -154,10 +165,14 @@ ul, li {
   transform: scale(0.9);
 }
 
+#navButton input:checked + span span {
+  border: 8px solid var(--main-background-color);
+}
+
 #navButton input:checked + span div {
   background-color: var(--main-style-color);
 }
-
+*/
 @media (min-device-width:1224px) {
 
   #nav {

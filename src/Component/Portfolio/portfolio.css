@@ -111,6 +111,10 @@ h1 {
         width: 28vw;
     }
 
+    .caseStudyButtons {
+        position: fixed;
+    }
+
     .casePrevNext {
         top: 0; bottom: 0;
     }
@@ -118,6 +122,15 @@ h1 {
     .nextCase {
         left: auto;
         right: 1vh;
+    }
+
+    .exitCaseStudy {
+        width: 4vh;
+        height: 4vh;
+        top: 2vh;
+        right: 2vh;
+        font-size: 3vh;
+        line-height: 4vh;
     }
 
 }
