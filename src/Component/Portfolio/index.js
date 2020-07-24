@@ -45,6 +45,7 @@ class Portfolio extends React.Component {
         this.caseStudyExit = this.caseStudyExit.bind(this);
         this.nextCaseStudy = this.nextCaseStudy.bind(this);
         this.prevCaseStudy = this.prevCaseStudy.bind(this);
+
     }
 
     caseStudyPop = (id, name, deskImage, mobImage, desc) => {
@@ -73,7 +74,7 @@ class Portfolio extends React.Component {
 
     nextCaseStudy = () => {
         if (this.y < this.x) {
-            this.y++;
+            this.y+=1;
             this.setState({...this.pages[this.y]});
         } else if (this.y >= this.x) {
             this.y = 0;
@@ -83,7 +84,7 @@ class Portfolio extends React.Component {
 
     prevCaseStudy = () => {
         if (this.y > 0) {
-            this.y--;
+            this.y-=1;
             this.setState({...this.pages[this.y]});
         } else if (this.y === 0) {
             this.y = this.pages.length - 1;

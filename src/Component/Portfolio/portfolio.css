@@ -54,6 +54,15 @@ h1 {
     background-color: var(--main-style-color);
     box-shadow: 10px 10px 20px -8px rgba(0, 0, 0, 0.8);
     border-radius: 100%;
+    transition: transform 0.5s ease;
+}
+
+.caseStudyButtons:hover {
+    transform: scale(1.2);
+}
+
+.caseStudyButtons:active {
+    transform: scale(0.9);
 }
 
 .casePrevNext {
