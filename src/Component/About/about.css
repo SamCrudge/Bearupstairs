@@ -1,4 +1,11 @@
 .About {
-    display: flex;
-    justify-content: center;
+
+}
+
+@media (min-device-width:1224px) {
+
+    .About {
+
+    }
+
 }

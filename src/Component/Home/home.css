@@ -1,7 +1,11 @@
 .Home {
-    min-height: 50vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+
+}
+
+@media (min-device-width:1224px) {
+
+    .Home {
+
+    }
+
 }

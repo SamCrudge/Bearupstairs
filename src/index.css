@@ -32,6 +32,22 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 5vh;
+}
+
+.fullPage {
+  max-width: 90vw;
+  min-height: 50vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
 .mainText {
   font-family: "Raleway";
   font-size: 1.3rem;
@@ -60,10 +76,6 @@ a {
 
 .redText {
   color: #ff3541;
-}
-
-.lineBreaker {
-  white-space: pre-line;
 }
 
 ul, li {
@@ -174,6 +186,16 @@ ul, li {
 }
 */
 @media (min-device-width:1224px) {
+
+  h1 {
+    height: 5rem;
+    line-height: 5rem;
+  }
+
+  .fullPage {
+    max-width: 60vw;
+    line-height: 2rem;
+  }
 
   #nav {
     display: flex;

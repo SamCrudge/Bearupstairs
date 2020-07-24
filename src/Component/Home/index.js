@@ -6,9 +6,9 @@ class Home extends React.Component {
     render() {
 
         return (
-            <div className="Home">
+            <div className="Home fullPage">
                 <div className="mainText">
-                    <p className="lineBreaker">
+                    <p>
                         Hi! We’re <span className="allCaps"><span className="redText"> Bear</span> Upstairs</span>,
                         your friendly web team.
                     </p>
