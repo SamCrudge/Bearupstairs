@@ -64,7 +64,6 @@ class Portfolio extends React.Component {
     }
 
     caseStudyExit = () => {
-        console.log(this.state.id);
         document.querySelectorAll('.caseStudyButtons').forEach(e => e.classList.toggle('caseClosed'));
         document.querySelector('.CaseWindow').classList.toggle('viewCaseStudy');
         setTimeout(() => { document.querySelector('.CaseBase').classList.toggle('viewCaseStudy') }, 300);
@@ -73,23 +72,31 @@ class Portfolio extends React.Component {
     }
 
     nextCaseStudy = () => {
-        if (this.y < this.x) {
-            this.y+=1;
-            this.setState({...this.pages[this.y]});
-        } else if (this.y >= this.x) {
-            this.y = 0;
-            this.setState({...this.pages[this.y]});
-        }
+        document.querySelector('.CaseWindow').classList.toggle('prevNextFade');
+        setTimeout(() => {
+            if (this.y < this.x) {
+                this.y+=1;
+                this.setState({...this.pages[this.y]});
+            } else if (this.y >= this.x) {
+                this.y = 0;
+                this.setState({...this.pages[this.y]});
+            }
+        }, 500);
+        setTimeout(() => { document.querySelector('.CaseWindow').classList.toggle('prevNextFade') }, 600);
     }
 
     prevCaseStudy = () => {
-        if (this.y > 0) {
-            this.y-=1;
-            this.setState({...this.pages[this.y]});
-        } else if (this.y === 0) {
-            this.y = this.pages.length - 1;
-            this.setState({...this.pages[this.y]});
-        }
+        document.querySelector('.CaseWindow').classList.toggle('prevNextFade');
+        setTimeout(() => {
+            if (this.y > 0) {
+                this.y-=1;
+                this.setState({...this.pages[this.y]});
+            } else if (this.y === 0) {
+                this.y = this.pages.length - 1;
+                this.setState({...this.pages[this.y]});
+            }
+        }, 500);
+        setTimeout(() => { document.querySelector('.CaseWindow').classList.toggle('prevNextFade') }, 600);
     }
 
     render() {

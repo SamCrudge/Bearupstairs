@@ -96,6 +96,10 @@
     opacity: 1;
 }
 
+.prevNextFade {
+    opacity: 0;
+}
+
 @media (min-width:1224px) {
 
     .CaseWindow {
