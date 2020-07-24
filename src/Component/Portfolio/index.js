@@ -118,9 +118,15 @@ class Portfolio extends React.Component {
                         {...this.pages[2]}
                     />
                 </div>
-                <div className="prevCase casePrevNext caseStudyButtons caseClosed" onClick={this.prevCaseStudy}><div>&#x2039;</div></div>
-                <div className="nextCase casePrevNext caseStudyButtons caseClosed" onClick={this.nextCaseStudy}><div>&#x203A;</div></div>
-                <div className="exitCaseStudy caseStudyButtons caseClosed" onClick={this.caseStudyExit}><div>&#10006;</div></div>
+                <div className="prevCase casePrevNext caseStudyButtons caseClosed" onClick={this.prevCaseStudy}>
+                    <div><img src={require("../../Assets/swish/prev.png")} /></div>
+                </div>
+                <div className="nextCase casePrevNext caseStudyButtons caseClosed" onClick={this.nextCaseStudy}>
+                    <div><img src={require("../../Assets/swish/next.png")} /></div>
+                </div>
+                <div className="exitCaseStudy caseStudyButtons caseClosed" onClick={this.caseStudyExit}>
+                    <div><img src={require("../../Assets/swish/exit.png")} /></div>
+                </div>
                 <div className="CaseStudy">
                     <div className="CaseBase" onClick={this.caseStudyExit} />
                     <div className="CaseWindow">

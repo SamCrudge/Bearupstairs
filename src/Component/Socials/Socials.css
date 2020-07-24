@@ -67,15 +67,15 @@
         position: absolute;
         top: 0; bottom: 0; left: 0; right: 0;
         margin: auto;
-        width: 1.3rem;
         transition: transform .3s ease;
     }
 
     #social #socialButton img {
-        width: 1rem;
+        width: 80%;
     }
 
     #social #socialIcons img {
+        width: 1.3rem;
         border-radius: 50%;
         box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.8);
     }

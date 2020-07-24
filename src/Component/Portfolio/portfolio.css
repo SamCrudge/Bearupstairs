@@ -50,6 +50,10 @@
     border-radius: 100%;
 }
 
+.caseStudyButtons img {
+    width: 100%;
+}
+
 .caseStudyButtons div {
     width: 100%;
     height: 100%;

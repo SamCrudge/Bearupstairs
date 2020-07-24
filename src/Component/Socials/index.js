@@ -16,7 +16,7 @@ class Socials extends React.Component {
         return (
             <div id="social">
                 <div id="socialButton" onClick={this.socialPop}>
-                    <img src={require("../../Assets/hearticon.png")} alt='Social media' />
+                    <img src={require("../../Assets/swish/heart.png")} alt='Social media' />
                 </div>
                 <menu id="socialIcons">
                     <a href="https://instagram.com/bear.upstairs" target="_blank" rel="noopener noreferrer" >
