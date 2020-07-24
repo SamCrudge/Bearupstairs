@@ -49,7 +49,7 @@
     font-size: 1.4rem;
     line-height: 4rem;
     color: var(--secondary-type-color);
-    background-color: var(--main-style-color);
+    background: var(--main-style-color) url("../../../Assets/swish/swish1.png") no-repeat left center/3git status0%;
     box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.75);
 }
 
