@@ -45,18 +45,36 @@
     height: 6vh;
     color: var(--secondary-type-color);
     text-align: center;
-    background-color: var(--main-style-color);
+    background-color: #292224;
     box-shadow: 10px 10px 20px -8px rgba(0, 0, 0, 0.8);
     border-radius: 100%;
-    transition: transform 0.5s ease;
 }
 
-.caseStudyButtons:hover {
-    transform: scale(1.2);
+.caseStudyButtons div {
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-style-color);
+    border-radius: 100%;
+    transition: all 0.5s ease;
 }
 
-.caseStudyButtons:active {
-    transform: scale(0.9);
+.caseStudyButtons:hover div {
+    transform: translateX(-8px) translateY(-8px);
+    box-shadow:
+            2px 2px #292224,
+            4px 4px #292224,
+            6px 6px #292224,
+            8px 8px #292224;
+}
+
+.caseStudyButtons:active div {
+    transform: translateX(-4px) translateY(-4px);
+    box-shadow:
+            0 0 #292224,
+            1px 1px #292224,
+            2px 2px #292224,
+            3px 3px #292224,
+            4px 4px #292224;
 }
 
 .casePrevNext {

@@ -27,6 +27,10 @@ class About extends React.Component {
                             don't <i>not</i> do it!
                         </span>
                     </p>
+                    <div className="aboutPics">
+                        <img src={require("../../Assets/sam.jpg")} alt="Sam" />
+                        <img src={require("../../Assets/ben.jpg")} alt="Sam" />
+                    </div>
                     <p>
                         Then throw her in the laundry room, which will hereafter be referred to as "the brig".
                         For example, if you killed your grandfather, you'd cease to exist!

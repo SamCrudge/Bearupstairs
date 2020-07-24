@@ -46,6 +46,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  line-height: 2rem;
 }
 
 .mainText {
@@ -194,7 +195,6 @@ ul, li {
 
   .fullPage {
     max-width: 60vw;
-    line-height: 2rem;
   }
 
   #nav {
@@ -221,14 +221,14 @@ ul, li {
   #nav div:hover {
     transform: translateX(-8px) translateY(-8px);
     box-shadow:
-      1px 1px #533c44,
-      2px 2px #533c44,
-      3px 3px #533c44,
-      4px 4px #533c44,
-      5px 5px #533c44,
-      6px 6px #533c44,
-      7px 7px #533c44,
-      8px 8px #533c44;
+      1px 1px #292224,
+      2px 2px #292224,
+      3px 3px #292224,
+      4px 4px #292224,
+      5px 5px #292224,
+      6px 6px #292224,
+      7px 7px #292224,
+      8px 8px #292224;
   }
 
   #nav div:active {
