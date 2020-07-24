@@ -12,7 +12,7 @@ class PortfolioPage extends React.Component {
                     this.props.mobImage,
                     this.props.desc
                 )}} >
-                <div className="title">&#10010; {this.props.name}</div>
+                <div className="portfolioTitle">{this.props.name}</div>
                 <img src={this.props.deskImage} alt='Desktop example' />
             </div>
         );

@@ -19,7 +19,7 @@
     margin-bottom: 5vh;
 }
 
-.title {
+.portfolioTitle {
     width: 90vw;
     box-sizing: border-box;
     padding: 1vh;
@@ -27,7 +27,8 @@
     font-weight: 700;
     color: var(--main-background-color);
     text-transform: uppercase;
-    background-color: var(--main-style-color);
+    text-indent: 3vh;
+    background: var(--main-style-color) url("../../Assets/swish/plus.png") no-repeat left center/contain;
     border-top-right-radius: 20vh;
 }
 
@@ -123,7 +124,7 @@
         transform: scale(1.05);
     }
 
-    .title {
+    .portfolioTitle {
         width: 28vw;
     }
 
