@@ -129,21 +129,22 @@ ul, li {
   display: none;
 }
 
-#navButton input + span {
+#navButton input + div {
   --navbutton-size: 50px;
   width: var(--navbutton-size);
   height: var(--navbutton-size);
   margin: auto;
+  background-color: var(--main-style-color);
   box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.75);
   border-radius: 100%;
   transition: all .5s ease;
 }
 
-#navButton input + span:active {
+#navButton input + div:active {
   transform: scale(0.9);
 }
 
-#navButton input + span img {
+#navButton input + div img {
   width: var(--navbutton-size);
 }
 

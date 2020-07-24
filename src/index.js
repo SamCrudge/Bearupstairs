@@ -32,7 +32,7 @@ class Routing extends React.Component {
                 <div>
                     <label id='navButton' onChange={this.navPop}>
                         <input type='checkbox' id='navCheckbox' />
-                        <span><img src={require("./Assets/swish/bars.png")} alt="Open menu" /></span>
+                        <div><img src={require("./Assets/swish/bars.png")} alt="Open menu" /></div>
                     </label>
                     <ul id='nav' className='closeNav'>
                         <li onClick={this.navPop}><Link to="/"><div>HOME</div></Link></li>
