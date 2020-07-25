@@ -96,7 +96,7 @@ class Portfolio extends React.Component {
                 this.y-=1;
                 this.setState({...pages[this.y]});
             } else if (this.y === 0) {
-                this.y = this.pages.length - 1;
+                this.y = pages.length - 1;
                 this.setState({...pages[this.y]});
             }
         }, 500);
@@ -114,7 +114,7 @@ class Portfolio extends React.Component {
             <div className="Portfolio">
                 <h1>PORTFOLIO</h1>
                 <div className="portfolioBlock">
-                    {pages.map((item, i) => <PortfolioPage clickHandler={this.caseStudyPop} {...pages[i]} />)}
+                    {pages.map((item, i) => <PortfolioPage clickHandler={this.caseStudyPop} {...pages[i]} /> )}
                 </div>
                 <div className="prevCase casePrevNext caseStudyButtons caseClosed" onClick={this.prevCaseStudy}>
                     <div><img src={require("../../Assets/swish/prev.png")} alt="button" /></div>
