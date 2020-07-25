@@ -49,17 +49,16 @@ class Portfolio extends React.Component {
     }
 
     caseStudyPop = (id, name, deskImage, mobImage, desc) => {
-        this.setState({
-            id: id,
-            name: name,
-            deskImage: deskImage,
-            mobImage: mobImage,
-            desc: desc
-        });
+        this.setState({ id: id, name: name, deskImage: deskImage, mobImage: mobImage, desc: desc });
         document.querySelector('.CaseStudy').classList.toggle('caseOpen');
         setTimeout(() => { document.querySelector('.CaseBase').classList.toggle('viewCaseStudy') }, 100);
         setTimeout(() => { document.querySelector('.CaseWindow').classList.toggle('viewCaseStudy') }, 700);
         setTimeout(() => { document.querySelectorAll('.caseStudyButtons').forEach(e => e.classList.toggle('caseClosed')) }, 750);
+        setTimeout(() => {
+            if (window.matchMedia("(max-width: 1224px)").matches) {
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+            }
+        }, 800);
         this.y = id;
     }
 
@@ -83,6 +82,11 @@ class Portfolio extends React.Component {
             }
         }, 500);
         setTimeout(() => { document.querySelector('.CaseWindow').classList.toggle('prevNextFade') }, 600);
+        setTimeout(() => {
+            if (window.matchMedia("(max-width: 1224px)").matches) {
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+            }
+        }, 400);
     }
 
     prevCaseStudy = () => {
@@ -97,6 +101,11 @@ class Portfolio extends React.Component {
             }
         }, 500);
         setTimeout(() => { document.querySelector('.CaseWindow').classList.toggle('prevNextFade') }, 600);
+        setTimeout(() => {
+            if (window.matchMedia("(max-width: 1224px)").matches) {
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+            }
+        }, 400);
     }
 
     render() {
@@ -119,13 +128,13 @@ class Portfolio extends React.Component {
                     />
                 </div>
                 <div className="prevCase casePrevNext caseStudyButtons caseClosed" onClick={this.prevCaseStudy}>
-                    <div><img src={require("../../Assets/swish/prev.png")} /></div>
+                    <div><img src={require("../../Assets/swish/prev.png")} alt="button" /></div>
                 </div>
                 <div className="nextCase casePrevNext caseStudyButtons caseClosed" onClick={this.nextCaseStudy}>
-                    <div><img src={require("../../Assets/swish/next.png")} /></div>
+                    <div><img src={require("../../Assets/swish/next.png")} alt="button" /></div>
                 </div>
                 <div className="exitCaseStudy caseStudyButtons caseClosed" onClick={this.caseStudyExit}>
-                    <div><img src={require("../../Assets/swish/exit.png")} /></div>
+                    <div><img src={require("../../Assets/swish/exit.png")} alt="button" /></div>
                 </div>
                 <div className="CaseStudy">
                     <div className="CaseBase" onClick={this.caseStudyExit} />

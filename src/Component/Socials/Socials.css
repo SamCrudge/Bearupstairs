@@ -49,8 +49,12 @@
         transition: all .3s ease;
     }
 
-    #social #socialButton:active, #social.socialClick #socialButton:active {
+    #social #socialButton:hover {
         transform: scale(1.2);
+    }
+
+    #social #socialButton:active {
+        transform: scale(0.9);
     }
 
     #social.socialClick #socialButton {

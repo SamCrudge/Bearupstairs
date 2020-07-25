@@ -2,10 +2,6 @@ import React from "react";
 
 class CaseStudy extends React.Component {
 
-    componentDidUpdate(prevProps, prevState,snapshot) {
-        window.scrollTo(0, 0)
-    }
-
     render() {
         return (
             <div className="CaseFile">

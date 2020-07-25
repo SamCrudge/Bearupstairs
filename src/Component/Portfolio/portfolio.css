@@ -41,7 +41,7 @@
 .caseStudyButtons {
     z-index: 500;
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     width: 6vh;
     height: 6vh;
     color: var(--secondary-type-color);
@@ -64,22 +64,11 @@
 }
 
 .caseStudyButtons:hover div {
-    transform: translateX(-8px) translateY(-8px);
-    box-shadow:
-            2px 2px #292224,
-            4px 4px #292224,
-            6px 6px #292224,
-            8px 8px #292224;
+    transform: scale(1.1);
 }
 
 .caseStudyButtons:active div {
-    transform: translateX(-4px) translateY(-4px);
-    box-shadow:
-            0 0 #292224,
-            1px 1px #292224,
-            2px 2px #292224,
-            3px 3px #292224,
-            4px 4px #292224;
+    transform: scale(0.9);
 }
 
 .casePrevNext {
