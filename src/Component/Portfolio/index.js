@@ -6,6 +6,26 @@ import './CaseStudy/caseStudy.css';
 import PortfolioPage from "./PortfolioPage";
 import CaseStudy from "./CaseStudy/CaseStudy";
 
+const pages = [{
+    id: 0,
+    name: "Artist gallery: bluesungfruit",
+    deskImage: require("../../Assets/portfolio/portfolio_bsf_1.jpg"),
+    mobImage: require("../../Assets/portfolio/portfolio_bsf_2.jpg"),
+    desc: "In Sicily, women are more dangerous than shotguns. Vito, how do you like my little angel? Isn't she beautiful? If anything in this life is certain, if history has taught us anything, it is that you can kill anyone. I am sorry. What happened to your father was business. I have much respect for your father. But your father, his thinking is old-fashioned. You must understand why I had to do that. Now let's work through where we go from here."
+},{
+    id: 1,
+    name: "Victoria Hill Acupuncture",
+    deskImage: require("../../Assets/portfolio/portfolio_vha_1.jpg"),
+    mobImage: require("../../Assets/portfolio/portfolio_vha_2.jpg"),
+    desc: "In Sicily, women are more dangerous than shotguns. Vito, how do you like my little angel? Isn't she beautiful? If anything in this life is certain, if history has taught us anything, it is that you can kill anyone. I am sorry. What happened to your father was business. I have much respect for your father. But your father, his thinking is old-fashioned. You must understand why I had to do that. Now let's work through where we go from here."
+},{
+    id: 2,
+    name: "The Forester & Flower",
+    deskImage: require("../../Assets/portfolio/portfolio_ff_1.jpg"),
+    mobImage: require("../../Assets/portfolio/portfolio_ff_2.jpg"),
+    desc: "Now, it is a fact, gentlemen, as you may see for yourselves, that my hair is of a very full and rich tint, so that it seemed to me that if there was to be any competition in the matter I stood as good a chance as any man that I had ever met. Vincent Spaulding seemed to know so much about it that I thought he might prove useful, so I just ordered him to put up the shutters for the day and to come right away with me. He was very willing to have a holiday, so we shut the business up and started off for the address that was given us in the advertisement."
+}];
+
 class Portfolio extends React.Component {
 
     constructor(props) {
@@ -19,27 +39,7 @@ class Portfolio extends React.Component {
             desc: ''
         };
 
-        this.pages = [{
-            id: 0,
-            name: "Artist gallery: bluesungfruit",
-            deskImage: require("../../Assets/portfolio/portfolio_bsf_1.jpg"),
-            mobImage: require("../../Assets/portfolio/portfolio_bsf_2.jpg"),
-            desc: "In Sicily, women are more dangerous than shotguns. Vito, how do you like my little angel? Isn't she beautiful? If anything in this life is certain, if history has taught us anything, it is that you can kill anyone. I am sorry. What happened to your father was business. I have much respect for your father. But your father, his thinking is old-fashioned. You must understand why I had to do that. Now let's work through where we go from here."
-        },{
-            id: 1,
-            name: "Victoria Hill Acupuncture",
-            deskImage: require("../../Assets/portfolio/portfolio_vha_1.jpg"),
-            mobImage: require("../../Assets/portfolio/portfolio_vha_2.jpg"),
-            desc: "In Sicily, women are more dangerous than shotguns. Vito, how do you like my little angel? Isn't she beautiful? If anything in this life is certain, if history has taught us anything, it is that you can kill anyone. I am sorry. What happened to your father was business. I have much respect for your father. But your father, his thinking is old-fashioned. You must understand why I had to do that. Now let's work through where we go from here."
-        },{
-            id: 2,
-            name: "The Forester & Flower",
-            deskImage: require("../../Assets/portfolio/portfolio_ff_1.jpg"),
-            mobImage: require("../../Assets/portfolio/portfolio_ff_2.jpg"),
-            desc: "Now, it is a fact, gentlemen, as you may see for yourselves, that my hair is of a very full and rich tint, so that it seemed to me that if there was to be any competition in the matter I stood as good a chance as any man that I had ever met. Vincent Spaulding seemed to know so much about it that I thought he might prove useful, so I just ordered him to put up the shutters for the day and to come right away with me. He was very willing to have a holiday, so we shut the business up and started off for the address that was given us in the advertisement."
-        }];
-
-        this.x = this.pages.length - 1;
+        this.x = pages.length - 1;
         this.y = this.state.id;
         this.caseStudyPop = this.caseStudyPop.bind(this);
         this.caseStudyExit = this.caseStudyExit.bind(this);
@@ -75,10 +75,10 @@ class Portfolio extends React.Component {
         setTimeout(() => {
             if (this.y < this.x) {
                 this.y+=1;
-                this.setState({...this.pages[this.y]});
+                this.setState({...pages[this.y]});
             } else if (this.y >= this.x) {
                 this.y = 0;
-                this.setState({...this.pages[this.y]});
+                this.setState({...pages[this.y]});
             }
         }, 500);
         setTimeout(() => { document.querySelector('.CaseWindow').classList.toggle('prevNextFade') }, 600);
@@ -94,10 +94,10 @@ class Portfolio extends React.Component {
         setTimeout(() => {
             if (this.y > 0) {
                 this.y-=1;
-                this.setState({...this.pages[this.y]});
+                this.setState({...pages[this.y]});
             } else if (this.y === 0) {
                 this.y = this.pages.length - 1;
-                this.setState({...this.pages[this.y]});
+                this.setState({...pages[this.y]});
             }
         }, 500);
         setTimeout(() => { document.querySelector('.CaseWindow').classList.toggle('prevNextFade') }, 600);
@@ -114,18 +114,7 @@ class Portfolio extends React.Component {
             <div className="Portfolio">
                 <h1>PORTFOLIO</h1>
                 <div className="portfolioBlock">
-                    <PortfolioPage
-                        clickHandler={this.caseStudyPop}
-                        {...this.pages[0]}
-                    />
-                    <PortfolioPage
-                        clickHandler={this.caseStudyPop}
-                        {...this.pages[1]}
-                    />
-                    <PortfolioPage
-                        clickHandler={this.caseStudyPop}
-                        {...this.pages[2]}
-                    />
+                    {pages.map((item, i) => <PortfolioPage clickHandler={this.caseStudyPop} {...pages[i]} />)}
                 </div>
                 <div className="prevCase casePrevNext caseStudyButtons caseClosed" onClick={this.prevCaseStudy}>
                     <div><img src={require("../../Assets/swish/prev.png")} alt="button" /></div>
