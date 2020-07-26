@@ -66,7 +66,7 @@ class Portfolio extends React.Component {
         setTimeout(() => { document.querySelectorAll('.caseStudyButtons').forEach(e => e.classList.toggle('caseOpen')) }, 750);
         setTimeout(() => {
             if (window.matchMedia("(max-width: 1224px)").matches) {
-                window.scrollTo({ top: 0, behavior: 'smooth' })
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         }, 800);
         this.y = id;
@@ -94,7 +94,7 @@ class Portfolio extends React.Component {
         setTimeout(() => { document.querySelector('.CaseStudyWindow').classList.toggle('prevNextFade') }, 600);
         setTimeout(() => {
             if (window.matchMedia("(max-width: 1224px)").matches) {
-                window.scrollTo({ top: 0, behavior: 'smooth' })
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         }, 400);
     }
@@ -113,7 +113,7 @@ class Portfolio extends React.Component {
         setTimeout(() => { document.querySelector('.CaseStudyWindow').classList.toggle('prevNextFade') }, 600);
         setTimeout(() => {
             if (window.matchMedia("(max-width: 1224px)").matches) {
-                window.scrollTo({ top: 0, behavior: 'smooth' })
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         }, 400);
     }

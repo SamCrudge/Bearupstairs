@@ -1,7 +1,9 @@
 import React from "react";
-import './services.css'
-import '../Portfolio/CaseStudy/caseStudy.css';
+
 import './Galleryfit/galleryfit.css';
+import './services.css';
+import '../buttons.css';
+
 import Galleryfit from "./Galleryfit";
 
 class Services extends React.Component {
@@ -15,17 +17,20 @@ class Services extends React.Component {
     }
 
     galleryfitPop = () => {
-        document.querySelector('.CaseStudyContainer').classList.toggle('caseOpen');
-        setTimeout(() => { document.querySelector('.CaseStudyBase').classList.toggle('viewCaseStudy') }, 100);
-        setTimeout(() => { document.querySelector('.CaseStudyWindow').classList.toggle('viewCaseStudy') }, 400);
-        setTimeout(() => { document.querySelector('.caseStudyButtons').classList.toggle('caseOpen') }, 500);
+        document.querySelector('.galleryfitContainer').classList.toggle('portOpen');
+        setTimeout(() => { document.querySelector('.galleryfitBase').classList.toggle('portView') }, 100);
+        setTimeout(() => { document.querySelector('.galleryfitWindow').classList.toggle('portView') }, 400);
+        setTimeout(() => { document.querySelector('.portButtons').classList.toggle('portOpen') }, 500);
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 800);
     }
 
     galleryfitExit = () => {
-        document.querySelector('.caseStudyButtons').classList.toggle('caseOpen');
-        document.querySelector('.CaseStudyWindow').classList.toggle('viewCaseStudy');
-        setTimeout(() => { document.querySelector('.CaseStudyBase').classList.toggle('viewCaseStudy') }, 100);
-        setTimeout(() => { document.querySelector('.CaseStudyContainer').classList.toggle('caseOpen') }, 400);
+        document.querySelector('.portButtons').classList.toggle('portOpen');
+        document.querySelector('.galleryfitWindow').classList.toggle('portView');
+        setTimeout(() => { document.querySelector('.galleryfitBase').classList.toggle('portView') }, 100);
+        setTimeout(() => { document.querySelector('.galleryfitContainer').classList.toggle('portOpen') }, 400);
     }
 
     render() {
@@ -111,15 +116,16 @@ class Services extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="exitCaseStudy caseStudyButtons" onClick={this.galleryfitExit}>
+                <div className="portExit portButtons" onClick={this.galleryfitExit}>
                     <div><img src={require("../../Assets/swish/exit.png")} alt="button" /></div>
                 </div>
-                <div className="CaseStudyContainer">
-                    <div className="CaseStudyBase" onClick={this.galleryfitExit} />
-                    <div className="CaseStudyWindow">
+                <div className="galleryfitContainer">
+                    <div className="galleryfitBase" onClick={this.galleryfitExit} />
+                    <div className="galleryfitWindow">
                         <Galleryfit />
                     </div>
                 </div>
+
             </div>
         )
     }
