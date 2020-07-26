@@ -31,6 +31,8 @@ class Home extends React.Component {
                 </div>
                 <div className="mainText">
                     <p>LET US HELP!</p>
+                    <p>hello@bearupstairs.com</p>
+                    <p>07753 700 197</p>
                 </div>
             </div>
         )

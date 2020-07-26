@@ -11,6 +11,7 @@
 .aboutPics img {
     width: 80vw;
     margin: 4vh auto 4vh auto;
+    border: 8px solid var(--main-style-color);
     border-radius: 100%;
 }
 

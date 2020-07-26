@@ -9,7 +9,7 @@ import Socials from "./Component/Socials";
 import Home from "./Component/Home"
 import About from "./Component/About";
 import Portfolio from "./Component/Portfolio";
-import Contact from "./Component/Contact";
+import Services from "./Component/Services";
 import Lost from "./Component/Lost"
 import Footer from "./Component/Footer";
 
@@ -36,15 +36,15 @@ class Routing extends React.Component {
                     </label>
                     <ul id='nav' className='closeNav'>
                         <li onClick={this.navPop}><Link to="/"><div>HOME</div></Link></li>
+                        <li onClick={this.navPop}><Link to="/services"><div>SERVICES</div></Link></li>
                         <li onClick={this.navPop}><Link to="/portfolio"><div>PORTFOLIO</div></Link></li>
                         <li onClick={this.navPop}><Link to="/about"><div>ABOUT</div></Link></li>
-                        <li onClick={this.navPop}><Link to="/contact"><div>CONTACT</div></Link></li>
                     </ul>
                     <Switch>
                         <Route exact path="/" component={ Home }/>
-                        <Route exact path="/about" component={ About }/>
+                        <Route exact path="/services" component={ Services }/>
                         <Route exact path="/portfolio" component={ Portfolio }/>
-                        <Route exact path="/contact" component={ Contact }/>
+                        <Route exact path="/about" component={ About }/>
                         <Route component={ Lost }/>
                     </Switch>
                     <Socials />

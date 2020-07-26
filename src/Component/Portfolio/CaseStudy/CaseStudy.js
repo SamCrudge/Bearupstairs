@@ -2,6 +2,17 @@ import React from "react";
 
 class CaseStudy extends React.Component {
 
+    componentDidMount() {
+        /*
+        document.getElementsByClassName("CaseDesc").textContent.split('\n').map((item, i) => {
+            return <p key={i}>{item}</p>;
+        });
+
+        const urlText = document.getElementsByClassName("CaseAddress");
+        urlText.textContent = urlText.textContent.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split('/');
+        */
+    }
+
     render() {
         return (
             <div className="CaseFile">
@@ -9,7 +20,16 @@ class CaseStudy extends React.Component {
                     {this.props.name}
                 </div>
                 <div className="CaseDesc">
-                    {this.props.desc}
+                    {this.props.desc.split('\n').map(function(item, i) {
+                        return (
+                            <p key={i} style={{paddingLeft: 1 + 'vh'}}>
+                                {item}
+                            </p>
+                        )
+                    })}
+                    <div className="CaseAddress">
+                        <a href={this.props.address} target="_blank" rel="noopener noreferrer">{this.props.address}</a>
+                    </div>
                 </div>
                 <div className="CaseDeskImg">
                     <div className="mobDesk">Desktop example</div>

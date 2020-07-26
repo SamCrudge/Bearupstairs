@@ -11,19 +11,24 @@ const pages = [{
     name: "Artist gallery: bluesungfruit",
     deskImage: require("../../Assets/portfolio/portfolio_bsf_1.jpg"),
     mobImage: require("../../Assets/portfolio/portfolio_bsf_2.jpg"),
-    desc: "In Sicily, women are more dangerous than shotguns. Vito, how do you like my little angel? Isn't she beautiful? If anything in this life is certain, if history has taught us anything, it is that you can kill anyone. I am sorry. What happened to your father was business. I have much respect for your father. But your father, his thinking is old-fashioned. You must understand why I had to do that. Now let's work through where we go from here."
+    desc: "bluesungfruit is a passion project of Benjamin Hill, one of our team.\n" +
+        "Wanting to showcase his personal paintings online, he started developing a unique gallery viewer, " +
+        "called Galleryfit, which we have now adapted for other artists.",
+    address: "https://bluesungfruit.com"
 },{
     id: 1,
     name: "Victoria Hill Acupuncture",
     deskImage: require("../../Assets/portfolio/portfolio_vha_1.jpg"),
     mobImage: require("../../Assets/portfolio/portfolio_vha_2.jpg"),
-    desc: "In Sicily, women are more dangerous than shotguns. Vito, how do you like my little angel? Isn't she beautiful? If anything in this life is certain, if history has taught us anything, it is that you can kill anyone. I am sorry. What happened to your father was business. I have much respect for your father. But your father, his thinking is old-fashioned. You must understand why I had to do that. Now let's work through where we go from here."
+    desc: "In Sicily, women are more dangerous than shotguns. Vito, how do you like my little angel? Isn't she beautiful? If anything in this life is certain, if history has taught us anything, it is that you can kill anyone. I am sorry. What happened to your father was business. I have much respect for your father. But your father, his thinking is old-fashioned. You must understand why I had to do that. Now let's work through where we go from here.",
+    address: "https://www.victoriahillacupuncture.co.uk"
 },{
     id: 2,
     name: "The Forester & Flower",
     deskImage: require("../../Assets/portfolio/portfolio_ff_1.jpg"),
     mobImage: require("../../Assets/portfolio/portfolio_ff_2.jpg"),
-    desc: "Now, it is a fact, gentlemen, as you may see for yourselves, that my hair is of a very full and rich tint, so that it seemed to me that if there was to be any competition in the matter I stood as good a chance as any man that I had ever met. Vincent Spaulding seemed to know so much about it that I thought he might prove useful, so I just ordered him to put up the shutters for the day and to come right away with me. He was very willing to have a holiday, so we shut the business up and started off for the address that was given us in the advertisement."
+    desc: "Now, it is a fact, gentlemen, as you may see for yourselves, that my hair is of a very full and rich tint, so that it seemed to me that if there was to be any competition in the matter I stood as good a chance as any man that I had ever met. Vincent Spaulding seemed to know so much about it that I thought he might prove useful, so I just ordered him to put up the shutters for the day and to come right away with me. He was very willing to have a holiday, so we shut the business up and started off for the address that was given us in the advertisement.",
+    address: "https://www.foresterandflower.com"
 }];
 
 class Portfolio extends React.Component {
@@ -36,7 +41,8 @@ class Portfolio extends React.Component {
             name: '',
             deskImage: '',
             mobImage: '',
-            desc: ''
+            desc: '',
+            address: ''
         };
 
         this.x = pages.length - 1;
@@ -48,8 +54,8 @@ class Portfolio extends React.Component {
 
     }
 
-    caseStudyPop = (id, name, deskImage, mobImage, desc) => {
-        this.setState({ id: id, name: name, deskImage: deskImage, mobImage: mobImage, desc: desc });
+    caseStudyPop = (id, name, deskImage, mobImage, desc, address) => {
+        this.setState({ id: id, name: name, deskImage: deskImage, mobImage: mobImage, desc: desc, address: address });
         document.querySelector('.CaseStudy').classList.toggle('caseOpen');
         setTimeout(() => { document.querySelector('.CaseBase').classList.toggle('viewCaseStudy') }, 100);
         setTimeout(() => { document.querySelector('.CaseWindow').classList.toggle('viewCaseStudy') }, 700);
@@ -67,7 +73,7 @@ class Portfolio extends React.Component {
         document.querySelector('.CaseWindow').classList.toggle('viewCaseStudy');
         setTimeout(() => { document.querySelector('.CaseBase').classList.toggle('viewCaseStudy') }, 300);
         setTimeout(() => { document.querySelector('.CaseStudy').classList.toggle('caseOpen') }, 400);
-        setTimeout(() => { this.setState({ id: '', name: '', deskImage: '', mobImage: '', desc: '' }); }, 500);
+        setTimeout(() => { this.setState({ id: '', name: '', deskImage: '', mobImage: '', desc: '', address: '' }); }, 500);
     }
 
     nextCaseStudy = () => {
@@ -132,7 +138,9 @@ class Portfolio extends React.Component {
                                    name={this.state.name}
                                    deskImage={this.state.deskImage}
                                    mobImage={this.state.mobImage}
-                                   desc={this.state.desc} />
+                                   desc={this.state.desc}
+                                   address={this.state.address}
+                        />
                     </div>
                 </div>
             </div>

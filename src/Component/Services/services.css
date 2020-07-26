@@ -1,0 +1,42 @@
+h3 {
+    margin-top: 5vh;
+    color: var(--main-style-color);
+}
+
+.invert {
+    width: 100%;
+    padding: 5vh 0 10vh 0;
+    text-align: center;
+    color: var(--secondary-type-color);
+    background-color: #383838;
+}
+
+.galleryOptions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 60vw;
+    margin: auto;
+}
+
+.accentTextThree {
+    font-size: 0.8rem;
+}
+
+.galleryOptions img {
+    width: 80vw;
+}
+
+@media (min-device-width:1224px) {
+
+    .galleryOptions {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .galleryOptions div, .galleryOptions img {
+        width: 17vw;
+    }
+
+}
