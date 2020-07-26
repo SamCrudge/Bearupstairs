@@ -13,11 +13,15 @@ class Services extends React.Component {
                     <h1>OUR SERVICES</h1>
                     <div className="mainText">
                         <p>
-                            We have a range of possibilities for attractive, quick-loading gallery pages.
+                            We offer simple, stylish, sensible websites for individuals and small businesses.
                         </p>
                     </div>
                     <div className="accentTextOne">
                         <p>
+                            We have a range of possibilities for attractive,
+                            quick-loading gallery pages for artists and other creatives.
+                        </p>
+                        <p style={{fontSize: 0.8 + 'rem'}}>
                             If you want to include an online shop, you can also choose between a couple of options,
                             including an integrated gallery-shop to make your customers' experience simpler.
                         </p>
@@ -44,8 +48,11 @@ class Services extends React.Component {
                                 <p>
                                     Neatly aligned columns.
                                 </p>
+                                <img src={require("../../Assets/galleryoptions/columns.jpg")} alt='Flexi columns' />
+                                <p>
+                                    Images flow down the page in a manner similar to Pinterest or Unsplash.
+                                </p>
                             </div>
-                            <img src={require("../../Assets/galleryoptions/columns.jpg")} alt='Flexi columns' />
                         </div>
                         <div>
                             <h3>
@@ -55,8 +62,12 @@ class Services extends React.Component {
                                 <p>
                                     Our favourite option.
                                 </p>
+                                <img src={require("../../Assets/galleryoptions/galleryfit.jpg")} alt='Galleryfit' />
+                                <p>
+                                    Images fit neatly across each row, with no gaps.
+                                    Rows resize automatically as necessary.
+                                </p>
                             </div>
-                            <img src={require("../../Assets/galleryoptions/galleryfit.jpg")} alt='Galleryfit' />
                         </div>
                         <div>
                             <h3>
@@ -64,10 +75,13 @@ class Services extends React.Component {
                             </h3>
                             <div className="accentTextThree">
                                 <p>
+                                    Images arranged in a grid.
+                                </p>
+                                <img src={require("../../Assets/galleryoptions/squares.jpg")} alt='Squares' />
+                                <p>
                                     Think of Instagram.
                                 </p>
                             </div>
-                            <img src={require("../../Assets/galleryoptions/squares.jpg")} alt='Squares' />
                         </div>
                     </div>
                 </div>

@@ -20,14 +20,18 @@ const pages = [{
     name: "Victoria Hill Acupuncture",
     deskImage: require("../../Assets/portfolio/portfolio_vha_1.jpg"),
     mobImage: require("../../Assets/portfolio/portfolio_vha_2.jpg"),
-    desc: "In Sicily, women are more dangerous than shotguns. Vito, how do you like my little angel? Isn't she beautiful? If anything in this life is certain, if history has taught us anything, it is that you can kill anyone. I am sorry. What happened to your father was business. I have much respect for your father. But your father, his thinking is old-fashioned. You must understand why I had to do that. Now let's work through where we go from here.",
+    desc: "Victoria wanted a no-frills website to offer her acupuncture services.\n" +
+        "Information on the site flows down in easily-digested boxes.\n" +
+        "The site and logo follow a simple colour scheme suggested by Victoria herself.",
     address: "https://www.victoriahillacupuncture.co.uk"
 },{
     id: 2,
     name: "The Forester & Flower",
     deskImage: require("../../Assets/portfolio/portfolio_ff_1.jpg"),
     mobImage: require("../../Assets/portfolio/portfolio_ff_2.jpg"),
-    desc: "Now, it is a fact, gentlemen, as you may see for yourselves, that my hair is of a very full and rich tint, so that it seemed to me that if there was to be any competition in the matter I stood as good a chance as any man that I had ever met. Vincent Spaulding seemed to know so much about it that I thought he might prove useful, so I just ordered him to put up the shutters for the day and to come right away with me. He was very willing to have a holiday, so we shut the business up and started off for the address that was given us in the advertisement.",
+    desc: "Working with a fantastic photographer to capture the atmosphere inside, " +
+        "we designed the website to reflect the place itself: " +
+        "traditional penumbral British pub decorated with bright splashes of colour.",
     address: "https://www.foresterandflower.com"
 }];
 

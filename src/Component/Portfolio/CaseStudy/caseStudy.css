@@ -83,6 +83,10 @@
     box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.75);
 }
 
+.CaseDesc p {
+    padding: 0 5vw 0 5vw;
+}
+
 .CaseAddress {
     width: 100%;
     text-align: center;
@@ -187,6 +191,10 @@
         margin: 0;
         padding: 2vh 4vh 6vh 3vh;
         border-left: 4px solid var(--main-style-color);
+    }
+
+    .CaseDesc p {
+        padding: 0;
     }
 
     .CaseAddress {

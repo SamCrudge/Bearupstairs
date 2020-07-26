@@ -15,8 +15,8 @@ import Footer from "./Component/Footer";
 
 class Routing extends React.Component {
 
-    constructor(props, context) {
-        super(props, context);
+    constructor(props) {
+        super(props);
         this.navPop = this.navPop.bind(this);
     }
 

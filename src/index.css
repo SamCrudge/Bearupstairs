@@ -18,7 +18,11 @@
   --secondary-type-color: #fff;
   font-size: 2vh;
 }
-
+/*
+div, h1 {
+  outline: 1px solid black;
+}
+*/
 body {
   background: var(--main-background-color);
   margin: 0;
@@ -33,18 +37,18 @@ a {
 }
 
 h1 {
-  font-weight: 200;
   margin-bottom: 5vh;
+  text-align: center;
+  font-weight: 200;
 }
 
-
 .fullPage {
-  max-width: 90vw;
-  min-height: 50vh;
-  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  max-width: 100vw;
+  margin: auto auto 5vh;
   text-align: center;
   line-height: 2rem;
 }

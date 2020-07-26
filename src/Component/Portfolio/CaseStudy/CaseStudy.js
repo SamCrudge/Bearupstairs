@@ -22,7 +22,7 @@ class CaseStudy extends React.Component {
                 <div className="CaseDesc">
                     {this.props.desc.split('\n').map(function(item, i) {
                         return (
-                            <p key={i} style={{paddingLeft: 1 + 'vh'}}>
+                            <p key={i}>
                                 {item}
                             </p>
                         )
