@@ -2,17 +2,6 @@ import React from "react";
 
 class CaseStudy extends React.Component {
 
-    componentDidMount() {
-        /*
-        document.getElementsByClassName("CaseDesc").textContent.split('\n').map((item, i) => {
-            return <p key={i}>{item}</p>;
-        });
-
-        const urlText = document.getElementsByClassName("CaseAddress");
-        urlText.textContent = urlText.textContent.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split('/');
-        */
-    }
-
     render() {
         return (
             <div className="CaseFile">

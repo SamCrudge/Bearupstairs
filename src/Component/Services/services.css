@@ -28,6 +28,10 @@ h3 {
     width: 80vw;
 }
 
+.galleryfitBase {
+    transition: opacity 0.5s;
+}
+
 @media (min-device-width:1224px) {
 
     .galleryOptions {

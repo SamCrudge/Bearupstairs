@@ -1,9 +1,32 @@
 import React from "react";
 import './services.css'
-
-
+import '../Portfolio/CaseStudy/caseStudy.css';
+import './Galleryfit/galleryfit.css';
+import Galleryfit from "./Galleryfit";
 
 class Services extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.galleryfitPop = this.galleryfitPop.bind(this);
+        this.galleryfitExit = this.galleryfitExit.bind(this);
+
+    }
+
+    galleryfitPop = () => {
+        document.querySelector('.CaseStudyContainer').classList.toggle('caseOpen');
+        setTimeout(() => { document.querySelector('.CaseStudyBase').classList.toggle('viewCaseStudy') }, 100);
+        setTimeout(() => { document.querySelector('.CaseStudyWindow').classList.toggle('viewCaseStudy') }, 400);
+        setTimeout(() => { document.querySelector('.caseStudyButtons').classList.toggle('caseOpen') }, 500);
+    }
+
+    galleryfitExit = () => {
+        document.querySelector('.caseStudyButtons').classList.toggle('caseOpen');
+        document.querySelector('.CaseStudyWindow').classList.toggle('viewCaseStudy');
+        setTimeout(() => { document.querySelector('.CaseStudyBase').classList.toggle('viewCaseStudy') }, 100);
+        setTimeout(() => { document.querySelector('.CaseStudyContainer').classList.toggle('caseOpen') }, 400);
+    }
 
     render() {
         return (
@@ -48,7 +71,7 @@ class Services extends React.Component {
                                 <p>
                                     Neatly aligned columns.
                                 </p>
-                                <img src={require("../../Assets/galleryoptions/columns.jpg")} alt='Flexi columns' />
+                                <img src={require("../../Assets/galleryOptions/columns.jpg")} alt='Flexi columns' />
                                 <p>
                                     Images flow down the page in a manner similar to Pinterest or Unsplash.
                                 </p>
@@ -62,10 +85,13 @@ class Services extends React.Component {
                                 <p>
                                     Our favourite option.
                                 </p>
-                                <img src={require("../../Assets/galleryoptions/galleryfit.jpg")} alt='Galleryfit' />
+                                <img src={require("../../Assets/galleryOptions/galleryfit.jpg")} alt='Galleryfit' />
                                 <p>
                                     Images fit neatly across each row, with no gaps.
                                     Rows resize automatically as necessary.
+                                </p>
+                                <p className="accentTextTwo redText" onClick={this.galleryfitPop}>
+                                    <i>click here for an example</i>
                                 </p>
                             </div>
                         </div>
@@ -77,7 +103,7 @@ class Services extends React.Component {
                                 <p>
                                     Images arranged in a grid.
                                 </p>
-                                <img src={require("../../Assets/galleryoptions/squares.jpg")} alt='Squares' />
+                                <img src={require("../../Assets/galleryOptions/squares.jpg")} alt='Squares' />
                                 <p>
                                     Think of Instagram.
                                 </p>
@@ -85,7 +111,15 @@ class Services extends React.Component {
                         </div>
                     </div>
                 </div>
-
+                <div className="exitCaseStudy caseStudyButtons" onClick={this.galleryfitExit}>
+                    <div><img src={require("../../Assets/swish/exit.png")} alt="button" /></div>
+                </div>
+                <div className="CaseStudyContainer">
+                    <div className="CaseStudyBase" onClick={this.galleryfitExit} />
+                    <div className="CaseStudyWindow">
+                        <Galleryfit />
+                    </div>
+                </div>
             </div>
         )
     }

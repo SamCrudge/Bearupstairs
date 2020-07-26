@@ -37,64 +37,6 @@
     box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.5);
 }
 
-/* exit, prev, next basic styling */
-.caseStudyButtons {
-    z-index: 500;
-    cursor: pointer;
-    position: fixed;
-    width: 6vh;
-    height: 6vh;
-    color: var(--secondary-type-color);
-    text-align: center;
-    background-color: var(--main-style-color);
-    border-radius: 100%;
-}
-
-.caseStudyButtons img {
-    width: 100%;
-}
-
-.caseStudyButtons div {
-    width: 100%;
-    height: 100%;
-    background-color: var(--main-style-color);
-    box-shadow: 10px 10px 20px -8px rgba(0, 0, 0, 0.8);
-    border-radius: 100%;
-    transition: all 0.5s ease;
-}
-
-.caseStudyButtons:hover div {
-    transform: scale(1.1);
-}
-
-.caseStudyButtons:active div {
-    transform: scale(0.9);
-}
-
-.casePrevNext {
-    top: 1vh;
-    margin: auto;
-    font-size: 6vh;
-    font-weight: 700;
-    line-height: 5vh;
-}
-
-.nextCase {
-    left: 8vh;
-}
-
-.prevCase {
-    left: 1vh;
-}
-
-/* other styling for this button on .caseStudyButton */
-.exitCaseStudy {
-    top: 1vh;
-    right: 1vh;
-    font-size: 3.5vh;
-    line-height: 6vh;
-}
-
 @media (min-width:1224px) {
 
     .portfolioBlock {
@@ -119,28 +61,6 @@
 
     .portfolioBlock img {
         width: 28vw;
-    }
-
-    .caseStudyButtons {
-        position: fixed;
-    }
-
-    .casePrevNext {
-        top: 0; bottom: 0;
-    }
-
-    .nextCase {
-        left: auto;
-        right: 1vh;
-    }
-
-    .exitCaseStudy {
-        width: 4vh;
-        height: 4vh;
-        top: 2vh;
-        right: 2vh;
-        font-size: 3vh;
-        line-height: 4vh;
     }
 
 }
