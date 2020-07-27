@@ -46,10 +46,10 @@ class Services extends React.Component {
                     </div>
                     <div className="accentTextOne">
                         <p>
-                            We have a range of possibilities for attractive,
-                            quick-loading gallery pages for artists and other creatives.
+                            We also have a range of possibilities for attractive,
+                            quick-loading gallery pages for visual artists.
                         </p>
-                        <p style={{fontSize: 0.8 + 'rem'}}>
+                        <p className="smallText">
                             If you want to include an online shop, you can also choose between a couple of options,
                             including an integrated gallery-shop to make your customers' experience simpler.
                         </p>
@@ -95,7 +95,7 @@ class Services extends React.Component {
                                     Images fit neatly across each row, with no gaps.
                                     Rows resize automatically as necessary.
                                 </p>
-                                <p className="accentTextTwo redText" onClick={this.galleryfitPop}>
+                                <p className="accentTextTwo redText" style={{cursor: "pointer"}} onClick={this.galleryfitPop}>
                                     <i>click here for an example</i>
                                 </p>
                             </div>

@@ -34,6 +34,8 @@
     left: 0;
     right: 0;
     margin: auto;
+    text-align: center;
+    color: var(--secondary-type-color);
 }
 
 .galleryPage {

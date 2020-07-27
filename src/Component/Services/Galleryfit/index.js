@@ -11,7 +11,8 @@ class Galleryfit extends React.Component {
 
     doGallerySize = () => {
 
-        const	gallLength = document.getElementsByClassName('galleryPage').length,
+        const
+            gallLength = document.getElementsByClassName('galleryPage').length,
             gallWidth = window.innerWidth / 100 * 70,
             findRatio = (a, b) => a / b;
 
@@ -48,7 +49,7 @@ class Galleryfit extends React.Component {
                     } else if (numOfImages === 2) {
                         thisPage.style.marginBottom = finalHeight * 0.015 * 0.5 + "px";
                     } else if (numOfImages > 2) {
-                        thisPage.style.marginBottom = (finalHeight * 0.015) * (numOfImages - 1) + "px";
+                        thisPage.style.marginBottom = (finalHeight * 0.015) * (numOfImages - 1) * 0.75 + "px";
                     }
                 } else if (numOfImages > sum) {
                     if (numOfImages === 1) {
@@ -56,18 +57,10 @@ class Galleryfit extends React.Component {
                     } else if (numOfImages === 2) {
                         thisPage.style.marginBottom = "-" + finalHeight * 0.015 * 0.5 + "px";
                     } else if (numOfImages >= 3) {
-                        thisPage.style.marginBottom = finalHeight * 0.015 * 0.5 + "px";
+                        thisPage.style.marginBottom = finalHeight * 0.015 * 0.3 + "px";
                     }
                 }
-/*
-                if ((numOfImages/sum) > 1.33) {
-                    thisPage.style.marginBottom = "-" + finalHeight * 0.015 * 0.5 + "px";
-                } else if ((numOfImages/sum) <= 1.33 && (numOfImages/sum) > 1) {
-                    thisPage.style.marginBottom = finalHeight * 0.03 * numOfImages + "px";
-                } else if ((numOfImages/sum) <= 1) {
-                    thisPage.style.marginBottom = (finalHeight * 0.015) * (numOfImages - 1) + "px";
-                }
-*/
+
            });
 
        }
@@ -77,12 +70,14 @@ class Galleryfit extends React.Component {
    componentDidMount() {
        setTimeout(() => {
            this.doGallerySize();
-       }, 100);
+       }, 500);
+       window.addEventListener('resize', this.doGallerySize);
    }
 
    render() {
        return (
            <div className="Galleryfit">
+               <h2>Galleryfit example</h2>
                <div className="galleryPage" id="galleryPage0">
                    <img alt="from Unsplash" src="https://images.unsplash.com/photo-1594220452487-6d3046e91787?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80" />
                    <img alt="from Unsplash" src="https://images.unsplash.com/photo-1593344352545-ffb4a9512528?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2978&q=80" />
@@ -112,7 +107,7 @@ class Galleryfit extends React.Component {
                    <img alt="from Unsplash" src="https://images.unsplash.com/photo-1593604977097-8ee5f2fda183?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80" />
                    <img alt="from Unsplash" src="https://images.unsplash.com/photo-1589746680328-25b4109b4287?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
                </div>
-
+               <div class="accentTextTwo redText smallText"><p><i>images courtesy of Unsplash.com</i></p></div>
            </div>
        )
    }

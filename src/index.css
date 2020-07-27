@@ -74,6 +74,10 @@ h1 {
   font-family: 'Elephant', italic;
 }
 
+.smallText {
+  font-size: 0.8rem;
+}
+
 .allCaps {
   text-transform: uppercase;
   font-size: 1rem;
