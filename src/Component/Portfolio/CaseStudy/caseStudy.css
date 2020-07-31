@@ -76,9 +76,10 @@
     width: 100%;
     margin-bottom: 2vh;
     box-sizing: border-box;
+    font-size: 0.9rem;
     line-height: 1.5rem;
-    color: var(--primary-type-color);
-    background-color: var(--main-background-color);
+    color: var(--secondary-type-color);
+    background-color: #222222;
     box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.75);
 }
 
@@ -90,7 +91,7 @@
     width: 100%;
     text-align: center;
     line-height: 2rem;
-    background-color: var(--main-style-color);
+    background-color: #222222;
 }
 
 .CaseAddress a {
@@ -262,7 +263,7 @@
         right: 0;
         margin: 0;
         padding: 0 2vh 0 2vh;
-        border-right: 4px solid var(--main-style-color);
+        text-align: right;
     }
 
     .caseStudyButtons {

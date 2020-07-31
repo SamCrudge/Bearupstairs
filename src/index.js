@@ -34,12 +34,14 @@ class Routing extends React.Component {
                         <input type='checkbox' id='navCheckbox' />
                         <div><img src={require("./Assets/swish/bars.png")} alt="Open menu" /></div>
                     </label>
-                    <ul id='nav' className='closeNav'>
-                        <li onClick={this.navPop}><Link to="/"><div>HOME</div></Link></li>
-                        <li onClick={this.navPop}><Link to="/services"><div>SERVICES</div></Link></li>
-                        <li onClick={this.navPop}><Link to="/portfolio"><div>PORTFOLIO</div></Link></li>
-                        <li onClick={this.navPop}><Link to="/about"><div>ABOUT</div></Link></li>
-                    </ul>
+                    <nav>
+                        <ul id="nav" className='closeNav'>
+                            <li onClick={this.navPop}><Link to="/"><div>HOME</div></Link></li>
+                            <li onClick={this.navPop}><Link to="/services"><div>SERVICES</div></Link></li>
+                            <li onClick={this.navPop}><Link to="/portfolio"><div>PORTFOLIO</div></Link></li>
+                            <li onClick={this.navPop}><Link to="/about"><div>ABOUT</div></Link></li>
+                        </ul>
+                    </nav>
                     <Switch>
                         <Route exact path="/" component={ Home }/>
                         <Route exact path="/services" component={ Services }/>

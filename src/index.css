@@ -53,6 +53,10 @@ h1 {
   line-height: 2rem;
 }
 
+.fullPage div {
+  padding: 0 2vw 0 2vw;
+}
+
 .mainText {
   font-family: "Raleway";
   font-size: 1.3rem;
@@ -177,7 +181,10 @@ ul, li {
     margin: 5vh auto 5vh auto;
     text-align: center;
     font-size: 0.8rem;
-    box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 1px rgba(0,0,0,0.1),
+                0 4px 2px rgba(0,0,0,0.1),
+                0 8px 4px rgba(0,0,0,0.1),
+                0 16px 8px rgba(0,0,0,0.1);
   }
 
   #nav div {
@@ -189,7 +196,7 @@ ul, li {
   }
 
   #nav div:hover {
-    background-color: #e4303b;
+    color: #dddddd;
   }
 
   #nav div:active {

@@ -8,38 +8,55 @@ h3 {
     padding: 5vh 0 10vh 0;
     text-align: center;
     color: var(--secondary-type-color);
-    background-color: #383838;
+    background-color: #444444;
+}
+
+.invert div {
+    padding: 0 2vw 0 2vw;
 }
 
 .galleryOptions {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    width: 60vw;
+    width: 80vw;
     margin: auto;
 }
 
-.accentTextThree {
-    font-size: 0.8rem;
+.galleryOptions div {
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+    padding-bottom: 2vh;
+    background-color: #383838;
+}
+
+.galleryOptions div p {
+    padding: 2vh;
 }
 
 .galleryOptions img {
     width: 80vw;
 }
 
-.galleryfitBase {
-    transition: opacity 0.5s;
-}
-
 @media (min-device-width:1224px) {
 
     .galleryOptions {
         flex-direction: row;
-        align-items: flex-start;
+        align-items: stretch;
+        margin: auto;
     }
 
-    .galleryOptions div, .galleryOptions img {
+    .galleryOptions div {
+        margin-bottom: 5vh;
+        padding: 0;
+    }
+
+    .galleryOptions div {
+        width: 30vw;
+    }
+
+    .galleryOptions img {
         width: 17vw;
     }
 

@@ -1,10 +1,11 @@
 import React from "react";
 
-import './Galleryfit/galleryfit.css';
+import './Examples/examples.css';
 import './services.css';
 import '../buttons.css';
 
-import Galleryfit from "./Galleryfit";
+import Galleryfit from "./Examples/Galleryfit";
+import Flexi from "./Examples/Flexi";
 
 class Services extends React.Component {
 
@@ -12,26 +13,38 @@ class Services extends React.Component {
         super(props);
 
         this.galleryfitPop = this.galleryfitPop.bind(this);
-        this.galleryfitExit = this.galleryfitExit.bind(this);
+        this.flexiPop = this.flexiPop.bind(this);
+        this.exampleExit = this.exampleExit.bind(this);
 
     }
 
-    galleryfitPop = () => {
-        document.querySelector('.galleryfitContainer').classList.toggle('portOpen');
-        setTimeout(() => { document.querySelector('.galleryfitBase').classList.toggle('portView') }, 100);
-        setTimeout(() => { document.querySelector('.galleryfitWindow').classList.toggle('portView') }, 400);
-        setTimeout(() => { document.querySelector('.portButtons').classList.toggle('portOpen') }, 500);
+    examplePop = () => {
+        document.querySelector('.exampleContainer').classList.add('portOpen');
+        setTimeout(() => { document.querySelector('.exampleBase').classList.add('portView') }, 100);
+        setTimeout(() => { document.querySelector('.exampleWindow').classList.add('portView') }, 400);
+        setTimeout(() => { document.querySelector('.portButtons').classList.add('portOpen') }, 500);
         setTimeout(() => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }, 800);
     }
 
-    galleryfitExit = () => {
-        document.querySelector('.portButtons').classList.toggle('portOpen');
-        document.querySelector('.galleryfitWindow').classList.toggle('portView');
-        setTimeout(() => { document.querySelector('.galleryfitBase').classList.toggle('portView') }, 100);
-        setTimeout(() => { document.querySelector('.galleryfitContainer').classList.toggle('portOpen') }, 400);
+    galleryfitPop = () => {
+        document.querySelector('.Galleryfit').classList.add('portOpen');
     }
+
+    flexiPop = () => {
+        document.querySelector('.Flexi').classList.add('portOpen');
+    }
+
+    exampleExit = () => {
+        document.querySelector('.portButtons').classList.remove('portOpen');
+        document.querySelector('.exampleWindow').classList.remove('portView');
+        setTimeout(() => { document.querySelector('.exampleBase').classList.remove('portView') }, 100);
+        setTimeout(() => { document.querySelector('.exampleContainer').classList.remove('portOpen') }, 400);
+        document.querySelector('.Galleryfit').classList.remove('portOpen');
+        document.querySelector('.Flexi').classList.remove('portOpen');
+    }
+
 
     render() {
         return (
@@ -58,21 +71,21 @@ class Services extends React.Component {
 
                 <div className="invert">
                     <h2 className="redText">GALLERY FORMATS</h2>
-                    <div className="mainText">
+                    <div className="smallText">
                         <p>
                             There are many ways to organise and style an online gallery.
                         </p>
                         <p>
-                            Here are three of our favourites:
+                            Here are a few of our favourites:
                         </p>
                     </div>
 
                     <div className="galleryOptions">
-                        <div>
+                        <div style={{cursor: "pointer"}} onClick={() => { this.examplePop(); this.flexiPop(); }}>
                             <h3>
                                 FLEXI COLUMNS
                             </h3>
-                            <div className="accentTextThree">
+                            <div className="smallText">
                                 <p>
                                     Neatly aligned columns.
                                 </p>
@@ -80,13 +93,16 @@ class Services extends React.Component {
                                 <p>
                                     Images flow down the page in a manner similar to Pinterest or Unsplash.
                                 </p>
+                                <p className="accentTextTwo redText smallText">
+                                    <i>click for an example</i>
+                                </p>
                             </div>
                         </div>
-                        <div>
+                        <div style={{cursor: "pointer"}} onClick={() => { this.examplePop(); this.galleryfitPop(); }}>
                             <h3>
                                 GALLERYFIT
                             </h3>
-                            <div className="accentTextThree">
+                            <div className="smallText">
                                 <p>
                                     Our favourite option.
                                 </p>
@@ -95,8 +111,24 @@ class Services extends React.Component {
                                     Images fit neatly across each row, with no gaps.
                                     Rows resize automatically as necessary.
                                 </p>
-                                <p className="accentTextTwo redText" style={{cursor: "pointer"}} onClick={this.galleryfitPop}>
-                                    <i>click here for an example</i>
+                                <p className="accentTextTwo redText smallText">
+                                    <i>click for an example</i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="galleryOptions">
+                        <div>
+                            <h3>
+                                SINGLES
+                            </h3>
+                            <div className="smallText">
+                                <p>
+                                    One image at a time.
+                                </p>
+                                <img src={require("../../Assets/galleryOptions/singles.jpg")} alt='Galleryfit' />
+                                <p>
+                                    Give each image undivided attention. Click, swipe, or scroll to the next.
                                 </p>
                             </div>
                         </div>
@@ -104,7 +136,7 @@ class Services extends React.Component {
                             <h3>
                                 SQUARES
                             </h3>
-                            <div className="accentTextThree">
+                            <div className="smallText">
                                 <p>
                                     Images arranged in a grid.
                                 </p>
@@ -115,17 +147,29 @@ class Services extends React.Component {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="portExit portButtons" onClick={this.galleryfitExit}>
-                    <div><img src={require("../../Assets/swish/exit.png")} alt="button" /></div>
-                </div>
-                <div className="galleryfitContainer">
-                    <div className="galleryfitBase" onClick={this.galleryfitExit} />
-                    <div className="galleryfitWindow">
-                        <Galleryfit />
+                    <div className="mainText">
+                        <p>
+                            To find out more...
+                            get in touch!
+                        </p>
+                        <p className="redText">
+                            hello@bearupstairs.com
+                        </p>
+                        <p>
+                            07753 700 197
+                        </p>
                     </div>
                 </div>
-
+                <div className="portExit portButtons" onClick={this.exampleExit}>
+                    <div><img src={require("../../Assets/swish/exit.png")} alt="button" /></div>
+                </div>
+                <div className="exampleContainer">
+                    <div className="exampleBase" onClick={this.exampleExit} />
+                    <div className="exampleWindow">
+                        <Galleryfit />
+                        <Flexi />
+                    </div>
+                </div>
             </div>
         )
     }
