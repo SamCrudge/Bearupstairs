@@ -12,6 +12,11 @@ class Services extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            scrollPosition: 0
+        };
+
+        this.examplePop = this.examplePop.bind(this);
         this.galleryfitPop = this.galleryfitPop.bind(this);
         this.flexiPop = this.flexiPop.bind(this);
         this.exampleExit = this.exampleExit.bind(this);
@@ -19,6 +24,7 @@ class Services extends React.Component {
     }
 
     examplePop = () => {
+        this.setState({scrollPosition: window.pageYOffset});
         document.querySelector('.exampleContainer').classList.add('portOpen');
         setTimeout(() => { document.querySelector('.exampleBase').classList.add('portView') }, 100);
         setTimeout(() => { document.querySelector('.exampleWindow').classList.add('portView') }, 400);
@@ -43,8 +49,10 @@ class Services extends React.Component {
         setTimeout(() => { document.querySelector('.exampleContainer').classList.remove('portOpen') }, 400);
         document.querySelector('.Galleryfit').classList.remove('portOpen');
         document.querySelector('.Flexi').classList.remove('portOpen');
+        setTimeout(() => {
+            window.scrollTo({ top: this.state.scrollPosition, behavior: 'smooth' });
+        }, 500);
     }
-
 
     render() {
         return (

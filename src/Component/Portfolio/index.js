@@ -124,7 +124,7 @@ class Portfolio extends React.Component {
             <div className="Portfolio">
                 <h1>PORTFOLIO</h1>
                 <div className="portfolioBlock">
-                    {pages.map((item, i) => <PortfolioPage clickHandler={this.caseStudyPop} {...pages[i]} /> )}
+                    {pages.map((item, i) => <PortfolioPage key={i} clickHandler={this.caseStudyPop} {...pages[i]} /> )}
                 </div>
                 <div className="prevCase casePrevNext caseStudyButtons" onClick={this.prevCaseStudy}>
                     <div><img src={require("../../Assets/swish/prev.png")} alt="button" /></div>
