@@ -38,7 +38,7 @@
     text-align: center;
     color: var(--secondary-type-color);
     background-color: #222222;
-    outline: 1vh solid #222222;
+    outline: 20px solid #222222;
 }
 
 .galleryContainer {
@@ -55,6 +55,7 @@
 
 .galleryPage img {
     height: 100%;
+    box-shadow: 0 8px 14px -7px rgba(0, 0, 0, 0.75);
 }
 
 .flexiCols {

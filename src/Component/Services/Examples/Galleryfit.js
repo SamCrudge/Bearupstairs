@@ -20,25 +20,26 @@ class Galleryfit extends React.Component {
 
         for (let i = 0; i < galleryLength; i++) {
 
+            const images = document.querySelectorAll(`#galleryPage${i} img`),
+                galleryPage = document.querySelectorAll(`#galleryPage${i}`);
             let sum = 0,
-                sumRev = 0,
                 finalHeight = 0,
                 finalPageHeight = 0,
                 finalImageHeight = 0,
-                spacing = 10;
-            const images = document.querySelectorAll(`#galleryPage${i} img`),
-                galleryPage = document.querySelectorAll(`#galleryPage${i}`);
+                spacing = 20,
+                spaces = images.length - 1;
 
             images.forEach(thisImage => {
                 sum += findRatio(thisImage.naturalWidth, thisImage.naturalHeight);
-                sumRev += findRatio(thisImage.naturalHeight, thisImage.naturalWidth);
             });
 
             finalHeight = gallWidth / sum;
-            finalPageHeight = finalHeight + (spacing / images.length);
-            finalImageHeight = finalHeight - (spacing / images.length) + (sum - sumRev - images.length);
-
-            console.log(i + ' ' + sum + ' ' + sumRev + ' ' + images.length);
+            let a = gallWidth - (spacing * spaces);
+            let b = a / spaces;
+            let c = b / (gallWidth / spaces);
+            let d = c * finalHeight;
+            finalPageHeight = d + spacing;
+            finalImageHeight = d;
 
             galleryPage.forEach(thisPage => {
                 thisPage.style.height = finalPageHeight + "px";
