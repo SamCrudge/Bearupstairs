@@ -5,7 +5,7 @@ class OptionSingles extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className="galleryOptionsContainer">
                 <h3>
                     SINGLES
                 </h3>
@@ -13,8 +13,8 @@ class OptionSingles extends React.Component {
                     <p>
                         One image at a time.
                     </p>
-                    <img src={require("../../Assets/galleryOptions/singles.jpg")} alt='Galleryfit' />
-                    <p>
+                    <img src={require("../../../Assets/galleryOptions/singles.jpg")} alt='Galleryfit' />
+                    <p className="verySmallText">
                         Give each image undivided attention. Click, swipe, or scroll to the next.
                     </p>
                 </div>

@@ -5,7 +5,7 @@ class OptionFlexi extends React.Component {
     render() {
 
         return (
-            <div style={{cursor: "pointer"}} onClick={() => {this.props.clickHandler(this.props.isOpenIndex)}}>
+            <div className="galleryOptionsContainer" style={{cursor: "pointer"}} onClick={() => {this.props.clickHandler(this.props.isOpenIndex)}}>
                 <h3>
                     FLEXI COLUMNS
                 </h3>
@@ -13,8 +13,8 @@ class OptionFlexi extends React.Component {
                     <p>
                         Neatly aligned columns.
                     </p>
-                    <img src={require("../../Assets/galleryOptions/columns.jpg")} alt='Flexi columns'/>
-                    <p>
+                    <img src={require("../../../Assets/galleryOptions/columns.jpg")} alt='Flexi columns'/>
+                    <p className="verySmallText">
                         Images flow down the page in a manner similar to Pinterest or Unsplash.
                     </p>
                     <p className="accentTextTwo redText smallText">

@@ -18,11 +18,7 @@
   --secondary-type-color: #fff;
   font-size: 2vh;
 }
-/*
-div, h1 {
-  outline: 1px solid black;
-}
-*/
+
 body {
   background: var(--main-background-color);
   margin: 0;
@@ -45,11 +41,16 @@ h1 {
 h2 {
   display: inline-block;
   padding: 1vh 2vh 1vh 2vh;
+  font-size: 1.3rem;
   background-color: var(--main-style-color);
   box-shadow: 0 2px 1px rgba(20,20,20,0.1),
               0 4px 2px rgba(20,20,20,0.1),
               0 8px 4px rgba(20,20,20,0.1),
               0 16px 8px rgba(20,20,20,0.1);
+}
+
+h3 {
+  padding: 1vh 0 2vh 0;
 }
 
 .fullPage {
@@ -90,6 +91,10 @@ h2 {
 
 .smallText {
   font-size: 0.8rem;
+}
+
+.verySmallText {
+  font-size: 0.6rem;
 }
 
 .allCaps {

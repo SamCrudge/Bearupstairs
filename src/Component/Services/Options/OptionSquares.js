@@ -5,7 +5,7 @@ class OptionSquares extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className="galleryOptionsContainer">
                 <h3>
                     SQUARES
                 </h3>
@@ -13,8 +13,8 @@ class OptionSquares extends React.Component {
                     <p>
                         Images arranged in a grid.
                     </p>
-                    <img src={require("../../Assets/galleryOptions/squares.jpg")} alt='Squares' />
-                    <p>
+                    <img src={require("../../../Assets/galleryOptions/squares.jpg")} alt='Squares' />
+                    <p className="verySmallText">
                         Think of Instagram.
                     </p>
                 </div>

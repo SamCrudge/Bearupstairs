@@ -20,18 +20,19 @@ h3 {
     margin: auto;
 }
 
-.galleryOptions div {
+.galleryOptionsContainer {
     margin-top: 3vh;
     margin-bottom: 2vh;
     padding-bottom: 2vh;
     background-color: #383838;
+    box-shadow: 0 8px 14px -7px rgba(0, 0, 0, 0.75);
 }
 
-.galleryOptions div p {
+.galleryOptionsContainer p {
     padding: 2vh;
 }
 
-.galleryOptions img {
+.galleryOptionsContainer img {
     width: 80vw;
 }
 
@@ -43,16 +44,13 @@ h3 {
         margin: auto;
     }
 
-    .galleryOptions div {
-        margin-bottom: 5vh;
-        padding: 0;
-    }
-
-    .galleryOptions div {
+    .galleryOptionsContainer {
         width: 30vw;
+        margin-bottom: 5vh;
+        padding-bottom: 2vh;
     }
 
-    .galleryOptions img {
+    .galleryOptionsContainer img {
         width: 17vw;
     }
 

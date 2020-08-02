@@ -39,21 +39,30 @@ class Galleryfit extends React.Component {
                 sum += findRatio(thisImage.naturalWidth, thisImage.naturalHeight);
             });
 
-            let finalHeight = (gallWidth - (spacing * spaces)) / sum;
+            let finalHeight = (gallWidth - (spacing * spaces)) / sum,
+                mobileHeight = (gallWidth - (5 * spaces)) / sum;
 
-            images.forEach(thisImage => {
-                thisImage.style.height = finalHeight + "px";
-            });
+            if (window.matchMedia("(min-device-width: 1224px)").matches) {
+                images.forEach(thisImage => {
+                    thisImage.style.height = finalHeight + "px";
+                });
+                thisGalleryPage.forEach(thisPage => {
+                    thisPage.style.height = finalHeight + "px";
+                    thisPage.style.marginBottom = spacing + "px";
+                });
+            } else if (window.matchMedia("(max-device-width: 1224px)").matches) {
+                images.forEach(thisImage => {
+                    thisImage.style.height = mobileHeight + "px";
+                });
+                thisGalleryPage.forEach(thisPage => {
+                    thisPage.style.height = mobileHeight + "px";
+                    thisPage.style.marginBottom = 5 + "px";
+                });
+            }
 
-            thisGalleryPage.forEach(thisPage => {
-                thisPage.style.height = finalHeight + "px";
-                thisPage.style.marginBottom = spacing + "px";
-            });
+        }
 
-            console.log(this.state.spacing);
-       }
-
-   };
+    };
 
     componentDidMount() {
        setTimeout(() => { this.doGallerySize(); }, 500);
@@ -68,8 +77,12 @@ class Galleryfit extends React.Component {
 
                    <h3>GALLERYFIT EXAMPLE</h3>
 
-                   <div className="sliderContainer">
-                       <input className="slider" type="range" min="1" max="40" step="1" value={this.state.spacing} onChange={this.sliderHandler} />
+                   <div className="sliderContainer verySmallText">
+                       <div>Slide to change margins</div>
+                       <input className="slider" type="range" min="5" max="45" step="1"
+                              value={this.state.spacing}
+                              onChange={this.sliderHandler} />
+                       <div>{this.state.spacing}</div>
                    </div>
 
                    <div className="galleryContainer">

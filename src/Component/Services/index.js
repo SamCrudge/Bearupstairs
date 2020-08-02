@@ -4,10 +4,10 @@ import './Examples/examples.css';
 import './services.css';
 import '../buttons.css';
 
-import OptionFlexi from "./OptionFlexi";
-import OptionGalleryfit from "./OptionGalleryfit";
-import OptionSingles from "./OptionSingles";
-import OptionSquares from "./OptionSquares";
+import OptionFlexi from "./Options/OptionFlexi";
+import OptionGalleryfit from "./Options/OptionGalleryfit";
+import OptionSingles from "./Options/OptionSingles";
+import OptionSquares from "./Options/OptionSquares";
 import Galleryfit from "./Examples/Galleryfit";
 import Flexi from "./Examples/Flexi";
 
@@ -82,21 +82,15 @@ class Services extends React.Component {
                             Here are a few of our favourites:
                         </p>
                     </div>
-
                     <div className="galleryOptions">
-
                         <OptionFlexi isOpenIndex={1} clickHandler={this.examplePop} />
                         <OptionGalleryfit isOpenIndex={2} clickHandler={this.examplePop} />
-
                     </div>
                     <div className="galleryOptions">
-
                         <OptionSingles />
                         <OptionSquares />
-
                     </div>
                     <div className="mainText">
-
                         <p>
                             To find out more...
                             get in touch!

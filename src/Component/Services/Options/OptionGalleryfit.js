@@ -5,7 +5,7 @@ class OptionGalleryfit extends React.Component {
     render() {
 
         return (
-            <div style={{cursor: "pointer"}} onClick={() => {this.props.clickHandler(this.props.isOpenIndex)}}>
+            <div className="galleryOptionsContainer" style={{cursor: "pointer"}} onClick={() => {this.props.clickHandler(this.props.isOpenIndex)}}>
                 <h3>
                     GALLERYFIT
                 </h3>
@@ -13,8 +13,8 @@ class OptionGalleryfit extends React.Component {
                     <p>
                         Our favourite option.
                     </p>
-                    <img src={require("../../Assets/galleryOptions/galleryfit.jpg")} alt='Galleryfit' />
-                    <p>
+                    <img src={require("../../../Assets/galleryOptions/galleryfit.jpg")} alt='Galleryfit' />
+                    <p className="verySmallText">
                         Images fit neatly across each row, with no gaps.
                         Rows resize automatically as necessary.
                     </p>
