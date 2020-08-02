@@ -28,7 +28,6 @@
 }
 
 .Galleryfit, .Flexi {
-    display: none;
     position: absolute;
     width: 70vw;
     top: 12vh;

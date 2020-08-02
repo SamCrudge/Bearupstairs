@@ -1,0 +1,29 @@
+import React from "react";
+
+class OptionFlexi extends React.Component {
+
+    render() {
+
+        return (
+            <div style={{cursor: "pointer"}}>
+                <h3>
+                    FLEXI COLUMNS
+                </h3>
+                <div className="smallText">
+                    <p>
+                        Neatly aligned columns.
+                    </p>
+                    <img src={require("../../Assets/galleryOptions/columns.jpg")} alt='Flexi columns'/>
+                    <p>
+                        Images flow down the page in a manner similar to Pinterest or Unsplash.
+                    </p>
+                    <p className="accentTextTwo redText smallText">
+                        <i>click for an example</i>
+                    </p>
+                </div>
+            </div>
+        )
+    }
+}
+
+export default OptionFlexi

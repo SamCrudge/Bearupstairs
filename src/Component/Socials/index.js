@@ -20,13 +20,13 @@ class Socials extends React.Component {
                 </div>
                 <menu id="socialIcons">
                     <a href="https://instagram.com/bear.upstairs" target="_blank" rel="noopener noreferrer">
-                        <img src={require("../../Assets/instagram.png")} className="iconOne" alt='Github logo' />
+                        <img src={require("../../Assets/socialIcons/instagram.png")} className="iconOne" alt='Github logo' />
                     </a>
                     <a href="https://twitter.com/bearupstairs" target="_blank" rel="noopener noreferrer">
-                        <img src={require("../../Assets/twitter.png")} className="iconTwo" alt='Twitter logo' />
+                        <img src={require("../../Assets/socialIcons/twitter.png")} className="iconTwo" alt='Twitter logo' />
                     </a>
                     <a href="https://facebook.com/bearupstairs" target="_blank" rel="noopener noreferrer">
-                        <img src={require("../../Assets/facebook.png")} className="iconThree" alt='Facebook logo' />
+                        <img src={require("../../Assets/socialIcons/facebook.png")} className="iconThree" alt='Facebook logo' />
                     </a>
                 </menu>
             </div>

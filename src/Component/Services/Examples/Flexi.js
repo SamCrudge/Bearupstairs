@@ -29,11 +29,6 @@ class Flexi extends React.Component {
 
         flexiCols.style.height = galleryWidth * ratio + "px";
 
-        console.log(ratioWHSum);
-        console.log(ratioHWSum);
-
-        console.log(ratio);
-
     }
 
     componentDidMount() {
@@ -50,16 +45,18 @@ class Flexi extends React.Component {
         });
 
         return (
-            <div className="Flexi">
+            <div className={this.props.isOpen ? 'portOpen' : 'portClosed'}>
+                <div className="Flexi">
 
-                <h3>FLEXI EXAMPLE</h3>
+                    <h3>FLEXI EXAMPLE</h3>
 
-                <div className="galleryContainer flexiCols">
-                    {images}
+                    <div className="galleryContainer flexiCols">
+                        {images}
+                    </div>
+
+                    <div className="accentTextTwo redText smallText"><p><i>images courtesy of Unsplash.com</i></p></div>
+
                 </div>
-
-                <div className="accentTextTwo redText smallText"><p><i>images courtesy of Unsplash.com</i></p></div>
-
             </div>
         )
     }

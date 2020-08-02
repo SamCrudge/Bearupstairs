@@ -4,6 +4,8 @@ import './Examples/examples.css';
 import './services.css';
 import '../buttons.css';
 
+import OptionFlexi from "./OptionFlexi";
+import OptionGalleryfit from "./OptionGalleryfit";
 import Galleryfit from "./Examples/Galleryfit";
 import Flexi from "./Examples/Flexi";
 
@@ -13,17 +15,17 @@ class Services extends React.Component {
         super(props);
 
         this.state = {
-            scrollPosition: 0
+            scrollPosition: 0,
+            isOpenIndex: 0
         };
 
         this.examplePop = this.examplePop.bind(this);
-        this.galleryfitPop = this.galleryfitPop.bind(this);
-        this.flexiPop = this.flexiPop.bind(this);
         this.exampleExit = this.exampleExit.bind(this);
 
     }
 
     examplePop = () => {
+        this.setState({isOpenIndex: this.isOpenIndex});
         this.setState({scrollPosition: window.pageYOffset});
         document.querySelector('.exampleContainer').classList.add('portOpen');
         setTimeout(() => { document.querySelector('.exampleBase').classList.add('portView') }, 100);
@@ -34,15 +36,8 @@ class Services extends React.Component {
         }, 800);
     }
 
-    galleryfitPop = () => {
-        document.querySelector('.Galleryfit').classList.add('portOpen');
-    }
-
-    flexiPop = () => {
-        document.querySelector('.Flexi').classList.add('portOpen');
-    }
-
     exampleExit = () => {
+        this.setState({isOpenIndex: 0});
         document.querySelector('.portButtons').classList.remove('portOpen');
         document.querySelector('.exampleWindow').classList.remove('portView');
         setTimeout(() => { document.querySelector('.exampleBase').classList.remove('portView') }, 100);
@@ -89,43 +84,13 @@ class Services extends React.Component {
                     </div>
 
                     <div className="galleryOptions">
-                        <div style={{cursor: "pointer"}} onClick={() => { this.examplePop(); this.flexiPop(); }}>
-                            <h3>
-                                FLEXI COLUMNS
-                            </h3>
-                            <div className="smallText">
-                                <p>
-                                    Neatly aligned columns.
-                                </p>
-                                <img src={require("../../Assets/galleryOptions/columns.jpg")} alt='Flexi columns' />
-                                <p>
-                                    Images flow down the page in a manner similar to Pinterest or Unsplash.
-                                </p>
-                                <p className="accentTextTwo redText smallText">
-                                    <i>click for an example</i>
-                                </p>
-                            </div>
-                        </div>
-                        <div style={{cursor: "pointer"}} onClick={() => { this.examplePop(); this.galleryfitPop(); }}>
-                            <h3>
-                                GALLERYFIT
-                            </h3>
-                            <div className="smallText">
-                                <p>
-                                    Our favourite option.
-                                </p>
-                                <img src={require("../../Assets/galleryOptions/galleryfit.jpg")} alt='Galleryfit' />
-                                <p>
-                                    Images fit neatly across each row, with no gaps.
-                                    Rows resize automatically as necessary.
-                                </p>
-                                <p className="accentTextTwo redText smallText">
-                                    <i>click for an example</i>
-                                </p>
-                            </div>
-                        </div>
+
+                        <OptionFlexi isOpenIndex={1} onClick={this.examplePop} />
+                        <OptionGalleryfit isOpenIndex={2} onClick={this.examplePop} />
+
                     </div>
                     <div className="galleryOptions">
+
                         <div>
                             <h3>
                                 SINGLES
@@ -140,6 +105,7 @@ class Services extends React.Component {
                                 </p>
                             </div>
                         </div>
+
                         <div>
                             <h3>
                                 SQUARES
@@ -154,8 +120,10 @@ class Services extends React.Component {
                                 </p>
                             </div>
                         </div>
+
                     </div>
                     <div className="mainText">
+
                         <p>
                             To find out more...
                             get in touch!
@@ -174,8 +142,8 @@ class Services extends React.Component {
                 <div className="exampleContainer">
                     <div className="exampleBase" onClick={this.exampleExit} />
                     <div className="exampleWindow">
-                        <Galleryfit />
-                        <Flexi />
+                        <Flexi isOpen={this.state.isOpenIndex[1]} />
+                        <Galleryfit isOpen={this.state.isOpenIndex[2]} />
                     </div>
                 </div>
             </div>
