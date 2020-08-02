@@ -6,8 +6,17 @@ class Flexi extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            spacing: 15
+        };
+
         this.doGallerySize = this.doGallerySize.bind(this);
 
+    }
+
+    sliderHandler = (event) => {
+        this.setState({spacing: event.target.value});
+        this.doGallerySize();
     }
 
     doGallerySize = () => {
@@ -17,17 +26,22 @@ class Flexi extends React.Component {
             flexiCols = document.querySelector('.flexiCols'),
             images = Array.from(document.querySelectorAll('.flexiCols img')),
             galleryWidth = getComputedStyle(gallery).getPropertyValue('width').match(/\d+/),
+            columnWidth = galleryWidth / 4,
+            spacing = this.state.spacing,
             findRatio = (a, b) => a / b;
 
         let imgWHRatios = images.map(function(img) { return findRatio(img.naturalWidth, img.naturalHeight); }),
             imgHWRatios = images.map(function(img) { return findRatio(img.naturalHeight, img.naturalWidth); }),
             ratioWHSum = imgWHRatios.reduce((a, b) => a + b, 0),
             ratioHWSum = imgHWRatios.reduce((a, b) => a + b, 0),
-            ratioWH = ratioWHSum / ratioHWSum,
-            ratioHW = ratioHWSum / ratioWHSum,
-            ratio = Math.max(ratioWH, ratioHW);
+            ratio = Math.max(ratioWHSum / ratioHWSum, ratioHWSum / ratioWHSum);
 
-        flexiCols.style.height = galleryWidth * ratio + "px";
+        flexiCols.style.maxHeight = galleryWidth * ratio + (images.length * spacing / 2) + "px";
+
+        images.forEach(thisImage => {
+            thisImage.style.width = columnWidth - spacing + "px";
+            thisImage.style.marginBottom = spacing + "px";
+        });
 
     }
 
@@ -49,6 +63,10 @@ class Flexi extends React.Component {
                 <div className="Flexi">
 
                     <h3>FLEXI EXAMPLE</h3>
+
+                    <div className="sliderContainer">
+                        <input className="slider" type="range" min="10" max="40" step="1" value={this.state.spacing} onChange={this.sliderHandler} />
+                    </div>
 
                     <div className="galleryContainer flexiCols">
                         {images}

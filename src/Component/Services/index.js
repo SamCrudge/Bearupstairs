@@ -6,6 +6,8 @@ import '../buttons.css';
 
 import OptionFlexi from "./OptionFlexi";
 import OptionGalleryfit from "./OptionGalleryfit";
+import OptionSingles from "./OptionSingles";
+import OptionSquares from "./OptionSquares";
 import Galleryfit from "./Examples/Galleryfit";
 import Flexi from "./Examples/Flexi";
 
@@ -24,8 +26,8 @@ class Services extends React.Component {
 
     }
 
-    examplePop = () => {
-        this.setState({isOpenIndex: this.isOpenIndex});
+    examplePop = (isOpenIndex) => {
+        this.setState({isOpenIndex: isOpenIndex});
         this.setState({scrollPosition: window.pageYOffset});
         document.querySelector('.exampleContainer').classList.add('portOpen');
         setTimeout(() => { document.querySelector('.exampleBase').classList.add('portView') }, 100);
@@ -42,8 +44,6 @@ class Services extends React.Component {
         document.querySelector('.exampleWindow').classList.remove('portView');
         setTimeout(() => { document.querySelector('.exampleBase').classList.remove('portView') }, 100);
         setTimeout(() => { document.querySelector('.exampleContainer').classList.remove('portOpen') }, 400);
-        document.querySelector('.Galleryfit').classList.remove('portOpen');
-        document.querySelector('.Flexi').classList.remove('portOpen');
         setTimeout(() => {
             window.scrollTo({ top: this.state.scrollPosition, behavior: 'smooth' });
         }, 500);
@@ -73,7 +73,7 @@ class Services extends React.Component {
                 </div>
 
                 <div className="invert">
-                    <h2 className="redText">GALLERY FORMATS</h2>
+                    <h2>GALLERY FORMATS</h2>
                     <div className="smallText">
                         <p>
                             There are many ways to organise and style an online gallery.
@@ -85,41 +85,14 @@ class Services extends React.Component {
 
                     <div className="galleryOptions">
 
-                        <OptionFlexi isOpenIndex={1} onClick={this.examplePop} />
-                        <OptionGalleryfit isOpenIndex={2} onClick={this.examplePop} />
+                        <OptionFlexi isOpenIndex={1} clickHandler={this.examplePop} />
+                        <OptionGalleryfit isOpenIndex={2} clickHandler={this.examplePop} />
 
                     </div>
                     <div className="galleryOptions">
 
-                        <div>
-                            <h3>
-                                SINGLES
-                            </h3>
-                            <div className="smallText">
-                                <p>
-                                    One image at a time.
-                                </p>
-                                <img src={require("../../Assets/galleryOptions/singles.jpg")} alt='Galleryfit' />
-                                <p>
-                                    Give each image undivided attention. Click, swipe, or scroll to the next.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h3>
-                                SQUARES
-                            </h3>
-                            <div className="smallText">
-                                <p>
-                                    Images arranged in a grid.
-                                </p>
-                                <img src={require("../../Assets/galleryOptions/squares.jpg")} alt='Squares' />
-                                <p>
-                                    Think of Instagram.
-                                </p>
-                            </div>
-                        </div>
+                        <OptionSingles />
+                        <OptionSquares />
 
                     </div>
                     <div className="mainText">
@@ -142,8 +115,10 @@ class Services extends React.Component {
                 <div className="exampleContainer">
                     <div className="exampleBase" onClick={this.exampleExit} />
                     <div className="exampleWindow">
-                        <Flexi isOpen={this.state.isOpenIndex[1]} />
-                        <Galleryfit isOpen={this.state.isOpenIndex[2]} />
+
+                        <Flexi isOpen={this.state.isOpenIndex===1} />
+                        <Galleryfit isOpen={this.state.isOpenIndex===2} />
+
                     </div>
                 </div>
             </div>

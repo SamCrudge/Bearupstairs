@@ -5,7 +5,7 @@ class OptionGalleryfit extends React.Component {
     render() {
 
         return (
-            <div style={{cursor: "pointer"}}>
+            <div style={{cursor: "pointer"}} onClick={() => {this.props.clickHandler(this.props.isOpenIndex)}}>
                 <h3>
                     GALLERYFIT
                 </h3>

@@ -42,6 +42,16 @@ h1 {
   font-weight: 200;
 }
 
+h2 {
+  display: inline-block;
+  padding: 1vh 2vh 1vh 2vh;
+  background-color: var(--main-style-color);
+  box-shadow: 0 2px 1px rgba(20,20,20,0.1),
+              0 4px 2px rgba(20,20,20,0.1),
+              0 8px 4px rgba(20,20,20,0.1),
+              0 16px 8px rgba(20,20,20,0.1);
+}
+
 .fullPage {
   display: flex;
   flex-direction: column;

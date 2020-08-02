@@ -5,14 +5,10 @@ h3 {
 
 .invert {
     width: 100%;
-    padding: 5vh 0 10vh 0;
+    padding: 2vh 0 10vh 0;
     text-align: center;
     color: var(--secondary-type-color);
     background-color: #444444;
-}
-
-.invert div {
-    padding: 0 2vw 0 2vw;
 }
 
 .galleryOptions {
