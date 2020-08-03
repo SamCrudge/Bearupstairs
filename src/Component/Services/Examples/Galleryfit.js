@@ -1,5 +1,4 @@
 import React from "react";
-import ImageBase from "./ImageBase";
 
 class Galleryfit extends React.Component {
 
@@ -7,7 +6,47 @@ class Galleryfit extends React.Component {
         super(props);
 
         this.state = {
-            spacing: 20
+
+            spacing: 20,
+
+            images: [
+                {
+                    id: 'galleryPage0',
+                    urls: [
+                        { id: 0, src: require("../../../Assets/unsplash/photo-1557487218-4574772f0b8c.jpg") },
+                        { id: 1, src: require("../../../Assets/unsplash/photo-1575226291244-25e8d23fa972.jpg") },
+                        { id: 2, src: require("../../../Assets/unsplash/photo-1586606445486-833e11c0d459.jpg") },
+                        ]
+                },{
+                    id: 'galleryPage1',
+                    urls: [
+                        { id: 3, src: require("../../../Assets/unsplash/photo-1596189183161-619b3b2c7bb7.jpg") },
+                        { id: 4, src: require("../../../Assets/unsplash/photo-1593720588474-eedab5ac8724.jpg") },
+                        { id: 5, src: require("../../../Assets/unsplash/photo-1593699153969-4b3a1aff4066.jpg") },
+                        { id: 6, src: require("../../../Assets/unsplash/photo-1593901138884-02ee723a96f7.jpg") },
+                    ]
+                },{
+                    id: 'galleryPage2',
+                    urls: [
+                        { id: 7, src: require("../../../Assets/unsplash/photo-1595970276486-c790e2305f95.jpg") },
+                        { id: 8, src: require("../../../Assets/unsplash/photo-1596019294199-d45dfbaba89a.jpg") },
+                        { id: 9, src: require("../../../Assets/unsplash/photo-1596135187959-562c650d98bc.jpg") },
+                    ]
+                },{
+                    id: 'galleryPage3',
+                    urls: [
+                        { id: 10, src: require("../../../Assets/unsplash/photo-1596174621919-3cd8eedaa316.jpg") },
+                        { id: 11, src: require("../../../Assets/unsplash/photo-1596176074334-5b08d4513dc7.jpg") },
+                        { id: 12, src: require("../../../Assets/unsplash/photo-1596184208929-63d2f2a700ef.jpg") },
+                    ]
+                },{
+                    id: 'galleryPage4',
+                    urls: [
+                        { id: 13, src: require("../../../Assets/unsplash/photo-1593390605369-ca78cc53312e.jpg") },
+                        { id: 14, src: require("../../../Assets/unsplash/photo-1593551646156-6051bfeecb83.jpg") },
+                    ]
+                },
+            ]
         };
 
         this.doGallerySize = this.doGallerySize.bind(this);
@@ -62,6 +101,7 @@ class Galleryfit extends React.Component {
     componentDidMount() {
         setTimeout(() => { this.doGallerySize(); }, 500);
         window.addEventListener('resize', this.doGallerySize);
+        window.addEventListener('drop', this.doGallerySize);
     }
 
     sliderHandler = (event) => {
@@ -86,37 +126,17 @@ class Galleryfit extends React.Component {
                    </div>
 
                    <div className="galleryContainer">
-                       <div className="galleryPage" id="galleryPage0">
-                           <img alt="from Unsplash" id={ImageBase[0].id} src={ImageBase[0].src} />
-                           <img alt="from Unsplash" id={ImageBase[1].id} src={ImageBase[1].src} />
-                           <img alt="from Unsplash" id={ImageBase[2].id} src={ImageBase[2].src} />
-                       </div>
 
-                       <div className="galleryPage" id="galleryPage1">
-                           <img alt="from Unsplash" id={ImageBase[3].id} src={ImageBase[3].src} />
-                           <img alt="from Unsplash" id={ImageBase[4].id} src={ImageBase[4].src} />
-                           <img alt="from Unsplash" id={ImageBase[5].id} src={ImageBase[5].src} />
-                           <img alt="from Unsplash" id={ImageBase[6].id} src={ImageBase[6].src} />
-                       </div>
-
-                       <div className="galleryPage" id="galleryPage2">
-                           <img alt="from Unsplash" id={ImageBase[7].id} src={ImageBase[7].src} />
-                           <img alt="from Unsplash" id={ImageBase[8].id} src={ImageBase[8].src} />
-                           <img alt="from Unsplash" id={ImageBase[9].id} src={ImageBase[9].src} />
-                       </div>
-
-                       <div className="galleryPage" id="galleryPage3">
-                           <img alt="from Unsplash" id={ImageBase[10].id} src={ImageBase[10].src} />
-                           <img alt="from Unsplash" id={ImageBase[11].id} src={ImageBase[11].src} />
-                           <img alt="from Unsplash" id={ImageBase[12].id} src={ImageBase[12].src} />
-                       </div>
-
-                       <div className="galleryPage" id="galleryPage4">
-                           <img alt="from Unsplash" id={ImageBase[13].id} src={ImageBase[13].src} />
-                           <img alt="from Unsplash" id={ImageBase[14].id} src={ImageBase[14].src} />
-                       </div>
+                       {this.state.images.map((item, i) =>
+                           <div className="galleryPage" id={this.state.images[i].id}>
+                               {this.state.images[i].urls.map((img, j) =>
+                                   <img src={this.state.images[i].urls[j].src} alt="from Unsplash" />
+                               )}
+                           </div>
+                       )}
 
                        <div className="accentTextTwo redText smallText"><p><i>images courtesy of Unsplash.com</i></p></div>
+
                    </div>
 
                </div>
