@@ -9,7 +9,7 @@ class OptionFlexi extends React.Component {
                 <h3>
                     FLEXI COLUMNS
                 </h3>
-                <div className="smallText">
+                <div className="accentTextOne smallText">
                     <p>
                         Neatly aligned columns.
                     </p>

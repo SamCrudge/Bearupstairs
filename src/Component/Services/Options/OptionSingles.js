@@ -9,7 +9,7 @@ class OptionSingles extends React.Component {
                 <h3>
                     SINGLES
                 </h3>
-                <div className="smallText">
+                <div className="accentTextOne smallText">
                     <p>
                         One image at a time.
                     </p>

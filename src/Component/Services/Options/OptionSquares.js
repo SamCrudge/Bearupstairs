@@ -9,7 +9,7 @@ class OptionSquares extends React.Component {
                 <h3>
                     SQUARES
                 </h3>
-                <div className="smallText">
+                <div className="accentTextOne smallText">
                     <p>
                         Images arranged in a grid.
                     </p>

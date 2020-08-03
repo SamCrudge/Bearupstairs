@@ -9,7 +9,7 @@ class OptionGalleryfit extends React.Component {
                 <h3>
                     GALLERYFIT
                 </h3>
-                <div className="smallText">
+                <div className="accentTextOne smallText">
                     <p>
                         Our favourite option.
                     </p>
