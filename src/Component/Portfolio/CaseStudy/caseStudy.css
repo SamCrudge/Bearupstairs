@@ -1,0 +1,291 @@
+.CaseStudyContainer {
+    display: none;
+    z-index: 200;
+}
+
+.CaseStudyBase {
+    z-index: 201;
+    opacity: 0;
+    position: fixed;
+    width: 100vw;
+    min-height: 100vh;
+    top: 0;
+    margin: auto;
+    background-color: rgba(100,100,100,0.9);
+    transition: opacity 0.3s;
+}
+
+.CaseStudyWindow {
+    z-index: 202;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: opacity 0.6s;
+}
+
+.CaseFile {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    top: 0;
+    margin: auto;
+}
+
+.CaseTitle {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 3rem 0 1rem;
+    margin: 9vh 0 2vh 0;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    text-transform: uppercase;
+    color: var(--secondary-type-color);
+    background-color: var(--main-style-color);
+    box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.75);
+}
+
+.CaseDeskImg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2vh;
+    color: var(--primary-type-color);
+}
+
+.CaseDeskImg img {
+    width: 100%;
+    margin: auto;
+    box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.75);
+}
+
+.CaseMobImg, .mobDesk {
+    display: none;
+}
+
+.CaseDesc {
+    width: 100%;
+    margin-bottom: 2vh;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    color: var(--secondary-type-color);
+    background-color: #222222;
+    box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.75);
+}
+
+.CaseDesc p {
+    padding: 0 5vw 0 5vw;
+}
+
+.CaseAddress {
+    width: 100%;
+    text-align: center;
+    line-height: 2rem;
+    background-color: #222222;
+}
+
+.CaseAddress a {
+    color: var(--secondary-type-color);
+}
+
+/* exit, prev, next basic styling */
+.caseStudyButtons {
+    display: none;
+    z-index: 500;
+    cursor: pointer;
+    position: fixed;
+    width: 6vh;
+    height: 6vh;
+    color: var(--secondary-type-color);
+    text-align: center;
+    background-color: var(--main-style-color);
+    border-radius: 100%;
+}
+
+.caseStudyButtons img {
+    width: 100%;
+}
+
+.caseStudyButtons div {
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-style-color);
+    box-shadow: 10px 10px 20px -8px rgba(0, 0, 0, 0.8);
+    border-radius: 100%;
+    transition: all 0.5s ease;
+}
+
+.caseStudyButtons:hover div {
+    transform: scale(1.1);
+}
+
+.caseStudyButtons:active div {
+    transform: scale(0.9);
+}
+/* other styling for this button on .caseStudyButton */
+.exitCaseStudy {
+    top: 1vh;
+    right: 1vh;
+    font-size: 3.5vh;
+    line-height: 6vh;
+}
+
+.casePrevNext {
+    top: 1vh;
+    margin: auto;
+    font-size: 6vh;
+    font-weight: 700;
+    line-height: 5vh;
+}
+
+.nextCase {
+    left: 8vh;
+}
+
+.prevCase {
+    left: 1vh;
+}
+
+.caseOpen {
+    display: block;
+}
+
+.caseClosed {
+    display: none;
+}
+
+.viewCaseStudy {
+    opacity: 1;
+}
+
+.prevNextFade {
+    opacity: 0;
+}
+
+@media (min-width:1224px) {
+
+    .CaseStudyWindow {
+        position: fixed;
+        width: 90vw;
+        height: 90vh;
+        overflow: visible;
+    }
+
+    .CaseFile {
+        display: block;
+    }
+
+    .CaseTitle {
+        position: absolute;
+        width: 40.5vw;
+        top: 0;
+        left: 0;
+        margin: 0;
+        text-indent: 3vh;
+        background: var(--main-style-color) url("../../../Assets/swish/plus.png") no-repeat left center/contain;
+        border-top-right-radius: 10vh;
+    }
+
+    .CaseDeskImg {
+        position: absolute;
+        width: 46vw;
+        top: 15vh;
+        right: 0;
+        margin: 0;
+    }
+
+    .CaseDeskImg img {
+        width: 46vw;
+        box-sizing: border-box;
+        border-left: 4px solid var(--main-style-color);
+    }
+
+    .CaseMobImg {
+        position: absolute;
+        display: block;
+        width: 14vw;
+        bottom: 0;
+        left: 39vw;
+        margin: auto;
+    }
+
+    .CaseMobImg img {
+        width: 14vw;
+        box-sizing: border-box;
+        border-left: 4px solid var(--main-style-color);
+        box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.75);
+    }
+
+    /* title bars for mobile & desktop images */
+    .mobDesk {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1vh;
+        font-size: 0.8rem;
+        color: var(--secondary-type-color);
+        text-indent: 3vh;
+        text-transform: uppercase;
+        background: var(--main-style-color) url("../../../Assets/swish/plus.png") no-repeat left center/contain;
+        box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.75);
+        border-top-right-radius: 10vh;
+    }
+
+    .CaseDesc {
+        position: absolute;
+        width: 40.5vw;
+        top: 5vh;
+        left: 0;
+        margin: 0;
+        padding: 2vh 4vh 6vh 3vh;
+        border-left: 4px solid var(--main-style-color);
+    }
+
+    .CaseDesc p {
+        padding: 0;
+    }
+
+    .CaseAddress {
+        position: absolute;
+        width: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: 0 2vh 0 2vh;
+        text-align: right;
+    }
+
+    .caseStudyButtons {
+        position: fixed;
+    }
+
+    .casePrevNext {
+        top: 0; bottom: 0;
+    }
+
+    .nextCase {
+        left: auto;
+        right: 1vh;
+    }
+
+    .exitCaseStudy {
+        width: 4vh;
+        height: 4vh;
+        top: 2vh;
+        right: 2vh;
+        font-size: 3vh;
+        line-height: 4vh;
+    }
+
+}

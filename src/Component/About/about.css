@@ -1,0 +1,34 @@
+.About {
+
+}
+
+.aboutPics {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.aboutPics img {
+    width: 80vw;
+    margin: 4vh auto 4vh auto;
+    border: 8px solid var(--main-style-color);
+    border-radius: 100%;
+}
+
+@media (min-device-width:1224px) {
+
+    .About {
+
+    }
+
+    .aboutPics {
+        flex-direction: row;
+        margin: 8vh auto 8vh auto;
+    }
+
+    .aboutPics img {
+        width: 20vw;
+        margin: auto;
+    }
+
+}

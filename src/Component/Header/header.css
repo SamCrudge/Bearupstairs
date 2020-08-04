@@ -1,0 +1,9 @@
+.Header {
+    display: flex;
+    justify-content: center;
+}
+
+.Header img {
+    z-index: -5;
+    height: 20vh;
+}
