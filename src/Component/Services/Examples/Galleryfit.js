@@ -1,4 +1,4 @@
-import React from "react";
+import React, {isValidElement} from "react";
 
 class Galleryfit extends React.Component {
 
@@ -8,48 +8,53 @@ class Galleryfit extends React.Component {
         this.state = {
 
             spacing: 20,
+            dragging: '',
+            dropping: '',
 
             images: [
                 {
                     id: 'galleryPage0',
                     urls: [
-                        { id: 0, src: require("../../../Assets/unsplash/photo-1557487218-4574772f0b8c.jpg") },
-                        { id: 1, src: require("../../../Assets/unsplash/photo-1575226291244-25e8d23fa972.jpg") },
-                        { id: 2, src: require("../../../Assets/unsplash/photo-1586606445486-833e11c0d459.jpg") },
-                        ]
+                        { image: 0, src: require("../../../Assets/unsplash/photo-1557487218-4574772f0b8c.jpg") },
+                        { image: 1, src: require("../../../Assets/unsplash/photo-1575226291244-25e8d23fa972.jpg") },
+                        { image: 2, src: require("../../../Assets/unsplash/photo-1586606445486-833e11c0d459.jpg") },
+                    ]
                 },{
                     id: 'galleryPage1',
                     urls: [
-                        { id: 3, src: require("../../../Assets/unsplash/photo-1596189183161-619b3b2c7bb7.jpg") },
-                        { id: 4, src: require("../../../Assets/unsplash/photo-1593720588474-eedab5ac8724.jpg") },
-                        { id: 5, src: require("../../../Assets/unsplash/photo-1593699153969-4b3a1aff4066.jpg") },
-                        { id: 6, src: require("../../../Assets/unsplash/photo-1593901138884-02ee723a96f7.jpg") },
+                        { image: 3, src: require("../../../Assets/unsplash/photo-1596189183161-619b3b2c7bb7.jpg") },
+                        { image: 4, src: require("../../../Assets/unsplash/photo-1593720588474-eedab5ac8724.jpg") },
+                        { image: 5, src: require("../../../Assets/unsplash/photo-1593699153969-4b3a1aff4066.jpg") },
+                        { image: 6, src: require("../../../Assets/unsplash/photo-1593901138884-02ee723a96f7.jpg") },
                     ]
                 },{
                     id: 'galleryPage2',
                     urls: [
-                        { id: 7, src: require("../../../Assets/unsplash/photo-1595970276486-c790e2305f95.jpg") },
-                        { id: 8, src: require("../../../Assets/unsplash/photo-1596019294199-d45dfbaba89a.jpg") },
-                        { id: 9, src: require("../../../Assets/unsplash/photo-1596135187959-562c650d98bc.jpg") },
+                        { image: 7, src: require("../../../Assets/unsplash/photo-1595970276486-c790e2305f95.jpg") },
+                        { image: 8, src: require("../../../Assets/unsplash/photo-1596019294199-d45dfbaba89a.jpg") },
+                        { image: 9, src: require("../../../Assets/unsplash/photo-1596135187959-562c650d98bc.jpg") },
                     ]
                 },{
                     id: 'galleryPage3',
                     urls: [
-                        { id: 10, src: require("../../../Assets/unsplash/photo-1596174621919-3cd8eedaa316.jpg") },
-                        { id: 11, src: require("../../../Assets/unsplash/photo-1596176074334-5b08d4513dc7.jpg") },
-                        { id: 12, src: require("../../../Assets/unsplash/photo-1596184208929-63d2f2a700ef.jpg") },
+                        { image: 10, src: require("../../../Assets/unsplash/photo-1596174621919-3cd8eedaa316.jpg") },
+                        { image: 11, src: require("../../../Assets/unsplash/photo-1596176074334-5b08d4513dc7.jpg") },
+                        { image: 12, src: require("../../../Assets/unsplash/photo-1596184208929-63d2f2a700ef.jpg") },
                     ]
                 },{
                     id: 'galleryPage4',
                     urls: [
-                        { id: 13, src: require("../../../Assets/unsplash/photo-1593390605369-ca78cc53312e.jpg") },
-                        { id: 14, src: require("../../../Assets/unsplash/photo-1593551646156-6051bfeecb83.jpg") },
+                        { image: 13, src: require("../../../Assets/unsplash/photo-1593390605369-ca78cc53312e.jpg") },
+                        { image: 14, src: require("../../../Assets/unsplash/photo-1593551646156-6051bfeecb83.jpg") },
                     ]
                 },
             ]
         };
 
         this.doGallerySize = this.doGallerySize.bind(this);
+        this.onDragStart = this.onDragStart.bind(this);
+        this.onDragOver = this.onDragOver.bind(this);
+        this.onDrop = this.onDrop.bind(this);
 
     }
 
@@ -109,6 +114,48 @@ class Galleryfit extends React.Component {
         this.doGallerySize();
     }
 
+    onDragStart = (event) => {
+        event.dataTransfer.setData("moved", event.target.id);
+
+        let targetImg = event.target.id,
+            targetSrc = event.target.src,
+            targetParent = event.target.parentNode.id;
+
+        console.log('dragging ' + targetImg + ' ' + targetParent + ' ' + targetSrc);
+
+        this.setState({
+            dragging:
+                [{
+                    id: targetParent,
+                    urls: [{image: targetImg, src: targetSrc}]
+                }]
+        });
+    }
+
+    onDragOver = (event) => {
+        event.preventDefault();
+
+        let targetId = event.target.id,
+            targetClass = event.target.className;
+
+        console.log('moving over ' + targetClass + ' ' + targetId);
+        this.setState({
+            dropping:
+                [{
+                    id: targetId
+                }]
+        });
+    }
+
+    onDrop = (event) => {
+        event.preventDefault();
+        const target = event.target.id;
+        let moved = event.dataTransfer.getData("moved");
+        console.log('dropping on ' + target);
+        console.log('state has (dragging from): ' + this.state.dragging[0].id);
+        console.log('state has (dropping on): ' + this.state.dropping[0].id);
+    }
+
    render() {
 
        return (
@@ -128,10 +175,22 @@ class Galleryfit extends React.Component {
                    <div className="galleryContainer">
 
                        {this.state.images.map((item, i) =>
-                           <div className="galleryPage" id={this.state.images[i].id}>
-                               {this.state.images[i].urls.map((img, j) =>
-                                   <img src={this.state.images[i].urls[j].src} alt="from Unsplash" />
-                               )}
+                           <div className="galleryPage"
+                                key={i}
+                                id={this.state.images[i].id}
+                                onDragOver={ (event) => this.onDragOver(event) }
+                                onDrop={ (event) => this.onDrop(event) }>
+
+                                   {this.state.images[i].urls.map((img, j) =>
+                                       <img className="draggable"
+                                            key={j}
+                                            id={this.state.images[i].urls[j].image}
+                                            src={this.state.images[i].urls[j].src}
+                                            onDragStart={ (event) => this.onDragStart(event) }
+                                            alt="from Unsplash"
+                                       />
+                                   )}
+
                            </div>
                        )}
 

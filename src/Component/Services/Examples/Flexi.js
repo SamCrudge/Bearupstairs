@@ -63,7 +63,7 @@ class Flexi extends React.Component {
     render() {
 
         const images = ImageBase.map((item, i) => {
-            return <img key={item} id={ImageBase[i].id} src={ImageBase[i].src} alt="from Unsplash" />
+            return <img key={i} id={ImageBase[i].id} src={ImageBase[i].src} alt="from Unsplash" />
         });
 
         return (
