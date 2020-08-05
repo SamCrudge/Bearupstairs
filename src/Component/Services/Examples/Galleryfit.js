@@ -1,4 +1,4 @@
-import React, {isValidElement} from "react";
+import React from "react";
 
 class Galleryfit extends React.Component {
 
@@ -15,37 +15,37 @@ class Galleryfit extends React.Component {
                 {
                     id: 'galleryPage0',
                     urls: [
-                        { image: 0, src: require("../../../Assets/unsplash/photo-1557487218-4574772f0b8c.jpg") },
-                        { image: 1, src: require("../../../Assets/unsplash/photo-1575226291244-25e8d23fa972.jpg") },
-                        { image: 2, src: require("../../../Assets/unsplash/photo-1586606445486-833e11c0d459.jpg") },
+                        require("../../../Assets/unsplash/photo-1557487218-4574772f0b8c.jpg"),
+                        require("../../../Assets/unsplash/photo-1575226291244-25e8d23fa972.jpg"),
+                        require("../../../Assets/unsplash/photo-1586606445486-833e11c0d459.jpg"),
                     ]
                 },{
                     id: 'galleryPage1',
                     urls: [
-                        { image: 3, src: require("../../../Assets/unsplash/photo-1596189183161-619b3b2c7bb7.jpg") },
-                        { image: 4, src: require("../../../Assets/unsplash/photo-1593720588474-eedab5ac8724.jpg") },
-                        { image: 5, src: require("../../../Assets/unsplash/photo-1593699153969-4b3a1aff4066.jpg") },
-                        { image: 6, src: require("../../../Assets/unsplash/photo-1593901138884-02ee723a96f7.jpg") },
+                        require("../../../Assets/unsplash/photo-1596189183161-619b3b2c7bb7.jpg"),
+                        require("../../../Assets/unsplash/photo-1593720588474-eedab5ac8724.jpg"),
+                        require("../../../Assets/unsplash/photo-1593699153969-4b3a1aff4066.jpg"),
+                        require("../../../Assets/unsplash/photo-1593901138884-02ee723a96f7.jpg"),
                     ]
                 },{
                     id: 'galleryPage2',
                     urls: [
-                        { image: 7, src: require("../../../Assets/unsplash/photo-1595970276486-c790e2305f95.jpg") },
-                        { image: 8, src: require("../../../Assets/unsplash/photo-1596019294199-d45dfbaba89a.jpg") },
-                        { image: 9, src: require("../../../Assets/unsplash/photo-1596135187959-562c650d98bc.jpg") },
+                        require("../../../Assets/unsplash/photo-1595970276486-c790e2305f95.jpg"),
+                        require("../../../Assets/unsplash/photo-1596019294199-d45dfbaba89a.jpg"),
+                        require("../../../Assets/unsplash/photo-1596135187959-562c650d98bc.jpg"),
                     ]
                 },{
                     id: 'galleryPage3',
                     urls: [
-                        { image: 10, src: require("../../../Assets/unsplash/photo-1596174621919-3cd8eedaa316.jpg") },
-                        { image: 11, src: require("../../../Assets/unsplash/photo-1596176074334-5b08d4513dc7.jpg") },
-                        { image: 12, src: require("../../../Assets/unsplash/photo-1596184208929-63d2f2a700ef.jpg") },
+                        require("../../../Assets/unsplash/photo-1596174621919-3cd8eedaa316.jpg"),
+                        require("../../../Assets/unsplash/photo-1596176074334-5b08d4513dc7.jpg"),
+                        require("../../../Assets/unsplash/photo-1596184208929-63d2f2a700ef.jpg"),
                     ]
                 },{
                     id: 'galleryPage4',
                     urls: [
-                        { image: 13, src: require("../../../Assets/unsplash/photo-1593390605369-ca78cc53312e.jpg") },
-                        { image: 14, src: require("../../../Assets/unsplash/photo-1593551646156-6051bfeecb83.jpg") },
+                        require("../../../Assets/unsplash/photo-1593390605369-ca78cc53312e.jpg"),
+                        require("../../../Assets/unsplash/photo-1593551646156-6051bfeecb83.jpg"),
                     ]
                 },
             ]
@@ -116,92 +116,69 @@ class Galleryfit extends React.Component {
 
     onDragStart = (event) => {
         event.dataTransfer.setData("moved", event.target.id);
-
-        let targetImg = event.target.id,
-            targetSrc = event.target.src,
-            targetParent = event.target.parentNode.id;
-
-        console.log('dragging ' + targetImg + ' ' + targetParent + ' ' + targetSrc);
-
-        this.setState({
-            dragging:
-                [{
-                    id: targetParent,
-                    urls: [{image: targetImg, src: targetSrc}]
-                }]
-        });
     }
 
     onDragOver = (event) => {
         event.preventDefault();
-
-        let targetId = event.target.id,
-            targetClass = event.target.className;
-
-        console.log('moving over ' + targetClass + ' ' + targetId);
-        this.setState({
-            dropping:
-                [{
-                    id: targetId
-                }]
-        });
     }
 
     onDrop = (event) => {
         event.preventDefault();
-        const target = event.target.id;
         let moved = event.dataTransfer.getData("moved");
-        console.log('dropping on ' + target);
-        console.log('state has (dragging from): ' + this.state.dragging[0].id);
-        console.log('state has (dropping on): ' + this.state.dropping[0].id);
+        if (event.target.tagName === 'DIV') {
+            event.target.appendChild(document.getElementById(moved));
+        } else if (event.target.tagName === 'IMG') {
+            event.target.parentNode.appendChild(document.getElementById(moved));
+        }
     }
 
-   render() {
+    render() {
 
-       return (
-           <div className={this.props.isOpen ? 'portOpen' : 'portClosed'}>
-               <div className="Galleryfit">
+        return (
+            <div className={this.props.isOpen ? 'portOpen' : 'portClosed'}>
+                <div className="Galleryfit">
 
-                   <h3>GALLERYFIT EXAMPLE</h3>
+                    <h3>GALLERYFIT EXAMPLE</h3>
 
-                   <div className="sliderContainer verySmallText">
-                       <div>Slide to change margins</div>
-                       <input className="slider" type="range" min="5" max="45" step="1"
-                              value={this.state.spacing}
-                              onChange={this.sliderHandler} />
-                       <div>{this.state.spacing}</div>
-                   </div>
+                    <div className="sliderContainer verySmallText">
+                        <div>Slide to change margins</div>
+                        <input className="slider" type="range" min="5" max="85" step="1"
+                               value={this.state.spacing}
+                               onChange={this.sliderHandler} />
+                        <div>{this.state.spacing}</div>
+                    </div>
 
-                   <div className="galleryContainer">
+                    <div className="galleryContainer">
 
-                       {this.state.images.map((item, i) =>
-                           <div className="galleryPage"
-                                key={i}
-                                id={this.state.images[i].id}
-                                onDragOver={ (event) => this.onDragOver(event) }
-                                onDrop={ (event) => this.onDrop(event) }>
+                        {this.state.images.map((item, i) =>
 
-                                   {this.state.images[i].urls.map((img, j) =>
-                                       <img className="draggable"
-                                            key={j}
-                                            id={this.state.images[i].urls[j].image}
-                                            src={this.state.images[i].urls[j].src}
-                                            onDragStart={ (event) => this.onDragStart(event) }
-                                            alt="from Unsplash"
-                                       />
-                                   )}
+                            <div className="galleryPage" key={i}
+                                 id={this.state.images[i].id}
+                                 onDragOver={ (event) => this.onDragOver(event) }
+                                 onDrop={ (event) => this.onDrop(event) }>
 
-                           </div>
-                       )}
+                                {this.state.images[i].urls.map((img, j) =>
 
-                       <div className="accentTextTwo redText smallText"><p><i>images courtesy of Unsplash.com</i></p></div>
+                                    <img className="draggable" key={j}
+                                         id={this.state.images[i].urls[j]}
+                                         src={this.state.images[i].urls[j]}
+                                         onDragStart={ (event) => this.onDragStart(event) }
+                                         alt="from Unsplash"
+                                    />
+                                )}
 
-                   </div>
+                            </div>
 
-               </div>
-           </div>
-       )
-   }
+                        )}
+
+                        <div className="accentTextTwo redText smallText"><p><i>images courtesy of Unsplash.com</i></p></div>
+
+                    </div>
+
+                </div>
+            </div>
+        )
+    }
 }
 
 export default Galleryfit
