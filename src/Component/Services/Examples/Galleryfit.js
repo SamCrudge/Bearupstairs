@@ -51,11 +51,6 @@ class Galleryfit extends React.Component {
             ]
         };
 
-        this.doGallerySize = this.doGallerySize.bind(this);
-        this.onDragStart = this.onDragStart.bind(this);
-        this.onDragOver = this.onDragOver.bind(this);
-        this.onDrop = this.onDrop.bind(this);
-
     }
 
     doGallerySize = () => {
@@ -106,6 +101,7 @@ class Galleryfit extends React.Component {
     componentDidMount() {
         setTimeout(() => { this.doGallerySize(); }, 500);
         window.addEventListener('resize', this.doGallerySize);
+        window.addEventListener('dragenter', this.doGallerySize);
         window.addEventListener('drop', this.doGallerySize);
     }
 
@@ -118,23 +114,92 @@ class Galleryfit extends React.Component {
         event.dataTransfer.setData("moved", event.target.id);
     }
 
+    onDragEnter = (event) => {
+        event.preventDefault();
+
+    }
+
     onDragOver = (event) => {
         event.preventDefault();
+        let rect = event.target.getBoundingClientRect(),
+            x = event.clientX - rect.left;
+        if (event.target.tagName === 'DIV') {
+            return false;
+        } else if (event.target.tagName === 'IMG') {
+            event.target.parentNode.classList.add('parentMarker');
+            if (x <= rect.width/2) {
+                event.target.classList.remove('afterMarker');
+                event.target.classList.add('beforeMarker');
+            } else if (x > rect.width/2) {
+                event.target.classList.remove('beforeMarker');
+                event.target.classList.add('afterMarker');
+            }
+        }
+    }
+
+    onDragExit = (event) => {
+        event.preventDefault();
+        if (event.target.tagName === 'DIV') {
+            return false;
+        } else if (event.target.tagName === 'IMG') {
+            event.target.parentNode.classList.remove('parentMarker');
+                event.target.classList.remove('beforeMarker');
+                event.target.classList.remove('afterMarker');
+        }
     }
 
     onDrop = (event) => {
         event.preventDefault();
-        let moved = event.dataTransfer.getData("moved");
-        if (event.target.tagName === 'DIV') {
-            event.target.appendChild(document.getElementById(moved));
-        } else if (event.target.tagName === 'IMG') {
-            event.target.parentNode.appendChild(document.getElementById(moved));
+        let moved = event.dataTransfer.getData("moved"),
+            movedItem = document.getElementById(moved),
+            rect = event.target.getBoundingClientRect(),
+            x = event.clientX - rect.left;
+        if (event.target === movedItem) {
+            event.target.parentNode.classList.remove('parentMarker');
+            event.target.classList.remove('beforeMarker');
+            event.target.classList.remove('afterMarker');
+        } else {
+            if (event.target.tagName === 'DIV') {
+                return false;
+            } else if (event.target.tagName === 'IMG') {
+                event.target.parentNode.classList.remove('parentMarker');
+                event.target.parentNode.appendChild(movedItem);
+                if (x <= rect.width / 2) {
+                    event.target.parentNode.insertBefore(movedItem, event.target);
+                    event.target.classList.remove('beforeMarker');
+                    event.target.classList.remove('afterMarker');
+                } else if (x > rect.width / 2) {
+                    event.target.parentNode.insertBefore(movedItem, event.target.nextSibling);
+                    event.target.classList.remove('beforeMarker');
+                    event.target.classList.remove('afterMarker');
+                }
+            }
         }
+/*
+        const parent = document.getElementById('galCon').children;
+        let children =  Array.from(parent);
+        for (let i = 0; i < children.length; i++) {
+            console.log(children.img);
+        }
+
+
+        const finalMover = this.state.images.find((item, index) => index === movedItem.id);
+        const remainingItems = this.state.images.filter((item, index) => index !== movedItem.id);
+
+        const images = [
+            ...remainingItems.slice(0, event.target.id),
+            finalMover,
+            ...remainingItems.slice(event.target.id)
+        ];
+
+        console.log(finalMover);
+*/
     }
 
     render() {
 
         return (
+
             <div className={this.props.isOpen ? 'portOpen' : 'portClosed'}>
                 <div className="Galleryfit">
 
@@ -148,23 +213,21 @@ class Galleryfit extends React.Component {
                         <div>{this.state.spacing}</div>
                     </div>
 
-                    <div className="galleryContainer">
+                    <div className="galleryContainer" id="galCon">
 
                         {this.state.images.map((item, i) =>
 
-                            <div className="galleryPage" key={i}
-                                 id={this.state.images[i].id}
+                            <div className="galleryPage" key={i} title={i} id={this.state.images[i].id}
+                                 onDragEnter={ (event) => this.onDragEnter(event) }
                                  onDragOver={ (event) => this.onDragOver(event) }
+                                 onDragExit={ (event) => this.onDragExit(event) }
                                  onDrop={ (event) => this.onDrop(event) }>
 
                                 {this.state.images[i].urls.map((img, j) =>
 
-                                    <img className="draggable" key={j}
-                                         id={this.state.images[i].urls[j]}
-                                         src={this.state.images[i].urls[j]}
-                                         onDragStart={ (event) => this.onDragStart(event) }
-                                         alt="from Unsplash"
-                                    />
+                                    <img key={j} name={j} id={this.state.images[i].urls[j]} src={this.state.images[i].urls[j]} alt="from Unsplash"
+                                         onDragStart={ (event) => this.onDragStart(event) }/>
+
                                 )}
 
                             </div>
