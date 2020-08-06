@@ -8,8 +8,6 @@ class Galleryfit extends React.Component {
         this.state = {
 
             spacing: 20,
-            dragging: '',
-            dropping: '',
 
             images: [
                 {
@@ -175,25 +173,20 @@ class Galleryfit extends React.Component {
                 }
             }
         }
-/*
-        const parent = document.getElementById('galCon').children;
-        let children =  Array.from(parent);
+    }
+
+    saveGallery = () => {
+        const parent = document.getElementById('galCon').children,
+            children = Array.from(parent),
+            newState = { spacing: +this.state.spacing, images: [] };
         for (let i = 0; i < children.length; i++) {
-            console.log(children.img);
+            let childNodes = Array.from(children[i].children);
+            newState.images.push({
+                id: children[i].id,
+                urls: [childNodes]
+            });
         }
-
-
-        const finalMover = this.state.images.find((item, index) => index === movedItem.id);
-        const remainingItems = this.state.images.filter((item, index) => index !== movedItem.id);
-
-        const images = [
-            ...remainingItems.slice(0, event.target.id),
-            finalMover,
-            ...remainingItems.slice(event.target.id)
-        ];
-
-        console.log(finalMover);
-*/
+        console.log(newState);
     }
 
     render() {
@@ -206,11 +199,16 @@ class Galleryfit extends React.Component {
                     <h3>GALLERYFIT EXAMPLE</h3>
 
                     <div className="sliderContainer verySmallText">
-                        <div>Slide to change margins</div>
-                        <input className="slider" type="range" min="5" max="85" step="1"
-                               value={this.state.spacing}
-                               onChange={this.sliderHandler} />
-                        <div>{this.state.spacing}</div>
+                        <div>
+                            <div>Slide to change margins</div>
+                            <input className="slider" type="range" min="5" max="85" step="1"
+                                   value={this.state.spacing}
+                                   onChange={this.sliderHandler} />
+                            <div>{this.state.spacing}</div>
+                        </div>
+                        <div className="saveButton">
+                            <input type="button" onClick={this.saveGallery} value="SAVE GALLERY" />
+                        </div>
                     </div>
 
                     <div className="galleryContainer" id="galCon">
@@ -234,9 +232,9 @@ class Galleryfit extends React.Component {
 
                         )}
 
-                        <div className="accentTextTwo redText smallText"><p><i>images courtesy of Unsplash.com</i></p></div>
-
                     </div>
+
+                    <div className="accentTextTwo redText smallText"><p><i>images courtesy of Unsplash.com</i></p></div>
 
                 </div>
             </div>

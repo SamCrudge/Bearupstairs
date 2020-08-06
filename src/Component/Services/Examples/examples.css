@@ -73,21 +73,22 @@
     display: none;
 }
 
-.dropMarker {
+.saveButton {
     display: none;
 }
 
 @media (min-device-width:1224px) {
 
     .sliderContainer {
-        display: block;
+        display: flex;
+        justify-content: space-evenly;
         margin: auto;
-        width: 200px;
+        width: 100%;
         font-size: 0.6rem;
     }
 
     .slider {
-        width: 100%;
+        width: 200px;
         height: 3px;
         margin: 20px 0 12px 0;
         background: var(--main-style-color);
@@ -124,6 +125,19 @@
 
     .afterMarker {
         border-right: 5px solid #3cb0ff;
+    }
+
+    .saveButton {
+        display: block;
+        padding-top: 1vh;
+    }
+
+    .saveButton input {
+        cursor: pointer;
+        color: var(--secondary-type-color);
+        background-color: var(--main-style-color);
+        border: none;
+        padding: 1vh 2vh 1vh 2vh;
     }
 
 }
