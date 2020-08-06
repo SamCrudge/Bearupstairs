@@ -29,7 +29,6 @@
 
 .Galleryfit, .Flexi {
     position: absolute;
-    width: 70vw;
     top: 12vh;
     left: 0;
     right: 0;
@@ -37,7 +36,18 @@
     text-align: center;
     color: var(--secondary-type-color);
     background-color: #222222;
-    outline: 20px solid #222222;
+    padding: 20px;
+    transition: 0.5s ease;
+}
+
+#gallerySmall {
+    width: 60vw;
+}
+#galleryMedium {
+    width: 80vw;
+}
+#galleryLarge {
+    width: 100vw;
 }
 
 .galleryContainer {
@@ -81,10 +91,20 @@
 
     .sliderContainer {
         display: flex;
+        flex-direction: column;
         justify-content: space-evenly;
+        position: fixed;
         margin: auto;
-        width: 100%;
+        width: 14vw;
+        height: 14vw;
+        min-width: 205px;
+        min-height: 205px;
+        top: 0;
+        bottom: 0;
+        right: 0;
         font-size: 0.6rem;
+        background-color: #222222;
+        box-shadow: 0 8px 14px -7px rgba(0, 0, 0, 0.75);
     }
 
     .slider {
@@ -115,6 +135,14 @@
         cursor: pointer;
     }
 
+    .widthForm {
+        margin-top: 1vh;
+    }
+
+    .widthForm label {
+        padding-right: 1vh;
+    }
+
     .parentMarker {
         background-color: rgba(60, 176, 255, 0.2);
     }
@@ -134,10 +162,22 @@
 
     .saveButton input {
         cursor: pointer;
+        font-family: "Raleway";
+        font-weight: 700;
         color: var(--secondary-type-color);
         background-color: var(--main-style-color);
         border: none;
+        border-radius: 1vh;
         padding: 1vh 2vh 1vh 2vh;
+        box-shadow: 0 8px 14px -7px rgba(0, 0, 0, 0.3);
+    }
+
+    .saveButton:hover {
+        transform: scale(1.03);
+    }
+
+    .saveButton:active {
+        transform: scale(1);
     }
 
 }

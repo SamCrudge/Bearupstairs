@@ -1,5 +1,8 @@
 import React from "react";
 
+const newState = { spacing: '', galleryWidth: '', images: [] };
+let str = JSON.stringify(newState);
+
 class Galleryfit extends React.Component {
 
     constructor(props) {
@@ -8,6 +11,7 @@ class Galleryfit extends React.Component {
         this.state = {
 
             spacing: 20,
+            galleryWidth: "gallerySmall",
 
             images: [
                 {
@@ -59,6 +63,8 @@ class Galleryfit extends React.Component {
             gallWidth = getComputedStyle(gallery).getPropertyValue('width').match(/\d+/),
             findRatio = (a, b) => a / b;
 
+        gallery.style.width = gallWidth;
+
         for (let i = 0; i < galleryPages.length; i++) {
 
             const images = document.querySelectorAll(`#galleryPage${i} img`),
@@ -108,6 +114,11 @@ class Galleryfit extends React.Component {
         this.doGallerySize();
     }
 
+    widthHandler = (event) => {
+        this.setState({galleryWidth: event.target.value});
+        setTimeout(() => { this.doGallerySize(); }, 700);
+    }
+
     onDragStart = (event) => {
         event.dataTransfer.setData("moved", event.target.id);
     }
@@ -141,8 +152,8 @@ class Galleryfit extends React.Component {
             return false;
         } else if (event.target.tagName === 'IMG') {
             event.target.parentNode.classList.remove('parentMarker');
-                event.target.classList.remove('beforeMarker');
-                event.target.classList.remove('afterMarker');
+            event.target.classList.remove('beforeMarker');
+            event.target.classList.remove('afterMarker');
         }
     }
 
@@ -177,8 +188,9 @@ class Galleryfit extends React.Component {
 
     saveGallery = () => {
         const parent = document.getElementById('galCon').children,
-            children = Array.from(parent),
-            newState = { spacing: +this.state.spacing, images: [] };
+            children = Array.from(parent);
+        newState.spacing = this.state.spacing;
+        newState.galleryWidth = this.state.galleryWidth;
         for (let i = 0; i < children.length; i++) {
             let childNodes = Array.from(children[i].children);
             newState.images.push({
@@ -186,29 +198,60 @@ class Galleryfit extends React.Component {
                 urls: [childNodes]
             });
         }
-        console.log(newState);
+        // this.makeTextFile(newState);
     }
-
+    /*
+        makeTextFile = (text) => {
+            let textFile = '';
+            let data = new Blob([text], {type: 'text/plain'});
+            if (textFile !== null) {
+                window.URL.revokeObjectURL(textFile);
+            }
+            textFile = window.URL.createObjectURL(data);
+            console.log(text);
+            return textFile;
+        };
+    */
     render() {
 
         return (
 
             <div className={this.props.isOpen ? 'portOpen' : 'portClosed'}>
-                <div className="Galleryfit">
-
+                <div className="Galleryfit" id={this.state.galleryWidth}>
                     <h3>GALLERYFIT EXAMPLE</h3>
 
                     <div className="sliderContainer verySmallText">
+
                         <div>
-                            <div>Slide to change margins</div>
+                            <div>MARGINS</div>
                             <input className="slider" type="range" min="5" max="85" step="1"
                                    value={this.state.spacing}
                                    onChange={this.sliderHandler} />
                             <div>{this.state.spacing}</div>
                         </div>
+
+                        <div>
+                            <div>WIDTH</div>
+                            <form className="widthForm verySmallText">
+                                <label><input type="radio" id="small" value="gallerySmall"
+                                              checked={this.state.galleryWidth === "gallerySmall"}
+                                              onChange={this.widthHandler}
+                                />small</label>
+                                <label><input type="radio" id="medium" value="galleryMedium"
+                                              checked={this.state.galleryWidth === "galleryMedium"}
+                                              onChange={this.widthHandler}
+                                />medium </label>
+                                <label><input type="radio" id="large" value="galleryLarge"
+                                              checked={this.state.galleryWidth === "galleryLarge"}
+                                              onChange={this.widthHandler}
+                                />full</label>
+                            </form>
+                        </div>
+
                         <div className="saveButton">
                             <input type="button" onClick={this.saveGallery} value="SAVE GALLERY" />
                         </div>
+
                     </div>
 
                     <div className="galleryContainer" id="galCon">
