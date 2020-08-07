@@ -134,6 +134,8 @@ h4 {
 }
 
 .paintShadowTextWide {
+  padding: 2vh;
+  font-weight: 700;
   background: url("./Assets/swish/widePaint.jpg") no-repeat center center/contain;
 }
 
