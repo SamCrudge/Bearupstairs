@@ -72,8 +72,17 @@ class Services extends React.Component {
                     </div>
                 </div>
 
+                <div className="packages">
+                    <h2>PACKAGES</h2>
+                    <div className="packagesBlock">
+                        <div className="packagesPage">pokey</div>
+                        <div className="packagesPage">shakey</div>
+                        <div className="packagesPage">monkey</div>
+                    </div>
+                </div>
+
                 <div className="invert">
-                    <h2>GALLERY FORMATS</h2>
+                    <h2 className="shadowText">GALLERY FORMATS</h2>
                     <div className="smallText">
                         <p>
                             There are many ways to organise and style an online gallery.
@@ -82,11 +91,11 @@ class Services extends React.Component {
                             Here are a few of our favourites:
                         </p>
                     </div>
-                    <div className="galleryOptions">
+                    <div className="galleryOptions" style={{marginTop: 4 + 'vh'}}>
                         <OptionFlexi isOpenIndex={1} clickHandler={this.examplePop} />
                         <OptionGalleryfit isOpenIndex={2} clickHandler={this.examplePop} />
                     </div>
-                    <div className="galleryOptions">
+                    <div className="galleryOptions" style={{marginBottom: 10 + 'vh'}}>
                         <OptionSingles />
                         <OptionSquares />
                     </div>
@@ -95,7 +104,7 @@ class Services extends React.Component {
                             To find out more...
                             get in touch!
                         </p>
-                        <p className="redText">
+                        <p className="redText shadowText">
                             hello@bearupstairs.com
                         </p>
                         <p>

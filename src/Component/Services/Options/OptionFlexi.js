@@ -6,7 +6,7 @@ class OptionFlexi extends React.Component {
 
         return (
             <div className="galleryOptionsContainer" style={{cursor: "pointer"}} onClick={() => {this.props.clickHandler(this.props.isOpenIndex)}}>
-                <h3>
+                <h3 className="shadowText">
                     FLEXI COLUMNS
                 </h3>
                 <div className="accentTextOne smallText">
@@ -17,7 +17,7 @@ class OptionFlexi extends React.Component {
                     <p className="verySmallText">
                         Images flow down the page in a manner similar to Pinterest or Unsplash.
                     </p>
-                    <p className="accentTextTwo redText smallText">
+                    <p className="accentTextTwo redText smallText shadowText">
                         <i>click for an example</i>
                     </p>
                 </div>

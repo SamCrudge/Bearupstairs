@@ -3,6 +3,26 @@ h3 {
     color: var(--main-style-color);
 }
 
+.packages {
+    text-align: center;
+}
+
+.packagesBlock {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+}
+
+.packagesPage {
+    cursor: pointer;
+    width: 90vw;
+    min-height: 20vh;
+    margin-bottom: 5vh;
+    background-color: var(--main-style-color);
+}
+
 .invert {
     width: 100%;
     padding: 2vh 0 10vh 0;
@@ -37,6 +57,21 @@ h3 {
 }
 
 @media (min-device-width:1224px) {
+
+    .packages {
+        padding: 2vh 0 10vh 0;
+    }
+
+    .packagesBlock {
+        flex-direction: row;
+    }
+
+    .packagesPage {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 20vw;
+    }
 
     .galleryOptions {
         flex-direction: row;

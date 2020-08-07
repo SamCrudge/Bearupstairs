@@ -36,8 +36,11 @@
     text-align: center;
     color: var(--secondary-type-color);
     background-color: #222222;
-    padding: 20px;
-    transition: 0.5s ease;
+    outline: 20px solid #222222;
+}
+
+.Flexi {
+    width: 70vw;
 }
 
 #gallerySmall {
@@ -83,10 +86,6 @@
     display: none;
 }
 
-.saveButton {
-    display: none;
-}
-
 @media (min-device-width:1224px) {
 
     .sliderContainer {
@@ -96,9 +95,9 @@
         position: fixed;
         margin: auto;
         width: 14vw;
-        height: 14vw;
         min-width: 205px;
-        min-height: 205px;
+        max-height: 40vh;
+        min-height: 10vh;
         top: 0;
         bottom: 0;
         right: 0;

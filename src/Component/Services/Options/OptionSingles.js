@@ -6,7 +6,7 @@ class OptionSingles extends React.Component {
 
         return (
             <div className="galleryOptionsContainer">
-                <h3>
+                <h3 className="shadowText">
                     SINGLES
                 </h3>
                 <div className="accentTextOne smallText">

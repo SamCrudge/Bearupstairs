@@ -222,8 +222,12 @@ class Galleryfit extends React.Component {
 
                     <div className="sliderContainer verySmallText">
 
+                        <div className="redText shadowText">TEST IT OUT!</div>
+
+                        <div>Drag images to reorder</div>
+
                         <div>
-                            <div>MARGINS</div>
+                            <div>Select margin width</div>
                             <input className="slider" type="range" min="5" max="85" step="1"
                                    value={this.state.spacing}
                                    onChange={this.sliderHandler} />
@@ -231,7 +235,7 @@ class Galleryfit extends React.Component {
                         </div>
 
                         <div>
-                            <div>WIDTH</div>
+                            <div>Select gallery size</div>
                             <form className="widthForm verySmallText">
                                 <label><input type="radio" id="small" value="gallerySmall"
                                               checked={this.state.galleryWidth === "gallerySmall"}
@@ -247,11 +251,11 @@ class Galleryfit extends React.Component {
                                 />full</label>
                             </form>
                         </div>
-
+                        {/*
                         <div className="saveButton">
                             <input type="button" onClick={this.saveGallery} value="SAVE GALLERY" />
                         </div>
-
+                        */}
                     </div>
 
                     <div className="galleryContainer" id="galCon">

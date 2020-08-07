@@ -6,7 +6,7 @@ class OptionSquares extends React.Component {
 
         return (
             <div className="galleryOptionsContainer">
-                <h3>
+                <h3 className="shadowText">
                     SQUARES
                 </h3>
                 <div className="accentTextOne smallText">

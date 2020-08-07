@@ -12,7 +12,7 @@ const pages = [{
     deskImage: require("../../Assets/portfolio/portfolio_bsf_1.jpg"),
     mobImage: require("../../Assets/portfolio/portfolio_bsf_2.jpg"),
     desc: "bluesungfruit is a passion project of Ben, one of our team.\n" +
-        "Wanting to showcase his personal paintings online, he started developing a unique gallery viewer, " +
+        "Wanting to showcase his personal paintings online, he started developing a unique gallery format, " +
         "called Galleryfit, which we have now adapted for other artists.",
     address: "https://bluesungfruit.com"
 },{
