@@ -1,7 +1,6 @@
 import React from "react";
 
 const newState = { spacing: '', galleryWidth: '', images: [] };
-let str = JSON.stringify(newState);
 
 class Galleryfit extends React.Component {
 
@@ -136,6 +135,7 @@ class Galleryfit extends React.Component {
             return false;
         } else if (event.target.tagName === 'IMG') {
             event.target.parentNode.classList.add('parentMarker');
+            event.target.classList.remove('imageShadow');
             if (x <= rect.width/2) {
                 event.target.classList.remove('afterMarker');
                 event.target.classList.add('beforeMarker');
@@ -154,6 +154,7 @@ class Galleryfit extends React.Component {
             event.target.parentNode.classList.remove('parentMarker');
             event.target.classList.remove('beforeMarker');
             event.target.classList.remove('afterMarker');
+            event.target.classList.add('imageShadow');
         }
     }
 
@@ -173,6 +174,7 @@ class Galleryfit extends React.Component {
             } else if (event.target.tagName === 'IMG') {
                 event.target.parentNode.classList.remove('parentMarker');
                 event.target.parentNode.appendChild(movedItem);
+                event.target.classList.add('imageShadow');
                 if (x <= rect.width / 2) {
                     event.target.parentNode.insertBefore(movedItem, event.target);
                     event.target.classList.remove('beforeMarker');
@@ -194,10 +196,11 @@ class Galleryfit extends React.Component {
         for (let i = 0; i < children.length; i++) {
             let childNodes = Array.from(children[i].children);
             newState.images.push({
-                id: children[i].id,
+                id: `galleryPage${i}`,
                 urls: [childNodes]
             });
         }
+        console.log(newState);
         // this.makeTextFile(newState);
     }
     /*
@@ -270,7 +273,7 @@ class Galleryfit extends React.Component {
 
                                 {this.state.images[i].urls.map((img, j) =>
 
-                                    <img key={j} name={j} id={this.state.images[i].urls[j]} src={this.state.images[i].urls[j]} alt="from Unsplash"
+                                    <img key={j} name={j} id={this.state.images[i].urls[j]} src={this.state.images[i].urls[j]} alt="from Unsplash" className="imageShadow"
                                          onDragStart={ (event) => this.onDragStart(event) }/>
 
                                 )}

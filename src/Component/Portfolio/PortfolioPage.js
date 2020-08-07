@@ -14,7 +14,7 @@ class PortfolioPage extends React.Component {
                         this.props.desc,
                         this.props.address
                 )}} >
-                <div className="portfolioTitle">{this.props.name}</div>
+                <h4 className="portfolioTitle">{this.props.name}</h4>
                 <img src={this.props.deskImage} alt='Desktop example' />
             </div>
         );

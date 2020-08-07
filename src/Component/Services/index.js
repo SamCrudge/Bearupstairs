@@ -75,9 +75,18 @@ class Services extends React.Component {
                 <div className="packages">
                     <h2>PACKAGES</h2>
                     <div className="packagesBlock">
-                        <div className="packagesPage">pokey</div>
-                        <div className="packagesPage">shakey</div>
-                        <div className="packagesPage">monkey</div>
+                        <div className="packagesPage">
+                            <h4 className="packagesTitle">FULL</h4>
+                            <div>stuff</div>
+                        </div>
+                        <div className="packagesPage">
+                            <h4 className="packagesTitle">MEDIUM</h4>
+                            <div>stuff</div>
+                        </div>
+                        <div className="packagesPage">
+                            <h4 className="packagesTitle">BASIC</h4>
+                            <div>stuff</div>
+                        </div>
                     </div>
                 </div>
 

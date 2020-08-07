@@ -47,6 +47,12 @@ h3 {
   padding: 1vh 0 2vh 0;
 }
 
+h4 {
+  margin: 0;
+  color: var(--secondary-type-color);
+  font-weight: 700;
+}
+
 .fullPage {
   display: flex;
   flex-direction: column;

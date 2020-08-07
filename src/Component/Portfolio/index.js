@@ -60,10 +60,10 @@ class Portfolio extends React.Component {
 
     caseStudyPop = (id, name, deskImage, mobImage, desc, address) => {
         this.setState({ id: id, name: name, deskImage: deskImage, mobImage: mobImage, desc: desc, address: address });
-        document.querySelector('.CaseStudyContainer').classList.toggle('caseOpen');
-        setTimeout(() => { document.querySelector('.CaseStudyBase').classList.toggle('viewCaseStudy') }, 100);
-        setTimeout(() => { document.querySelector('.CaseStudyWindow').classList.toggle('viewCaseStudy') }, 700);
-        setTimeout(() => { document.querySelectorAll('.caseStudyButtons').forEach(e => e.classList.toggle('caseOpen')) }, 750);
+        document.querySelector('.CaseStudyContainer').classList.toggle('portOpen');
+        setTimeout(() => { document.querySelector('.CaseStudyBase').classList.toggle('portView') }, 100);
+        setTimeout(() => { document.querySelector('.CaseStudyWindow').classList.toggle('portView') }, 700);
+        setTimeout(() => { document.querySelectorAll('.portButtons').forEach(e => e.classList.toggle('portOpen')) }, 750);
         setTimeout(() => {
             if (window.matchMedia("(max-width: 1224px)").matches) {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -73,10 +73,10 @@ class Portfolio extends React.Component {
     }
 
     caseStudyExit = () => {
-        document.querySelectorAll('.caseStudyButtons').forEach(e => e.classList.toggle('caseOpen'));
-        document.querySelector('.CaseStudyWindow').classList.toggle('viewCaseStudy');
-        setTimeout(() => { document.querySelector('.CaseStudyBase').classList.toggle('viewCaseStudy') }, 300);
-        setTimeout(() => { document.querySelector('.CaseStudyContainer').classList.toggle('caseOpen') }, 400);
+        document.querySelectorAll('.portButtons').forEach(e => e.classList.toggle('portOpen'));
+        document.querySelector('.CaseStudyWindow').classList.toggle('portView');
+        setTimeout(() => { document.querySelector('.CaseStudyBase').classList.toggle('portView') }, 300);
+        setTimeout(() => { document.querySelector('.CaseStudyContainer').classList.toggle('portOpen') }, 400);
         setTimeout(() => { this.setState({ id: '', name: '', deskImage: '', mobImage: '', desc: '', address: '' }); }, 500);
     }
 
@@ -126,13 +126,13 @@ class Portfolio extends React.Component {
                 <div className="portfolioBlock">
                     {pages.map((item, i) => <PortfolioPage key={i} clickHandler={this.caseStudyPop} {...pages[i]} /> )}
                 </div>
-                <div className="prevCase casePrevNext caseStudyButtons" onClick={this.prevCaseStudy}>
+                <div className="portPrev portPrevNext portButtons" onClick={this.prevCaseStudy}>
                     <div><img src={require("../../Assets/swish/prev.png")} alt="button" /></div>
                 </div>
-                <div className="nextCase casePrevNext caseStudyButtons" onClick={this.nextCaseStudy}>
+                <div className="portNext portPrevNext portButtons" onClick={this.nextCaseStudy}>
                     <div><img src={require("../../Assets/swish/next.png")} alt="button" /></div>
                 </div>
-                <div className="exitCaseStudy caseStudyButtons" onClick={this.caseStudyExit}>
+                <div className="portExit portButtons" onClick={this.caseStudyExit}>
                     <div><img src={require("../../Assets/swish/exit.png")} alt="button" /></div>
                 </div>
                 <div className="CaseStudyContainer">

@@ -20,11 +20,9 @@
 }
 
 .portfolioTitle {
-    width: 90vw;
     box-sizing: border-box;
     padding: 1vh;
     font-size: 0.8rem;
-    font-weight: 700;
     color: var(--main-background-color);
     text-transform: uppercase;
     text-indent: 3vh;
@@ -53,10 +51,6 @@
 
     .portfolioPage:hover {
         transform: scale(1.05);
-    }
-
-    .portfolioTitle {
-        width: 28vw;
     }
 
     .portfolioBlock img {

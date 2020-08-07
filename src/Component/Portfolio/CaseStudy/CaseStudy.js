@@ -5,9 +5,9 @@ class CaseStudy extends React.Component {
     render() {
         return (
             <div className="CaseFile">
-                <div className="CaseTitle">
+                <h4 className="CaseTitle">
                     {this.props.name}
-                </div>
+                </h4>
                 <div className="CaseDesc">
                     {this.props.desc.split('\n').map(function(item, i) {
                         return (
