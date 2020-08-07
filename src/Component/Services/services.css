@@ -11,31 +11,28 @@ h3 {
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     width: 100vw;
+    margin: auto;
 }
 
 .packagesPage {
     width: 90vw;
-    min-height: 20vh;
-    margin-bottom: 5vh;
+    margin-bottom: 3vh;
 }
+
 .packagesTitle {
-    box-sizing: border-box;
     padding: 1vh;
     font-size: 0.8rem;
-    color: var(--main-background-color);
-    text-transform: uppercase;
-    text-indent: 3vh;
-    background: var(--main-style-color) url("../../Assets/swish/plus.png") no-repeat left center/contain;
+    text-align: left;
     border-top-right-radius: 20vh;
 }
 
 .packagesPage div {
-    margin: 1vh 1vh 0 1vh;
+    margin-bottom: 1px;
     padding: 1vh;
-    border: 1px solid black;
     background-color: var(--main-background-color);
+    box-shadow: 0 2px 1px rgba(0,0,0,0.1), 0 4px 4px rgba(0,0,0,0.1), 0 8px 6px rgba(0,0,0,0.1);
 }
 
 .invert {
@@ -79,13 +76,15 @@ h3 {
 
     .packagesBlock {
         flex-direction: row;
+        align-items: flex-start;
+        width: 80vw;
     }
 
     .packagesPage {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        width: 20vw;
+        width: 25vw;
     }
 
     .galleryOptions {

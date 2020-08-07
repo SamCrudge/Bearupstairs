@@ -54,6 +54,13 @@ class Galleryfit extends React.Component {
 
     }
 
+    componentDidMount() {
+        setTimeout(() => { this.doGallerySize(); }, 500);
+        window.addEventListener('resize', this.doGallerySize);
+        window.addEventListener('dragenter', this.doGallerySize);
+        window.addEventListener('drop', this.doGallerySize);
+    }
+
     doGallerySize = () => {
 
         const
@@ -100,13 +107,6 @@ class Galleryfit extends React.Component {
         }
 
     };
-
-    componentDidMount() {
-        setTimeout(() => { this.doGallerySize(); }, 500);
-        window.addEventListener('resize', this.doGallerySize);
-        window.addEventListener('dragenter', this.doGallerySize);
-        window.addEventListener('drop', this.doGallerySize);
-    }
 
     sliderHandler = (event) => {
         this.setState({spacing: event.target.value});
@@ -187,7 +187,7 @@ class Galleryfit extends React.Component {
             }
         }
     }
-
+    /*
     saveGallery = () => {
         const parent = document.getElementById('galCon').children,
             children = Array.from(parent);
@@ -203,7 +203,7 @@ class Galleryfit extends React.Component {
         console.log(newState);
         // this.makeTextFile(newState);
     }
-    /*
+
         makeTextFile = (text) => {
             let textFile = '';
             let data = new Blob([text], {type: 'text/plain'});

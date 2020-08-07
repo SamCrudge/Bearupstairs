@@ -39,7 +39,7 @@ h1 {
 }
 
 h2 {
-  padding: 1vh 2vh 1vh 2vh;
+  padding: 1vh 2vh 2vh 2vh;
   font-size: 1.3rem;
 }
 
@@ -51,6 +51,15 @@ h4 {
   margin: 0;
   color: var(--secondary-type-color);
   font-weight: 700;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  text-indent: 3vh;
+  text-shadow:
+          0 2px 1px rgba(0, 0, 0, 0.1),
+          0 4px 2px rgba(0,0,0,0.1),
+          0 8px 4px rgba(0, 0, 0, 0.1),
+          0 16px 8px rgba(0, 0, 0, 0.1);
+  background: var(--main-style-color) url("./Assets/swish/plus.png") no-repeat left center/contain;
 }
 
 .fullPage {
@@ -107,7 +116,29 @@ h4 {
 }
 
 .shadowText {
-  text-shadow:0 2px 1px rgba(0, 0, 0, 0.1), 0 4px 2px rgba(0,0,0,0.1), 0 8px 4px rgba(0,0,0,0.1), 0 16px 8px rgba(0,0,0,0.1);
+  text-shadow:
+          0 2px 1px rgba(0, 0, 0, 0.1),
+          0 4px 2px rgba(0, 0, 0, 0.1),
+          0 8px 4px rgba(0, 0, 0, 0.1),
+          0 16px 8px rgba(0, 0, 0, 0.1);
+}
+
+.paintShadowText {
+  color: var(--secondary-type-color);
+  font-size: 2rem;
+  text-shadow:
+          0 2px 1px rgba(0, 0, 0, 0.1),
+          0 4px 2px rgba(0, 0, 0, 0.1),
+          0 8px 4px rgba(0, 0, 0, 0.1),
+          0 16px 8px rgba(0, 0, 0, 0.1);
+}
+
+.paintShadowTextWide {
+  background: url("./Assets/swish/widePaint.jpg") no-repeat center center/contain;
+}
+
+.paintShadowTextNarrow {
+  background: url("./Assets/swish/narrowPaint.jpg") no-repeat center center/contain;
 }
 
 ul, li {
@@ -138,9 +169,10 @@ ul, li {
 #nav a {
   color: var(--secondary-type-color);
   text-decoration: none;
-  text-shadow:0 2px 1px rgba(20,20,20,0.1),
-              0 4px 2px rgba(20,20,20,0.1),
-              0 8px 4px rgba(20,20,20,0.1);
+  text-shadow:
+          0 2px 1px rgba(20, 20, 20,0.1),
+          0 4px 2px rgba(20, 20, 20,0.1),
+          0 8px 4px rgba(20, 20, 20,0.1);
 }
 
 .closeNav {

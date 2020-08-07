@@ -21,11 +21,11 @@ class CaseStudy extends React.Component {
                     </div>
                 </div>
                 <div className="CaseDeskImg">
-                    <div className="mobDesk">Desktop example</div>
+                    <h4 className="mobDesk">Desktop example</h4>
                     <img src={this.props.deskImage} alt="Case study desktop example" />
                 </div>
                 <div className="CaseMobImg">
-                    <div className="mobDesk">Mobile example</div>
+                    <h4 className="mobDesk">Mobile example</h4>
                     <img src={this.props.mobImage} alt="Case study mobile example" />
                 </div>
             </div>

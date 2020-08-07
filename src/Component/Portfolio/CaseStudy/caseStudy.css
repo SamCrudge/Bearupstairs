@@ -41,14 +41,9 @@
 }
 
 .CaseTitle {
-    width: 100%;
-    box-sizing: border-box;
     padding: 0 3rem 0 1rem;
     margin: 9vh 0 2vh 0;
     line-height: 2.5rem;
-    text-transform: uppercase;
-    color: var(--secondary-type-color);
-    background-color: var(--main-style-color);
     box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.75);
 }
 
@@ -116,8 +111,6 @@
         top: 0;
         left: 0;
         margin: 0;
-        text-indent: 3vh;
-        background: var(--main-style-color) url("../../../Assets/swish/plus.png") no-repeat left center/contain;
         border-top-right-radius: 10vh;
     }
 
@@ -126,7 +119,6 @@
         width: 46vw;
         top: 15vh;
         right: 0;
-        margin: 0;
     }
 
     .CaseDeskImg img {
@@ -154,14 +146,8 @@
     /* title bars for mobile & desktop images */
     .mobDesk {
         display: block;
-        width: 100%;
-        box-sizing: border-box;
         padding: 1vh;
         font-size: 0.8rem;
-        color: var(--secondary-type-color);
-        text-indent: 3vh;
-        text-transform: uppercase;
-        background: var(--main-style-color) url("../../../Assets/swish/plus.png") no-repeat left center/contain;
         box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.75);
         border-top-right-radius: 10vh;
     }

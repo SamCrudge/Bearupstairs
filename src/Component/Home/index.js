@@ -30,7 +30,7 @@ class Home extends React.Component {
                     <p className="mainText redText">simply.</p>
                 </div>
                 <div className="mainText">
-                    <p>LET US HELP!</p>
+                    <p className="paintShadowText paintShadowTextWide">LET US HELP!</p>
                     <p>hello@bearupstairs.com</p>
                     <p>07753 700 197</p>
                 </div>
