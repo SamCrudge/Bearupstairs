@@ -45,6 +45,11 @@ h2 {
 
 h3 {
   padding: 1vh 0 2vh 0;
+  text-shadow:
+          0 2px 1px rgba(0, 0, 0, 0.1),
+          0 4px 2px rgba(0,0,0,0.1),
+          0 8px 4px rgba(0, 0, 0, 0.1),
+          0 16px 8px rgba(0, 0, 0, 0.1);
 }
 
 h4 {
@@ -60,6 +65,7 @@ h4 {
           0 8px 4px rgba(0, 0, 0, 0.1),
           0 16px 8px rgba(0, 0, 0, 0.1);
   background: var(--main-style-color) url("./Assets/swish/plus.png") no-repeat left center/contain;
+  box-shadow: 0 2px 1px rgba(0,0,0,0.1), 0 4px 4px rgba(0,0,0,0.1), 0 8px 6px rgba(0,0,0,0.1);
 }
 
 .fullPage {
@@ -126,6 +132,7 @@ h4 {
 .paintShadowText {
   color: var(--secondary-type-color);
   font-size: 2rem;
+  line-height: 3rem;
   text-shadow:
           0 2px 1px rgba(0, 0, 0, 0.1),
           0 4px 2px rgba(0, 0, 0, 0.1),

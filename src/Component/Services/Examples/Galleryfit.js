@@ -1,7 +1,7 @@
 import React from "react";
-
+/*
 const newState = { spacing: '', galleryWidth: '', images: [] };
-
+*/
 class Galleryfit extends React.Component {
 
     constructor(props) {
@@ -225,7 +225,9 @@ class Galleryfit extends React.Component {
 
                     <div className="sliderContainer verySmallText">
 
-                        <div className="redText shadowText">TEST IT OUT!</div>
+                        <div className="redText shadowText">
+                            <b>TEST IT OUT!</b>
+                        </div>
 
                         <div>Drag images to reorder</div>
 

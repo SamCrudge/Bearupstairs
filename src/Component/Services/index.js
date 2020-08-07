@@ -33,9 +33,7 @@ class Services extends React.Component {
         setTimeout(() => { document.querySelector('.exampleBase').classList.add('portView') }, 100);
         setTimeout(() => { document.querySelector('.exampleWindow').classList.add('portView') }, 400);
         setTimeout(() => { document.querySelector('.portButtons').classList.add('portOpen') }, 500);
-        setTimeout(() => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }, 800);
+        window.scrollTo({ top: 0 });
     }
 
     exampleExit = () => {
@@ -44,9 +42,7 @@ class Services extends React.Component {
         document.querySelector('.exampleWindow').classList.remove('portView');
         setTimeout(() => { document.querySelector('.exampleBase').classList.remove('portView') }, 100);
         setTimeout(() => { document.querySelector('.exampleContainer').classList.remove('portOpen') }, 400);
-        setTimeout(() => {
-            window.scrollTo({ top: this.state.scrollPosition, behavior: 'smooth' });
-        }, 500);
+        window.scrollTo({ top: this.state.scrollPosition });
     }
 
     render() {
