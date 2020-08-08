@@ -40,21 +40,19 @@
 }
 
 .Flexi {
-    width: 70vw;
+    width: 100vw;
 }
 
 #gallerySmall {
     width: 60vw;
 }
+
 #galleryMedium {
     width: 80vw;
 }
+
 #galleryLarge {
     width: 100vw;
-}
-
-.galleryContainer {
-    margin-top: 5vh;
 }
 
 .galleryPage {
@@ -91,17 +89,23 @@
 
 @media (min-device-width:1224px) {
 
+    .Flexi {
+        width: 70vw;
+    }
+
+    .galleryContainer {
+        margin-top: 5vh;
+    }
+
     .parentMarker {
         background-color: rgba(60, 176, 255, 0.2);
     }
 
     .beforeMarker {
-        border-left: 5px solid #3cb0ff;
         box-shadow: -20px 0 0 0 #3cb0ff;
     }
 
     .afterMarker {
-        border-right: 5px solid #3cb0ff;
         box-shadow: 20px 0 0 0 #3cb0ff;
     }
 

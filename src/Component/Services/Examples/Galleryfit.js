@@ -10,7 +10,7 @@ class Galleryfit extends React.Component {
         this.state = {
 
             spacing: 20,
-            galleryWidth: "gallerySmall",
+            galleryWidth: '',
 
             images: [
                 {
@@ -55,10 +55,15 @@ class Galleryfit extends React.Component {
     }
 
     componentDidMount() {
-        setTimeout(() => { this.doGallerySize(); }, 500);
-        window.addEventListener('resize', this.doGallerySize);
-        window.addEventListener('dragenter', this.doGallerySize);
-        window.addEventListener('drop', this.doGallerySize);
+        if (window.matchMedia("(min-device-width: 1224px)").matches) {
+            this.setState({galleryWidth: 'gallerySmall'});
+        } else if (window.matchMedia("(max-device-width: 1224px)").matches) {
+            this.setState({galleryWidth: 'galleryLarge'});
+        };
+            setTimeout(() => { this.doGallerySize(); }, 500);
+            window.addEventListener('resize', this.doGallerySize);
+            window.addEventListener('dragenter', this.doGallerySize);
+            window.addEventListener('drop', this.doGallerySize);
     }
 
     doGallerySize = () => {

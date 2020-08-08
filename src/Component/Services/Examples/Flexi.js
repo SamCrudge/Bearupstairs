@@ -71,17 +71,7 @@ class Flexi extends React.Component {
                 <div className="Flexi">
 
                     <h3>FLEXI EXAMPLE</h3>
-                    {/*
-                    <div className="sliderContainer verySmallText">
-                        <div>
-                            <div>Slide to change margins</div>
-                            <input className="slider" type="range" min="10" max="40" step="1"
-                                   value={this.state.spacing}
-                                   onChange={this.sliderHandler} />
-                            <div>{this.state.spacing}</div>
-                        </div>
-                    </div>
-                    */}
+
                     <div className="galleryContainer flexiCols">
                         {images}
                     </div>
