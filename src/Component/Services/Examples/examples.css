@@ -91,6 +91,20 @@
 
 @media (min-device-width:1224px) {
 
+    .parentMarker {
+        background-color: rgba(60, 176, 255, 0.2);
+    }
+
+    .beforeMarker {
+        border-left: 5px solid #3cb0ff;
+        box-shadow: -20px 0 0 0 #3cb0ff;
+    }
+
+    .afterMarker {
+        border-right: 5px solid #3cb0ff;
+        box-shadow: 20px 0 0 0 #3cb0ff;
+    }
+
     .sliderContainer {
         display: flex;
         flex-direction: column;
@@ -106,6 +120,7 @@
         right: 0;
         font-size: 0.6rem;
         background-color: #222222;
+        border-radius: 2vh 0 0 2vh;
         box-shadow: 0 8px 14px -7px rgba(0, 0, 0, 0.75);
     }
 
@@ -113,7 +128,7 @@
         width: 200px;
         height: 3px;
         margin: 20px 0 12px 0;
-        background: var(--main-style-color);
+        background-color: var(--main-style-color);
         transition: opacity .2s;
     }
 
@@ -122,41 +137,54 @@
     }
 
     .slider::-webkit-slider-thumb {
+        cursor: pointer;
         width: 15px;
         height: 15px;
         background: var(--main-background-color);
         border-radius: 100%;
-        cursor: pointer;
     }
 
     .slider::-moz-range-thumb {
+        cursor: pointer;
         width: 15px;
         height: 15px;
-        background: var(--main-background-color);
+        background-color: var(--main-background-color);
         border-radius: 100%;
-        cursor: pointer;
     }
 
     .widthForm {
-        margin-top: 1vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        min-height: 100px;
+        margin: 1vh 0 0 5vw;
     }
 
-    .widthForm label {
-        padding-right: 1vh;
+    .widthForm input {
+        display: none;
     }
 
-    .parentMarker {
-        background-color: rgba(60, 176, 255, 0.2);
+    .widthForm input + div {
+        cursor: pointer;
+        display: inline-block;
+        content: '';
+        width: 18px;
+        height: 18px;
+        margin-right: 1vh;
+        border: 2px solid var(--main-style-color);
+        border-radius: 100%;
+        transition: background-color 500ms ease;
     }
 
-    .beforeMarker {
-        border-left: 5px solid #3cb0ff;
-        box-shadow: -20px 0 0 0 #3cb0ff;
+    .widthForm input + div::before {
+        display: inline-block;
+        content: '';
     }
 
-    .afterMarker {
-        border-right: 5px solid #3cb0ff;
-        box-shadow: 20px 0 0 0 #3cb0ff;
+    .widthForm input:checked + div {
+        background-color: var(--main-background-color);
+        box-shadow: inset 0 0 0 4px #222;
     }
 
     .saveButton {

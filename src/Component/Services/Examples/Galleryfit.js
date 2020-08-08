@@ -245,15 +245,15 @@ class Galleryfit extends React.Component {
                                 <label><input type="radio" id="small" value="gallerySmall"
                                               checked={this.state.galleryWidth === "gallerySmall"}
                                               onChange={this.widthHandler}
-                                />small</label>
+                                /><div />small</label>
                                 <label><input type="radio" id="medium" value="galleryMedium"
                                               checked={this.state.galleryWidth === "galleryMedium"}
                                               onChange={this.widthHandler}
-                                />medium </label>
+                                /><div />medium </label>
                                 <label><input type="radio" id="large" value="galleryLarge"
                                               checked={this.state.galleryWidth === "galleryLarge"}
                                               onChange={this.widthHandler}
-                                />full</label>
+                                /><div />full</label>
                             </form>
                         </div>
                         {/*
