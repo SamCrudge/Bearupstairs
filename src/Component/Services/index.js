@@ -69,26 +69,37 @@ class Services extends React.Component {
                 </div>
 
                 <div className="packages">
-                    <h2 className="paintShadowText paintShadowTextNarrow">PACKAGES</h2>
+                    <h2 className="paintShadowText paintShadowTextNarrow">
+                        PACKAGES
+                    </h2>
                     <div className="packagesBlock">
                         <div className="packagesPage">
                             <h4 className="packagesTitle">FULL</h4>
-                            <div>Hosting & domain</div>
-                            <div>Website design</div>
-                            <div>Any gallery option</div>
-                            <div>Fully integrated shop</div>
-                            <div>Logo & social media design</div>
+                            <div>
+                                <div>Web address & storage</div>
+                                <div>Website design</div>
+                                <div>Any gallery option</div>
+                                <div>Fully integrated shop</div>
+                                <div>Logo & social media design</div>
+                                <div>6 months free support</div>
+                            </div>
                         </div>
                         <div className="packagesPage">
                             <h4 className="packagesTitle">MEDIUM</h4>
-                            <div>Hosting & domain</div>
-                            <div>Website design</div>
-                            <div>Basic responsive gallery</div>
+                            <div>
+                                <div>Web address & storage</div>
+                                <div>Website design</div>
+                                <div>Basic responsive gallery</div>
+                                <div>3 months free support</div>
+                            </div>
                         </div>
                         <div className="packagesPage">
                             <h4 className="packagesTitle">BASIC</h4>
-                            <div>Hosting & domain</div>
-                            <div>Website design</div>
+                            <div>
+                                <div>Web address & storage</div>
+                                <div>Website design</div>
+                                <div>1 month free support</div>
+                            </div>
                         </div>
                     </div>
                 </div>

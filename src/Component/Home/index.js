@@ -9,11 +9,11 @@ class Home extends React.Component {
             <div className="Home fullPage">
                 <div className="mainText">
                     <p>
-                        Hi! We’re <span className="allCaps"><span className="redText"> Bear</span> Upstairs</span>,
+                        Hi! We’re <span className="allCaps"><span className="redText">Bear</span> Upstairs</span>,
                         your friendly web team.
                     </p>
                     <p>
-                        We build attractive, functional websites for creatives.
+                        We build functional, attractive websites for creatives.
                     </p>
                 </div>
                 <div className="accentTextOne">

@@ -4,7 +4,7 @@ h3 {
 }
 
 .packages {
-    text-align: center;
+    padding-bottom: 4vh;
     color: var(--secondary-type-color);
 }
 
@@ -20,20 +20,31 @@ h3 {
 .packagesPage {
     width: 90vw;
     margin-bottom: 3vh;
+    text-align: left;
+    border-left: 4px solid var(--main-style-color);
 }
 
 .packagesTitle {
     padding: 1vh;
     font-size: 0.8rem;
-    text-align: left;
-    border-top-right-radius: 20vh;
+    border-top-right-radius: 10vh;
 }
 
-.packagesPage div {
-    margin-bottom: 1px;
-    padding: 1vh;
+.packagesPage > div {
     background-color: #222;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 6px 4px rgba(0,0,0,0.1), 0 8px 8px rgba(0,0,0,0.1);
+}
+
+.packagesPage > div div {
+    margin-bottom: 1px;
+    padding: 1vh;
+}
+
+.packagesPage > div div:before {
+    content: '✔';
+    color: var(--main-style-color);
+    margin-bottom: 1px;
+    padding: 1vh;
 }
 
 .invert {
@@ -72,7 +83,7 @@ h3 {
 @media (min-device-width:1224px) {
 
     .packages {
-        padding: 2vh 0 10vh 0;
+        padding: 2vh 0 8vh 0;
     }
 
     .packagesBlock {
@@ -85,13 +96,12 @@ h3 {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        width: 25vw;
+        width: 23vw;
     }
 
     .galleryOptions {
         flex-direction: row;
         align-items: stretch;
-        margin: auto;
     }
 
     .galleryOptionsContainer {
